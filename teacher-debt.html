@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 หนี้สินครู — สรุปจำง่าย + ข้อสอบเคส</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+:root{--bg:#0f172a;--s:#1e293b;--s2:#334155;--a:#f59e0b;--a2:#10b981;--a3:#3b82f6;--a4:#ef4444;--t:#f1f5f9;--t2:#94a3b8;--b:#475569}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Thai','Sarabun',sans-serif;background:var(--bg);color:var(--t);line-height:1.8}
+nav{position:sticky;top:0;z-index:100;background:var(--s);border-bottom:1px solid var(--b);padding:12px 20px;display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+nav h1{font-size:17px;color:var(--a);margin-right:12px;white-space:nowrap}
+nav a{color:var(--t2);text-decoration:none;font-size:12px;padding:3px 8px;border-radius:5px;transition:all .2s}
+nav a:hover{background:var(--s2);color:var(--a)}
+.ct{max-width:960px;margin:0 auto;padding:30px 20px 80px}
+.hero{text-align:center;padding:30px 20px;border-bottom:2px solid var(--b);margin-bottom:36px}
+.hero h1{font-size:28px;color:var(--a);margin-bottom:6px}
+.hero p{color:var(--t2);font-size:15px}
+.badge{display:inline-block;margin:4px;padding:5px 14px;border-radius:16px;font-size:12px;font-weight:600}
+.badge.gold{background:#78350f;color:#fbbf24} .badge.red{background:#7f1d1d;color:#fca5a5} .badge.blue{background:#1e3a5f;color:#60a5fa} .badge.green{background:#064e3b;color:#34d399}
+section{margin-bottom:32px}
+section h2{font-size:22px;color:var(--a);border-left:4px solid var(--a);padding-left:12px;margin-bottom:16px}
+section h3{font-size:17px;color:var(--a2);margin:14px 0 8px}
+.card{background:var(--s);border:1px solid var(--b);border-radius:10px;padding:16px 20px;margin-bottom:12px}
+.card.warn{border-left:4px solid var(--a4)} .card.tip{border-left:4px solid var(--a)} .card.info{border-left:4px solid var(--a3)}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+th{background:var(--s2);color:var(--a);padding:8px 10px;text-align:left;font-weight:600}
+td{padding:7px 10px;border-bottom:1px solid var(--b)}
+tr:hover td{background:var(--s2)}
+ul,ol{padding-left:22px;margin:6px 0} li{margin-bottom:3px}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:1px}
+.tag.red{background:#7f1d1d;color:#fca5a5} .tag.green{background:#064e3b;color:#34d399} .tag.blue{background:#1e3a5f;color:#93c5fd} .tag.gold{background:#78350f;color:#fbbf24}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+details{margin:8px 0;background:var(--s);border-radius:8px;border:1px solid var(--b);padding:4px 12px}
+details[open]{border-color:var(--a2)}
+summary{cursor:pointer;padding:8px 0;font-weight:600;color:var(--a3)}
+footer{text-align:center;padding:24px;color:var(--t2);font-size:13px;border-top:1px solid var(--b);margin-top:36px}
+</style>
+</head>
+<body>
+<nav>
+  <h1>📚 หนี้สินครู</h1>
+  <a href="#info">ข้อมูลทั่วไป</a>
+  <a href="#numbers">ตัวเลขจำ</a>
+  <a href="#agent">ธ.ก.ส. = Agent</a>
+  <a href="#cash">การจ่ายเงิน</a>
+  <a href="#contract">สัญญา</a>
+  <a href="#case">ข้อสอบเคส</a>
+</nav>
+<div class="ct">
+
+<div class="hero">
+  <h1>📚 เงินทุนหมุนเวียนเพื่อแก้ไขปัญหาหนี้สินข้าราชการครู</h1>
+  <p>สินเชื่อเพื่อสังคม — ธ.ก.ส. เป็นเพียงผู้รับจ้างบริหารจัดการ (Agent) ไม่ใช่เจ้าของเงินทุน</p>
+  <div>
+    <span class="badge gold">💡 เทคนิคจำง่าย</span>
+    <span class="badge red">🚨 จุดดักข้อสอบ</span>
+    <span class="badge blue">📝 ข้อสอบเคสตัวอย่าง</span>
+  </div>
+</div>
+
+<!-- ======================== -->
+<section id="info">
+<h2>📌 ข้อมูลทั่วไป หนี้สินครู</h2>
+<div class="card">
+  <p><strong>โครงการ:</strong> เงินทุนหมุนเวียนเพื่อแก้ไขปัญหาหนี้สินข้าราชการครู</p>
+  <p><strong>จุดประสงค์:</strong> นำเงินไป <strong>ชำระหนี้ในระบบที่บังคับได้ตามกฎหมาย</strong> เช่น หนี้ธนาคาร/สหกรณ์ (≥6 เดือน), หนี้บัตรเครดิต (≥2 เดือน) หรือหนี้ค้ำประกันที่มีคำพิพากษาศาล</p>
+  <p><strong>ผู้กู้:</strong> ข้าราชการครูและบุคลากรทางการศึกษา <strong>สังกัดกระทรวงศึกษาธิการ</strong></p>
+  <p><strong>เงื่อนไขผู้กู้:</strong> รับราชการมาแล้ว <strong>ไม่น้อยกว่า 3 ปี</strong></p>
+  <p><strong>💰 สำคัญมาก:</strong> ธ.ก.ส. <span class="tag red">ไม่มีอำนาจอนุมัติ</span> — มีหน้าที่แค่วิเคราะห์แล้วเสนอความเห็น ผู้อนุมัติคือ <strong>คณะอนุกรรมการ (อกก.) ประจำจังหวัด/กทม./ส่วนราชการ</strong></p>
+</div>
+
+<h3>📊 ข้อมูลสำคัญที่ต้องจำ</h3>
+<table>
+  <tr><th>หัวข้อ</th><th>รายละเอียด</th><th>สัญลักษณ์จำ</th></tr>
+  <tr><td><strong>วงเงินกู้สูงสุด</strong></td><td>ไม่เกินรายละ <span class="tag blue">500,000 บาท</span></td><td>500K</td></tr>
+  <tr><td><strong>อัตราดอกเบี้ย</strong></td><td><span class="tag gold">4% ต่อปี</span> (ลดต้นลดดอก)</td><td>4%</td></tr>
+  <tr><td><strong>ระยะเวลาชำระ</strong></td><td>ไม่เกิน <span class="tag blue">12 ปี (144 งวด)</span> และไม่เกินอายุราชการคงเหลือ</td><td>12</td></tr>
+  <tr><td><strong>TDR ยืดเวลา</strong></td><td>ไม่เกิน <span class="tag blue">8 ปี (96 งวด)</span></td><td>8</td></tr>
+  <tr><td><strong>เงินเดือนคงเหลือสุทธิ</strong></td><td>ต้องไม่น้อยกว่า <span class="tag green">ร้อยละ 30</span> (30% Rule)</td><td>30%</td></tr>
+  <tr><td><strong>ค่าประเมินที่ดิน</strong></td><td><span class="tag green">500 บาท/แปลง</span> (รายได้สาขา)</td><td>500</td></tr>
+  <tr><td><strong>อากรแสตมป์</strong></td><td><span class="tag green">ได้รับการยกเว้น</span> (สัญญารัฐบาล)</td><td>ไม่ต้อง</td></tr>
+  <tr><td><strong>งวดแรกชำระ</strong></td><td><span class="tag red">เดือนถัดจากเดือนที่จ่ายกู้</span> (ห้ามเดือนเดียวกัน!)</td><td>เดือนถัดไป</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<section id="numbers">
+<h2>🔢 ตัวเลข "4-5-3-12-30" ที่ต้องจำ</h2>
+
+<div class="grid2">
+<div class="card info">
+  <h4>💰 ดอกเบี้ย & วงเงิน</h4>
+  <table>
+    <tr><td>ดอกเบี้ย</td><td><strong>4%</strong> ต่อปี</td></tr>
+    <tr><td>วงเงินสูงสุด</td><td><strong>500,000</strong> บ.</td></tr>
+    <tr><td>ระยะเวลาชำระ</td><td>ไม่เกิน <strong>12</strong> ปี</td></tr>
+    <tr><td>TDR ยืดเวลา</td><td>ไม่เกิน <strong>8</strong> ปี</td></tr>
+  </table>
+</div>
+<div class="card info">
+  <h4>👥 ผู้กู้ & ผู้ค้ำ</h4>
+  <table>
+    <tr><td>รับราชการแล้ว</td><td>ไม่น้อยกว่า <strong>3</strong> ปี</td></tr>
+    <tr><td>เงินเดือนคงเหลือ</td><td>ไม่น้อยกว่า <strong>30%</strong></td></tr>
+    <tr><td>เงินเดือนผู้ค้ำ</td><td>ไม่ต่ำกว่า <strong>25,000</strong> บ.</td></tr>
+  </table>
+</div>
+<div class="card info">
+  <h4>👥 ผู้ค้ำประกัน</h4>
+  <table>
+    <tr><td>กู้ ≤ 300K</td><td>ค้ำ <strong>2 คน</strong></td></tr>
+    <tr><td>กู้ > 300K</td><td>ค้ำ <strong>3 คน</strong></td></tr>
+    <tr><td>ค้ำคนอื่นได้</td><td>ไม่เกิน <strong>3 คน</strong></td></tr>
+    <tr><td>ผู้ค้ำต้องเป็น</td><td>ข้าราชการครู ศธ.</td></tr>
+  </table>
+</div>
+<div class="card info">
+  <h4>💼 ค่าธรรมเนียม/สัญญา</h4>
+  <table>
+    <tr><td>ค่าประเมินที่ดิน</td><td><strong>500</strong> บ./แปลง</td></tr>
+    <tr><td>อากรแสตมป์</td><td><strong>ไม่ต้องติด</strong></td></tr>
+    <tr><td>โอนเข้าบัญชีครู?</td><td><span class="tag red">ห้ามเด็ดขาด!</span></td></tr>
+    <tr><td>จ่ายให้ใคร?</td><td><strong>เจ้าหนี้เดิม</strong>เท่านั้น</td></tr>
+  </table>
+</div>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="agent">
+<h2>🚨 ธ.ก.ส. = Agent — ไม่ใช่เจ้าของเงิน!</h2>
+<div class="card warn">
+  <strong>จุดสำคัญที่สุดที่ข้อสอบชอบถาม!</strong>
+  <ul>
+    <li>ธ.ก.ส. เป็นเพียง <strong>ผู้รับจ้างบริหารจัดการโครงการ (Agent)</strong></li>
+    <li>ธ.ก.ส. <strong>ไม่มีอำนาจอนุมัติ</strong> — มีหน้าที่แค่วิเคราะห์ความสามารถในการชำระหนี้แล้วเสนอความเห็น</li>
+    <li>ผู้อนุมัติคือ <strong>คณะอนุกรรมการ (อกก.) ประจำจังหวัด/กทม./ส่วนราชการ</strong> เท่านั้น</li>
+    <li><strong>ถ้าธ.ก.ส. วิเคราะห์ว่ากู้ไม่ได้ แต่ อกก. อนุมัติให้กู้:</strong> ธนาคารต้องให้ อกก. บันทึกความเห็นไว้ในรายงานการประชุม แล้วธนาคารก็ต้องจัดทำสัญญาให้ตามที่ อกก. สั่ง</li>
+  </ul>
+</div>
+
+<div class="card tip">
+  <strong>💡 เทคนิคจำ:</strong> "ธ.ก.ส. หนี้สินครู = แค่ <strong>A</strong>gent" (ไม่ใช่เจ้าของ)
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="cash">
+<h2>💵 การจ่ายเงินกู้ — จุดตายข้อสอบ!</h2>
+<div class="card warn">
+  <strong>🚨 กฎเหล็กการจ่ายเงิน:</strong>
+  <ul>
+    <li>ธ.ก.ส. <strong>ห้ามโอนเงินกู้เข้าบัญชีเงินฝากของผู้กู้ (ครู) เด็ดขาด!</strong></li>
+    <li>ต้องจ่ายเงินให้ <strong>"เจ้าหนี้เดิมของผู้กู้"</strong> เท่านั้น</li>
+  </ul>
+</div>
+
+<h3>วิธีจ่ายเงิน ตามประเภทเจ้าหนี้</h3>
+<table>
+  <tr><th>กรณี</th><th>วิธีจ่ายเงิน</th><th>หลักฐาน</th></tr>
+  <tr><td><strong>เจ้าหนี้เป็นบุคคลธรรมดา มาเอง</strong></td><td>จ่ายเป็น<strong>เงินสด</strong></td><td>เจ้าหนี้เซ็นรับเงินหน้า 5 ของสัญญา</td></tr>
+  <tr><td><strong>เจ้าหนี้ไม่มา / เป็นสถาบันการเงิน</strong></td><td>ตีเป็น <strong>แคชเชียร์เช็ค</strong> ขีดคร่อมสั่งจ่ายในนามเจ้าหนี้</td><td>เก็บค่าธรรมเนียมจากครู + เก็บสำเนาเช็ค</td></tr>
+  <tr><td><strong>จ่ายเงินไม่ได้ / ลูกค้าไม่มา</strong></td><td>โอนเงินส่งคืนบัญชี สป. ที่สาขานางเลิ้ง</td><td><strong>ห้ามจ่ายเงินสดส่วนที่เหลือให้ครูเด็ดขาด!</strong></td></tr>
+</table>
+
+<div class="card warn">
+  <strong>🚨 จุดดักข้อสอบ:</strong> ห้ามสั่งพนักงานโอนเงินเข้าบัญชีครูผู้กู้เด็ดขาด! ต้องจ่ายให้เจ้าหนี้เท่านั้น
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="contract">
+<h2>📝 สัญญาและวันจ่ายงวด</h2>
+<div class="card">
+  <strong>📋 กำหนดจ่ายงวดแรก:</strong>
+  <p>ให้กำหนดชำระหนี้งวดแรกใน <strong>"เดือนถัดจากเดือนที่จ่ายเงินกู้"</strong> เสมอ</p>
+  <p>เหตุผล: เพื่อให้สอดคล้องกับรอบการทำบัญชีหักเงินเดือนของกระทรวงศึกษาธิการ</p>
+  <p><span class="tag red">🚨 ห้ามกำหนดให้ชำระในเดือนที่รับเงินกู้เด็ดขาด!</strong> เพราะจะตัดเงินไม่ทันและกลายเป็นหนี้ค้างชำระ</p>
+</div>
+
+<div class="card info">
+  <strong>💡 เทคนิคจำวันจ่าย:</strong> "ได้เงินเดือนไหน → ส่งงวดเดือนถัดไป"
+  <p>เช่น จ่ายเงินกู้ ม.ค. 2569 → งวดแรก มี.ค. 2569 (ไม่ใช่ ก.พ. เพราะต้องรอรอบหักเงินเดือน)</p>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="case">
+<h2>📝 ข้อสอบเคสตัวอย่าง — ทดสอบตัวเอง!</h2>
+
+<details>
+<summary>📝 เคส 1: ใครมีอำนาจอนุมัติ?</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูคนหนึ่งมาขอกู้เงินหนี้สินครู วงเงิน 400,000 บาท ผจข.ธ.ก.ส. วิเคราะห์แล้วเห็นว่าผ่านเกณฑ์ จึงสั่งอนุมัติเอง</p>
+  <p><strong>ถาม:</strong> การกระทำของผจข.ถูกต้องหรือไม่?</p>
+  <details>
+    <summary style="color:#ef4444">❌ คำตอบ: ไม่ถูกต้อง!</summary>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <p><strong>ธ.ก.ส. ไม่มีอำนาจอนุมัติ!</strong></p>
+      <p>ธ.ก.ส. เป็นเพียง Agent มีหน้าที่แค่วิเคราะห์แล้วเสนอความเห็น ผู้อนุมัติคือ <strong>คณะอนุกรรมการ (อกก.) ประจำจังหวัด/กทม./ส่วนราชการ</strong> เท่านั้น</p>
+      <p><span class="tag red">⚠️ จุดดักข้อสอบ: ออกบ่อยมาก! ผจข. ทำได้แค่วิเคราะห์และเสนอความเห็น ไม่ใช่อนุมัติเอง</span></p>
+    </div>
+  </details>
+</div>
+</details>
+
+<details>
+<summary>📝 เคส 2: จ่ายเงินกู้ให้ใคร?</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูร้อยตำรวจตรีกู้เงินหนี้สินครู วงเงิน 300,000 บาท เพื่อชำระหนี้บัตรเครดิต 2 ใบ ขณะที่โอนเงินมาที่สาขาแล้ว พนักงาน建议ว่าให้โอนเงินเข้าบัญชีเงินฝากของครูโดยตรงเพื่อความสะดวก</p>
+  <p><strong>ถาม:</strong> ควรทำอย่างไร?</p>
+  <details>
+    <summary style="color:#ef4444">❌ คำตอบ: ห้ามโอนเข้าบัญชีครูเด็ดขาด!</summary>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <p><strong>ธ.ก.ส. ห้ามโอนเงินกู้เข้าบัญชีเงินฝากของผู้กู้เด็ดขาด!</strong></p>
+      <p>ต้องนัด<strong>เจ้าหนี้เดิมของผู้กู้</strong>มารับเงินที่สาขาเท่านั้น</p>
+      <ul>
+        <li>ถ้าเจ้าหนี้เป็นบุคคลธรรมดา มาเอง → จ่ายเงินสด + เซ็นรับหน้า 5 ของสัญญา</li>
+        <li>ถ้าเจ้าหนี้ไม่มา → ตีเป็นแคชเชียร์เช็คขีดคร่อมสั่งจ่ายในนามเจ้าหนี้</li>
+      </ul>
+      <p><span class="tag red">⚠️ จุดดักข้อสอบ: ห้ามเชื่อคำแนะนำที่ให้โอนเงินเข้าบัญชีครู ไม่ว่าจะอ้างเหตุผลใด!</span></p>
+    </div>
+  </details>
+</div>
+</details>
+
+<details>
+<summary>📝 เคส 3: กำหนดวันจ่ายงวดแรก</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูมาทำสัญญาเงินกู้หนี้สินครูวันที่ 15 ก.พ. 2569 พนักงานกำหนดให้ชำระงวดแรกในเดือน ก.พ. 2569 เลย</p>
+  <p><strong>ถาม:</strong> ถูกต้องหรือไม่?</p>
+  <details>
+    <summary style="color:#ef4444">❌ คำตอบ: ไม่ถูกต้อง!</summary>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <p><strong>ห้ามกำหนดให้ชำระในเดือนที่รับเงินกู้เด็ดขาด!</strong></p>
+      <p>ต้องกำหนดงวดแรกใน<strong>"เดือนถัดจากเดือนที่จ่ายเงินกู้"</strong> เท่านั้น</p>
+      <p>เช่น จ่ายเงินกู้ ก.พ. 2569 → งวดแรกต้องเป็น <strong>มี.ค. 2569</strong></p>
+      <p>เหตุผล: ต้องรอรอบทำบัญชีหักเงินเดือนของกระทรวงศึกษาฯ ถ้ากำหนดเดือนเดียวกันจะตัดเงินไม่ทัน กลายเป็นหนี้ค้างชำระ</p>
+    </div>
+  </details>
+</div>
+</details>
+
+<details>
+<summary>📝 เคส 4: วงเงินกู้ & ผู้ค้ำ</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูคนหนึ่งขอกู้หนี้สินครู วงเงิน 350,000 บาท จะใช้บุคคลค้ำประกัน</p>
+  <p><strong>ถาม:</strong> ต้องใช้ผู้ค้ำกี่คน?</p>
+  <details>
+    <summary style="color:#10b981">✅ คำตอบ: 3 คน</summary>
+    <div class="card" style="border-left:4px solid #10b981">
+      <p>เงื่อนไข: กู้ไม่เกิน 300,000 ใช้ 2 คน / กู้เกิน 300,000 ใช้ 3 คน</p>
+      <p>350,000 > 300,000 → ต้องใช้ <strong>3 คน</strong></p>
+      <p>ผู้ค้ำต้องเป็นข้าราชการครูสังกัด ศธ. เงินเดือนไม่ต่ำกว่า 25,000 บ.</p>
+      <p>ผู้ค้ำ 1 คน ค้ำคนอื่นได้ไม่เกิน 3 คน</p>
+    </div>
+  </details>
+</div>
+</details>
+
+<details>
+<summary>📝 เคส 5: 30% Rule</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูเงินเดือน 35,000 บาท มีหนี้สินเดิมหักอยู่เดือนละ 8,000 บาท ขอกู้หนี้สินครู วงเงิน 300,000 บาท งวดละ 2,778 บาท (108 งวด)</p>
+  <p><strong>ถาม:</strong> ครูผ่านเกณฑ์ 30% Rule มั้ย?</p>
+  <details>
+    <summary style="color:#10b981">✅ คำตอบ: ผ่านเกณฑ์</summary>
+    <div class="card" style="border-left:4px solid #10b981">
+      <p><strong>วิธีคิด:</strong></p>
+      <ul>
+        <li>เงินได้รายเดือน: 35,000 บ.</li>
+        <li>หักหนี้เดิม: -8,000 บ.</li>
+        <li>หักงวดสป.กษ.: -2,778 บ.</li>
+        <li>เงินได้คงเหลือสุทธิ: 35,000 - 8,000 - 2,778 = <strong>24,222 บ.</strong></li>
+        <li>30% ของเงินเดือน: 35,000 × 30% = <strong>10,500 บ.</strong></li>
+        <li>24,222 > 10,500 → <strong>ผ่านเกณฑ์!</strong></li>
+      </ul>
+    </div>
+  </details>
+</div>
+</details>
+
+<details>
+<summary>📝 เคส 6: TDR ปรับปรุงโครงสร้างหนี้</summary>
+<div class="card">
+  <p><strong>โจทย์:</strong> ครูกู้หนี้สินครูวงเงิน 500,000 บาท ส่งไม่ไหว ขอปรับปรุงโครงสร้างหนี้ (TDR) ต้องการยืดเวลาเป็น 10 ปี</p>
+  <p><strong>ถาม:</strong> ทำได้หรือไม่?</p>
+  <details>
+    <summary style="color:#ef4444">❌ คำตอบ: ทำไม่ได้!</summary>
+    <div class="card" style="border-left:4px solid #ef4444">
+      <p><strong>TDR ยืดเวลาได้ไม่เกิน 8 ปี (96 งวด) เท่านั้น</strong></p>
+      <p>10 ปี > 8 ปี → ทำไม่ได้</p>
+      <p>ต้องยื่นคำขอให้ <strong>อกก. กำกับติดตามเร่งรัดหนี้ค้างชำระฯ</strong> พิจารณาให้ความเห็นชอบก่อน ธ.ก.ส. จึงจะทำข้อตกลงต่อท้ายสัญญาให้ได้</p>
+      <p>ดอกเบี้ยใช้เรตเดิมตามที่กระทรวงกำหนด</p>
+    </div>
+  </details>
+</div>
+</details>
+
+</section>
+
+<footer>
+  🐶✨ สรุปโดย คาร่า — 27 พฤษภาคม 2569<br>
+  <small>ที่มา: NotebookLM — Banking Operations and Cash Management Manual</small>
+</footer>
+</div>
+</body>
+</html>

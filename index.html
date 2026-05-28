@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🎯 ศูนย์เตรียมสอบ ผช.ผจข. ธ.ก.ส. — Genius 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0e1a;
+  --bg2: #111827;
+  --surface: #1e293b;
+  --surface2: #283548;
+  --surface3: #334155;
+  --gold: #f59e0b;
+  --gold2: #fbbf24;
+  --gold-dim: rgba(245, 158, 11, 0.15);
+  --green: #10b981;
+  --green-dim: rgba(16, 185, 129, 0.15);
+  --blue: #3b82f6;
+  --blue-dim: rgba(59, 130, 246, 0.15);
+  --purple: #8b5cf6;
+  --purple-dim: rgba(139, 92, 246, 0.15);
+  --red: #ef4444;
+  --red-dim: rgba(239, 68, 68, 0.15);
+  --cyan: #06b6d4;
+  --cyan-dim: rgba(6, 182, 212, 0.15);
+  --text: #f1f5f9;
+  --text2: #94a3b8;
+  --text3: #64748b;
+  --border: rgba(255,255,255,0.06);
+  --glow: 0 0 40px rgba(245,158,11,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Noto Sans Thai', 'Sarabun', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Animated background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(245,158,11,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(59,130,246,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(139,92,246,0.03) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Header */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 60px 20px 40px;
+  z-index: 1;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-dim);
+  color: var(--gold);
+  border: 1px solid rgba(245,158,11,0.3);
+  border-radius: 20px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.hero h1 {
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--gold), var(--gold2), #fde68a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  animation: fadeInUp 0.6s ease 0.1s both;
+}
+
+.hero p {
+  color: var(--text2);
+  font-size: 1.05rem;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeInUp 0.6s ease 0.2s both;
+}
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 24px;
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.hero-stat {
+  text-align: center;
+}
+
+.hero-stat-num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Filter tabs */
+.filter-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background: var(--surface);
+  color: var(--text2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.filter-btn:hover {
+  background: var(--surface2);
+  color: var(--text);
+  border-color: rgba(255,255,255,0.12);
+}
+
+.filter-btn.active {
+  background: var(--gold-dim);
+  color: var(--gold);
+  border-color: rgba(245,158,11,0.4);
+}
+
+/* Grid */
+.grid {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.5s ease both;
+  position: relative;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  border-radius: 16px 16px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,0.1);
+  box-shadow: var(--glow);
+}
+
+.card:hover::before { opacity: 1; }
+
+.card[data-cat="summary"]::before { background: linear-gradient(90deg, var(--blue), var(--cyan)); }
+.card[data-cat="quiz"]::before { background: linear-gradient(90deg, var(--green), #34d399); }
+.card[data-cat="special"]::before { background: linear-gradient(90deg, var(--purple), #a78bfa); }
+
+.card-top {
+  padding: 24px 24px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.card-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.card[data-cat="summary"] .card-icon { background: var(--blue-dim); }
+.card[data-cat="quiz"] .card-icon { background: var(--green-dim); }
+.card[data-cat="special"] .card-icon { background: var(--purple-dim); }
+
+.card-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.card-desc {
+  font-size: 0.82rem;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.card-body {
+  padding: 16px 24px;
+}
+
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+}
+
+.tag-blue { background: var(--blue-dim); color: var(--blue); }
+.tag-green { background: var(--green-dim); color: var(--green); }
+.tag-gold { background: var(--gold-dim); color: var(--gold); }
+.tag-purple { background: var(--purple-dim); color: var(--purple); }
+.tag-red { background: var(--red-dim); color: var(--red); }
+.tag-cyan { background: var(--cyan-dim); color: var(--cyan); }
+
+.card-footer {
+  padding: 0 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-size {
+  font-size: 0.75rem;
+  color: var(--text3);
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 18px;
+  border-radius: 10px;
+  transition: all 0.25s;
+}
+
+.card[data-cat="summary"] .card-link { color: var(--blue); background: var(--blue-dim); }
+.card[data-cat="summary"] .card-link:hover { background: rgba(59,130,246,0.25); }
+.card[data-cat="quiz"] .card-link { color: var(--green); background: var(--green-dim); }
+.card[data-cat="quiz"] .card-link:hover { background: rgba(16,185,129,0.25); }
+.card[data-cat="special"] .card-link { color: var(--purple); background: var(--purple-dim); }
+.card[data-cat="special"] .card-link:hover { background: rgba(139,92,246,0.25); }
+
+.card-link svg {
+  width: 14px;
+  height: 14px;
+  transition: transform 0.2s;
+}
+
+.card-link:hover svg { transform: translateX(3px); }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.card:nth-child(1) { animation-delay: 0.05s; }
+.card:nth-child(2) { animation-delay: 0.1s; }
+.card:nth-child(3) { animation-delay: 0.15s; }
+.card:nth-child(4) { animation-delay: 0.2s; }
+.card:nth-child(5) { animation-delay: 0.25s; }
+.card:nth-child(6) { animation-delay: 0.3s; }
+.card:nth-child(7) { animation-delay: 0.35s; }
+.card:nth-child(8) { animation-delay: 0.4s; }
+.card:nth-child(9) { animation-delay: 0.45s; }
+
+/* Footer */
+.footer {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+  color: var(--text3);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Hidden class for filtering */
+.card.hidden {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 20px 14px 60px;
+  }
+  
+  .hero { padding: 40px 16px 24px; }
+  .hero h1 { font-size: 1.6rem; }
+  .hero-stats { gap: 16px; }
+  
+  .card-top { padding: 18px 18px 0; }
+  .card-body { padding: 12px 18px; }
+  .card-footer { padding: 0 18px 16px; }
+  
+  .filter-bar { padding: 10px 12px; gap: 4px; }
+  .filter-btn { padding: 6px 12px; font-size: 0.78rem; }
+}
+
+/* Scroll reveal */
+.card { opacity: 0; }
+.card.visible { animation: fadeInUp 0.5s ease forwards; }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-badge">✦ GENIUS 9 — ธ.ก.ส. ✦</div>
+  <h1>ศูนย์เตรียมสอบ ผช.ผจข.</h1>
+  <p>สรุปเนื้อหา + แบบทดสอบครบทุกหัวข้อ สำหรับการสอบเลื่อนระดับ ผู้ช่วยผู้จัดการสาขา</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num">6</div>
+      <div class="hero-stat-label">สรุปเนื้อหา</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">3</div>
+      <div class="hero-stat-label">ชุดแบบทดสอบ</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">300+</div>
+      <div class="hero-stat-label">ข้อสอบ</div>
+    </div>
+  </div>
+</section>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">📋 ทั้งหมด</button>
+  <button class="filter-btn" data-filter="summary">📖 สรุปเนื้อหา</button>
+  <button class="filter-btn" data-filter="quiz">✅ แบบทดสอบ</button>
+  <button class="filter-btn" data-filter="special">⭐ เสริม</button>
+</div>
+
+<div class="grid" id="cardGrid">
+
+  <!-- ===== สรุปเนื้อหา ===== -->
+
+  <div class="card" data-cat="summary">
+    <div class="card-top">
+      <div class="card-icon">📚</div>
+      <div class="card-meta">
+        <div class="card-title">สรุปครบทุกหัวข้อ</div>
+        <div class="card-desc">รวมเนื้อหาทุกหัวข้อสอบ ผช.ผจข. ไว้ในที่เดียว — Regulation 35, จัดซื้อ, FMIS, Good Bank/NPL</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-blue">Regulation 35</span>
+        <span class="tag tag-blue">FMIS</span>
+        <span class="tag tag-blue">NPL</span>
+        <span class="tag tag-blue">จัดซื้อจัดจ้าง</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">31 KB</span>
+      <a href="summary-all.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="summary">
+    <div class="card-top">
+      <div class="card-icon">🎯</div>
+      <div class="card-meta">
+        <div class="card-title">Competency C9 — ผช.ผจข.</div>
+        <div class="card-desc">สมรรถนะหลัก C9 ผู้ช่วยผู้จัดการสาขา สรุปเข้มข้นทุกหัวข้อสอบ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-gold">Competency C9</span>
+        <span class="tag tag-gold">สมรรถนะ</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">34 KB</span>
+      <a href="competency-c9.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="summary">
+    <div class="card-top">
+      <div class="card-icon">📋</div>
+      <div class="card-meta">
+        <div class="card-title">SE-AM 2569</div>
+        <div class="card-desc">สรุป สินเชื่อ อนุมัติ บริหารจัดการ ปี 2569 ทุกขั้นตอน</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-cyan">SE-AM</span>
+        <span class="tag tag-cyan">สินเชื่อ</span>
+        <span class="tag tag-cyan">2569</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">24 KB</span>
+      <a href="se-am.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="summary">
+    <div class="card-top">
+      <div class="card-icon">💰</div>
+      <div class="card-meta">
+        <div class="card-title">สป.กษ. — สรุปจำง่าย + ข้อสอบเคส</div>
+        <div class="card-desc">ส่งเสริมและพัฒนาการเกษตร สรุปเนื้อหาจำง่ายพร้อมข้อสอบเคสประกอบ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">สป.กษ.</span>
+        <span class="tag tag-green">เกษตร</span>
+        <span class="tag tag-red">ข้อสอบเคส</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">24 KB</span>
+      <a href="splg.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="summary">
+    <div class="card-top">
+      <div class="card-icon">📚</div>
+      <div class="card-meta">
+        <div class="card-title">หนี้สินครู — สรุปจำง่าย + ข้อสอบเคส</div>
+        <div class="card-desc">สินเชื่อสวัสดิการครู สรุปเนื้อหาเข้าใจง่ายพร้อมเคสสอบจริง</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-purple">หนี้สินครู</span>
+        <span class="tag tag-purple">สวัสดิการ</span>
+        <span class="tag tag-red">ข้อสอบเคส</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">25 KB</span>
+      <a href="teacher-debt.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== แบบทดสอบ ===== -->
+
+  <div class="card" data-cat="quiz">
+    <div class="card-top">
+      <div class="card-icon">📝</div>
+      <div class="card-meta">
+        <div class="card-title">แบบทดสอบชุดที่ 1 — เตรียมสอบเลื่อนระดับ</div>
+        <div class="card-desc">ชุดใหญ่รวมทุกหัวข้อ ก่อสร้าง  FMIS ค่าใช้จ่าย จัดซื้อ แผนวิสาหกิจ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">ข้อสอบ</span>
+        <span class="tag tag-gold">150+ ข้อ</span>
+        <span class="tag tag-blue">มีเฉลย</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">96 KB</span>
+      <a href="quiz-1.html" class="card-link">
+        ทำแบบทดสอบ
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="quiz">
+    <div class="card-top">
+      <div class="card-icon">✅</div>
+      <div class="card-meta">
+        <div class="card-title">แบบทดสอบชุดที่ 2 — ธ.ก.ส.</div>
+        <div class="card-desc">เน้นก่อสร้างอาคาร FMIS ค่าใช้จ่ายทั่วไป แผนวิสาหกิจ จัดซื้อจัดจ้าง</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">ข้อสอบ</span>
+        <span class="tag tag-gold">80+ ข้อ</span>
+        <span class="tag tag-blue">มีเฉลย</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">67 KB</span>
+      <a href="quiz-2.html" class="card-link">
+        ทำแบบทดสอบ
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="card" data-cat="quiz">
+    <div class="card-top">
+      <div class="card-icon">🎯</div>
+      <div class="card-meta">
+        <div class="card-title">แบบทดสอบชุดที่ 3 — แนวข้อสอบจริง 2567</div>
+        <div class="card-desc">จำลองข้อสอบจริง ปี 2567 ครบทุกหมวด พร้อมระบบตรวจคำตอบ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-green">ข้อสอบจริง</span>
+        <span class="tag tag-gold">80+ ข้อ</span>
+        <span class="tag tag-blue">มีเฉลย</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">70 KB</span>
+      <a href="quiz-3.html" class="card-link">
+        ทำแบบทดสอบ
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== เสริม ===== -->
+
+  <div class="card" data-cat="special">
+    <div class="card-top">
+      <div class="card-icon">🧠</div>
+      <div class="card-meta">
+        <div class="card-title">Mastery — Robert Greene สรุปหนังสือ</div>
+        <div class="card-desc">สรุปหนังสือ Mastery เข้าใจเส้นทางสู่ความเป็นเลิศ — เสริมทัศนคติสำหรับผู้นำ</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-tags">
+        <span class="tag tag-purple">Mastery</span>
+        <span class="tag tag-purple">ความเป็นผู้นำ</span>
+        <span class="tag tag-gold">Robert Greene</span>
+      </div>
+    </div>
+    <div class="card-footer">
+      <span class="card-size">28 KB</span>
+      <a href="mastery.html" class="card-link">
+        เปิดอ่าน
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z"/></svg>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer class="footer">
+  สร้างโดย คาร่า 🐶 สำหรับพ่อ · Genius 9 ธ.ก.ส. · 2569
+</footer>
+
+<script>
+// Filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const cards = document.querySelectorAll('.card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    
+    cards.forEach(card => {
+      if (filter === 'all' || card.dataset.cat === filter) {
+        card.classList.remove('hidden');
+        card.classList.add('visible');
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+  });
+});
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+cards.forEach(card => observer.observe(card));
+</script>
+</body>
+</html>

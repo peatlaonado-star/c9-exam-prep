@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📚 Genius 9 ผช.ผจข. ธ.ก.ส. — สรุปครบทุกหัวข้อ</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface2: #334155;
+  --accent: #f59e0b;
+  --accent2: #10b981;
+  --accent3: #3b82f6;
+  --accent4: #ef4444;
+  --accent5: #8b5cf6;
+  --text: #f1f5f9;
+  --text2: #94a3b8;
+  --border: #475569;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.8;
+  padding: 0;
+}
+
+/* Sticky Nav */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 20px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+nav h1 {
+  font-size: 18px;
+  color: var(--accent);
+  margin-right: 16px;
+  white-space: nowrap;
+}
+nav a {
+  color: var(--text2);
+  text-decoration: none;
+  font-size: 13px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+nav a:hover {
+  background: var(--surface2);
+  color: var(--accent);
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 30px 20px 80px;
+}
+
+/* Header */
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 40px;
+}
+.hero h1 {
+  font-size: 32px;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+.hero p {
+  color: var(--text2);
+  font-size: 16px;
+}
+.hero .badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.badge.gold { background: #78350f; color: #fbbf24; }
+.badge.green { background: #064e3b; color: #34d399; }
+.badge.blue { background: #1e3a5f; color: #60a5fa; }
+.badge.red { background: #7f1d1d; color: #fca5a5; }
+.badge.purple { background: #3b0764; color: #c4b5fd; }
+
+/* Sections */
+section {
+  margin-bottom: 36px;
+}
+section h2 {
+  font-size: 24px;
+  color: var(--accent);
+  border-left: 4px solid var(--accent);
+  padding-left: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+section h3 {
+  font-size: 18px;
+  color: var(--accent2);
+  margin: 16px 0 10px;
+}
+section h4 {
+  font-size: 15px;
+  color: var(--accent3);
+  margin: 12px 0 8px;
+}
+
+/* Cards */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin-bottom: 14px;
+}
+.card.warn {
+  border-left: 4px solid var(--accent4);
+}
+.card.tip {
+  border-left: 4px solid var(--accent);
+}
+.card.info {
+  border-left: 4px solid var(--accent3);
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 14px;
+}
+th {
+  background: var(--surface2);
+  color: var(--accent);
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 600;
+}
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+tr:hover td {
+  background: var(--surface2);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 22px;
+  margin: 8px 0;
+}
+li {
+  margin-bottom: 4px;
+}
+
+/* Blockquote */
+blockquote {
+  border-left: 3px solid var(--accent2);
+  padding: 10px 16px;
+  margin: 12px 0;
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  color: var(--accent2);
+}
+
+/* Code / highlights */
+.highlight {
+  background: #78350f;
+  color: #fbbf24;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+.highlight.red {
+  background: #7f1d1d;
+  color: #fca5a5;
+}
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  margin: 2px;
+}
+.tag.s { background: #065f46; color: #6ee7b7; }
+.tag.w { background: #78350f; color: #fbbf24; }
+.tag.o { background: #1e3a5f; color: #93c5fd; }
+.tag.t { background: #7f1d1d; color: #fca5a5; }
+
+/* Grid */
+.grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+@media (max-width: 640px) {
+  .grid2 { grid-template-columns: 1fr; }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: var(--text2);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+
+/* Details/summary for quiz */
+details {
+  margin: 8px 0;
+  background: var(--surface);
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  padding: 4px 12px;
+}
+details[open] {
+  border-color: var(--accent2);
+}
+summary {
+  cursor: pointer;
+  padding: 8px 0;
+  font-weight: 600;
+  color: var(--accent3);
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>📚 Genius 9</h1>
+  <a href="#vision">วิสัยทัศน์</a>
+  <a href="#mission">พันธกิจ</a>
+  <a href="#spark">SPARK</a>
+  <a href="#heart">HEART</a>
+  <a href="#sod">SODs</a>
+  <a href="#esg">ESG</a>
+  <a href="#bcg">BCG</a>
+  <a href="#swot">SWOT</a>
+  <a href="#tows">TOWS</a>
+  <a href="#so">SO1–SO6</a>
+  <a href="#mid1">กลาง 1</a>
+  <a href="#finance">เป้าหมายการเงิน</a>
+  <a href="#tips">ทริคสอบ</a>
+</nav>
+
+<div class="container">
+
+<div class="hero">
+  <h1>🏦 Genius 9 ผช.ผจข. ธ.ก.ส.</h1>
+  <p>สรุปเนื้อหาสำคัญจากแผนวิสาหกิจ 2567–2571 (ทบทวนปี 2569) <br>และเอกสารเตรียมสอบครบทุกหัวข้อ</p>
+  <div>
+    <span class="badge gold">🏛️ กลาง 1</span>
+    <span class="badge green">🏦 แผนวิสาหกิจ</span>
+    <span class="badge blue">♻️ ESG</span>
+    <span class="badge red">⚠️ จุดดักข้อสอบ</span>
+    <span class="badge purple">💡 ทริค</span>
+  </div>
+  <p style="margin-top:12px; font-size:13px; color:var(--text2);">อัปเดตล่าสุด: 27 พ.ค. 2569<br>ที่มา: แผนวิสาหกิจ 2569 (314 หน้า) + NotebookLM + GBrain</p>
+</div>
+
+<!-- ======================== -->
+<!-- 1. วิสัยทัศน์ -->
+<!-- ======================== -->
+<section id="vision">
+<h2>👁️ วิสัยทัศน์ (Vision)</h2>
+<blockquote>« เป็นธนาคารพัฒนาชนบทที่ยั่งยืน »</blockquote>
+<p>มุ่งสู่การยกระดับธนาคารให้เป็น <span class="highlight">"ธนาคารยั่งยืน + ชนบทยั่งยืน = ESG²"</span></p>
+</section>
+
+<!-- ======================== -->
+<!-- 2. พันธกิจ -->
+<!-- ======================== -->
+<section id="mission">
+<h2>🎯 พันธกิจ 4 ข้อ (Mission M1–M4)</h2>
+<table>
+  <tr><th>ภารกิจ</th><th>รายละเอียด</th></tr>
+  <tr><td><strong>M1</strong></td><td>เป็นศูนย์กลางทางการเงิน ให้บริการครบวงจร ทันสมัย แก่ลูกค้าภาคชนบท</td></tr>
+  <tr><td><strong>M2</strong></td><td>พัฒนาการบริหารและจัดการทรัพยากร มุ่งสู่องค์กรประสิทธิภาพสูง มีธรรมาภิบาล</td></tr>
+  <tr><td><strong>M3</strong></td><td>ส่งเสริมเทคโนโลยีและนวัตกรรม เพิ่มขีดความสามารถ แก้ปัญหาความยากจน เพิ่มรายได้ชนบท</td></tr>
+  <tr><td><strong>M4</strong></td><td>สนับสนุนกิจกรรมทางเศรษฐกิจในชุมชน ให้ความรู้และเงินทุน คำนึงถึงคุณค่าร่วมสมดุล ESG</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 3. SPARK -->
+<!-- ======================== -->
+<section id="spark">
+<h2>💎 ค่านิยมองค์กร — SPARK</h2>
+<table>
+  <tr><th>S</th><td><strong>S</strong>ustainability</td><td>ความยั่งยืน</td></tr>
+  <tr><th>P</th><td><strong>P</strong>articipation</td><td>การมีส่วนร่วม</td></tr>
+  <tr><th>A</th><td><strong>A</strong>ccountability</td><td>ความรับผิดชอบ</td></tr>
+  <tr><th>R</th><td><strong>R</strong>espect</td><td>ความเคารพ</td></tr>
+  <tr><th>K</th><td><strong>K</strong>nowledge</td><td>ความรู้</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 4. HEART -->
+<!-- ======================== -->
+<section id="heart">
+<h2>💖 วัฒนธรรมองค์กร — HEART</h2>
+<table>
+  <tr><th>H</th><td><strong>H</strong>onesty with integrity</td><td>ซื่อสัตย์สุจริต</td></tr>
+  <tr><th>E</th><td><strong>E</strong>conomy / Sufficiency</td><td>ประหยัด / พอเพียง</td></tr>
+  <tr><th>A</th><td><strong>A</strong>ccountability</td><td>รับผิดชอบ</td></tr>
+  <tr><th>R</th><td><strong>R</strong>esponse heartily</td><td>ตอบสนองด้วยใจ</td></tr>
+  <tr><th>T</th><td><strong>T</strong>eamwork</td><td>การทำงานเป็นทีม</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 5. SODs -->
+<!-- ======================== -->
+<section id="sod">
+<h2>📌 SODs — Statement of Directions</h2>
+<p>แนวนโยบายผู้ถือหุ้นภาครัฐ โดยกระทรวงการคลัง / สคร. กำหนดให้รัฐวิสาหกิจจัดทำแผนให้สอดคล้องยุทธศาสตร์ชาติ</p>
+
+<h3>📋 ยุทธศาสตร์รัฐวิสาหกิจภาพรวม</h3>
+<blockquote>รัฐวิสาหกิจมีบทบาทขับเคลื่อนยุทธศาสตร์ชาติ โดยเน้นนวัตกรรมและเทคโนโลยี พัฒนางาน เพิ่มประสิทธิภาพ ภายใต้ธรรมาภิบาลที่โปร่งใส และหลักปรัชญาเศรษฐกิจพอเพียง</blockquote>
+
+<h3>📋 ยุทธศาสตร์รัฐวิสาหกิจสาขาสถาบันการเงิน</h3>
+<blockquote>เป็นสถาบันการเงินเพื่อการพัฒนา สร้างโอกาสให้ประชาชนเข้าถึงแหล่งเงินทุน ควบคู่กับการให้ความรู้ทางการเงิน สนับสนุนความเข้มแข็งเศรษฐกิจฐานราก ลดความเหลื่อมล้ำ นำเทคโนโลยีและนวัตกรรมมาประยุกต์ใช้</blockquote>
+
+<h3>📋 แนวนโยบาย SFIs — 3 ด้าน</h3>
+<table>
+  <tr><th>นโยบาย</th><th>คำอธิบาย</th></tr>
+  <tr><td><strong>💰 Finance for all</strong></td><td>เติมเต็มช่องว่างทางการเงิน ขยายโอกาสเข้าถึงบริการ (Financial Inclusion)</td></tr>
+  <tr><td><strong>📚 Literacy for all</strong></td><td>ยกระดับศักยภาพลูกหนี้ ให้ความรู้ทางการเงิน + ความรู้ดิจิทัล</td></tr>
+  <tr><td><strong>♻️ Responsibility for all</strong></td><td>ดำเนินธุรกิจอย่างรับผิดชอบ ยึดหลัก Sustainable Banking, Good Governance, ESG</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 6. ESG -->
+<!-- ======================== -->
+<section id="esg">
+<h2>🌿 ESG Framework & SDGs</h2>
+
+<h3>ESG 3 มิติ</h3>
+<table>
+  <tr><th>มิติ</th><th>ประเด็นสำคัญ</th></tr>
+  <tr><td><span class="tag s">E</span> สิ่งแวดล้อม</td><td>ลดผลกระทบ climate change, บริหารทรัพยากร, สนับสนุนสินเชื่อสีเขียว, Net Zero, Carbon Credit</td></tr>
+  <tr><td><span class="tag w">S</span> สังคม</td><td>พัฒนาศักยภาพพนักงาน, ส่งเสริมความรู้นวัตกรรมการเกษตร, การให้ความรู้ทางการเงิน (Financial Literacy)</td></tr>
+  <tr><td><span class="tag o">G</span> ธรรมาภิบาล</td><td>เทคโนโลยีดิจิทัลและนวัตกรรม, บริหารจัดการหนี้, การบริหารห่วงโซ่อุปทาน, การปฏิบัติตามกฎเกณฑ์</td></tr>
+</table>
+
+<h3>SDGs ที่เชื่อมโยงกับ ธ.ก.ส. (5 เป้าหมาย)</h3>
+<ol>
+  <li>ขจัดความยากจน</li>
+  <li>การจ้างงานที่มีคุณค่าและการเติบโตทางเศรษฐกิจ</li>
+  <li>ลดความเหลื่อมล้ำ</li>
+  <li>การบริโภคและการผลิตที่ยั่งยืน</li>
+  <li>ความร่วมมือเพื่อการพัฒนาที่ยั่งยืน</li>
+</ol>
+
+<h3>ประเด็นความยั่งยืน ปี 2569 เพิ่มใหม่</h3>
+<ul>
+  <li><strong>S07</strong> การให้ความรู้ทางการเงิน</li>
+  <li><strong>G06</strong> การบริหารจัดการห่วงโซ่อุปทาน</li>
+  <li><strong>G01</strong> การบริหารการปฏิบัติตามข้อกำหนดกฎเกณฑ์</li>
+</ul>
+
+<div class="card warn">
+  <strong>⚠️ จุดดักข้อสอบ:</strong> Blockchain ในบริบท ธ.ก.ส. ใช้กับ Trade Finance และการติดตามพืชผลเกษตร<br>
+  <strong>ไม่ได้ใช้กับ</strong> "ออกหนังสือรับรองหนี้"
+</div>
+</section>
+
+<!-- ======================== -->
+<!-- 7. BCG Model -->
+<!-- ======================== -->
+<section id="bcg">
+<h2>🌱 BCG Model</h2>
+<table>
+  <tr><th>เป้าหมาย</th><th>คำอธิบาย</th></tr>
+  <tr><td>1. เพิ่มการเติบโตทางธุรกิจ</td><td>ขยายสินเชื่อ พัฒนาผลิตภัณฑ์ สร้างรายได้</td></tr>
+  <tr><td>2. ลดความเหลื่อมล้ำทางสังคม</td><td>ยกระดับศักยภาพเกษตรกรรายย่อย ชุมชน</td></tr>
+  <tr><td>3. ความยั่งยืนของธรรมชาติและสิ่งแวดล้อม</td><td>สนับสนุน Green Economy, Carbon Neutrality</td></tr>
+</table>
+
+<div class="card warn">
+  <strong>🚨 ตัวหลอกข้อสอบ!</strong><br>
+  <span class="highlight red">"พัฒนาคุณภาพชีวิตของประชาชาติ"</span> — <strong>ไม่ใช่</strong>เป้าหมายของ BCG Model
+</div>
+
+<h3>♻️ Carbon Neutrality — BAAC Carbon Credit</h3>
+<ul>
+  <li>สนับสนุนลูกค้าที่ปลูกต้นไม้ → สมัครสมาชิก <strong>"ธนาคารต้นไม้"</strong></li>
+  <li>ได้รับการประเมินขึ้นทะเบียนกับ <strong>T-VER</strong></li>
+  <li>สามารถขายคาร์บอนเครดิต สร้างมูลค่าเพิ่ม</li>
+</ul>
+</section>
+
+<!-- ======================== -->
+<!-- 8. SWOT -->
+<!-- ======================== -->
+<section id="swot">
+<h2>📊 SWOT Analysis</h2>
+
+<div class="grid2">
+  <div class="card">
+    <h4>✅ จุดแข็ง (Strengths)</h4>
+    <ul>
+      <li><strong>S1</strong> ส่วนแบ่งตลาดสินเชื่อเกษตรสูง + ลูกค้าขึ้นทะเบียนมาก</li>
+      <li><strong>S2</strong> ภาคีเครือข่ายร่วมมือภาครัฐ เอกชน สถาบันการศึกษา</li>
+      <li><strong>S3</strong> พนักงานพร้อมบริการ + เครือข่ายครอบคลุมทุกพื้นที่</li>
+      <li><strong>S4</strong> พร้อมบุคลากร เครื่องมือ เงินทุน สนับสนุน ESG</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>❌ จุดอ่อน (Weaknesses)</h4>
+    <ul>
+      <li><strong>W1</strong> ลูกค้าเปราะบางทางการเงิน + สูงอายุ</li>
+      <li><strong>W2</strong> กระบวนการ/ข้อมูล จำกัดในการเปลี่ยนผ่านดิจิทัล</li>
+      <li><strong>W3</strong> การปรับตามเกณฑ์กำกับ → ส่งผลต่อระยะเวลาให้บริการ</li>
+      <li><strong>W4</strong> ทักษะบุคลากรไม่รองรับสินเชื่อประเภทใหม่</li>
+      <li><strong>W5</strong> รายได้ดอกเบี้ยลด ค่าใช้จ่ายเพิ่ม</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>🌟 โอกาส (Opportunities)</h4>
+    <ul>
+      <li><strong>O1</strong> เทคโนโลยี AI + ดิจิทัล → เพิ่มประสิทธิภาพ</li>
+      <li><strong>O2</strong> ทิศทาง ESG → โอกาสแหล่งเงินทุนยั่งยืน</li>
+      <li><strong>O3</strong> นโยบายรัฐ → โอกาสสนับสนุน SME เกษตร</li>
+      <li><strong>O4</strong> Food Security + ท่องเที่ยวยั่งยืน</li>
+      <li><strong>O5</strong> ประชาชน/ราชการ ต้องการเงินทุน → ขยายสินเชื่อ</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h4>⚠️ อุปสรรค (Threats)</h4>
+    <ul>
+      <li><strong>T1</strong> หนี้ครัวเรือนสูง NPLs เพิ่ม → ขยายสินเชื่อลด</li>
+      <li><strong>T2</strong> ผู้สูงอายุเพิ่ม → ศักยภาพรายได้ลด</li>
+      <li><strong>T3</strong> Climate Change + กฎหมาย → ต้นทุนเพิ่ม</li>
+      <li><strong>T4</strong> การแข่งขันสูงจาก non-bank + Virtual Bank</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ======================== -->
+<!-- 9. TOWS -->
+<!-- ======================== -->
+<section id="tows">
+<h2>🧩 TOWS Matrix</h2>
+
+<h3>กลยุทธ์เชิงรุก (SO)</h3>
+<table>
+  <tr><th>กลยุทธ์</th><th>คำอธิบาย</th><th>เชื่อมโยง</th></tr>
+  <tr><td>SO1</td><td>สร้างขีดความสามารถการเติบโตสินเชื่อ</td><td>S2,S3,O1,O5</td></tr>
+  <tr><td>SO2</td><td>สร้างมูลค่าเพิ่มทางธุรกิจด้วยวิจัยและนวัตกรรม</td><td>S1,S2,S3,O1,O4</td></tr>
+  <tr><td>SO3</td><td>ขับเคลื่อน ESG</td><td>S1,S2,S4,O2,O3</td></tr>
+  <tr><td>SO4</td><td>ยกระดับพอร์ตสินเชื่อลูกค้ากลุ่มเปราะบาง</td><td>S1,S2,S3,S4,O1,O2,O3,O4</td></tr>
+</table>
+
+<h3>กลยุทธ์เชิงแก้ไข (WO)</h3>
+<table>
+  <tr><th>กลยุทธ์</th><th>คำอธิบาย</th></tr>
+  <tr><td>WO1</td><td>สนับสนุนกลไกเชื่อมโยง สร้างมูลค่าเพิ่มทางธุรกิจ (W1,O2,O3,O4,O5)</td></tr>
+  <tr><td>WO2</td><td>ยกระดับกระบวนการและบริการด้วยเทคโนโลยีดิจิทัล (W2,O1,O5)</td></tr>
+  <tr><td>WO3</td><td>ขยายขีดความสามารถบุคลากรรองรับธุรกิจ (W3,W4,W5,O1)</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 10. SO1-SO6 -->
+<!-- ======================== -->
+<section id="so">
+<h2>🎯 วัตถุประสงค์เชิงยุทธศาสตร์ (SO1–SO6)</h2>
+
+<table>
+  <tr><th>SO</th><th>วัตถุประสงค์</th><th>กลยุทธ์</th><th>ตัวชี้วัด/เป้าหมาย</th></tr>
+  <tr>
+    <td><strong>SO1</strong></td>
+    <td>บริหารสินทรัพย์เพื่อสร้างรายได้สมดุล</td>
+    <td>สร้างขีดความสามารถสินเชื่อ, ยกระดับพอร์ตลูกค้าเปราะบาง</td>
+    <td>สัดส่วนพอร์ตสินเชื่อใน/นอกเกษตร 84:16</td>
+  </tr>
+  <tr>
+    <td><strong>SO2</strong></td>
+    <td>บริหารคุณภาพสินเชื่อเพื่อความแข็งแกร่งทางการเงิน</td>
+    <td>บริหารหนี้ถึงกำหนด, บริหาร NPLs</td>
+    <td>NPLs คงเหลือสุทธิ &lt; 92,777 ลบ.</td>
+  </tr>
+  <tr>
+    <td><strong>SO3</strong></td>
+    <td>เพิ่มขีดความสามารถลูกค้าและชุมชนผ่านแกนกลางเกษตร</td>
+    <td>ฟื้นฟู พัฒนาศักยภาพตามกลุ่มลูกค้า</td>
+    <td>ลูกค้าที่ผ่านการพัฒนา 311,000 ราย</td>
+  </tr>
+  <tr>
+    <td><strong>SO4</strong></td>
+    <td>เพิ่มขีดความสามารถองค์กรด้วยเทคโนโลยีดิจิทัลและนวัตกรรม</td>
+    <td>ยกระดับกระบวนการด้วยดิจิทัล, สร้างมูลค่าด้วยนวัตกรรม</td>
+    <td>Digital Transformation 100%, Innovation Value ≥ 30%</td>
+  </tr>
+  <tr>
+    <td><strong>SO5</strong></td>
+    <td>เพิ่มศักยภาพบุคลากรและ GRC รองรับการเติบโต</td>
+    <td>พัฒนาบุคลากร, บริหารความเสี่ยง, ปฏิบัติตามกฎเกณฑ์</td>
+    <td>-</td>
+  </tr>
+  <tr>
+    <td><strong>SO6</strong></td>
+    <td>บริหารจัดการองค์กรและชุมชนเพื่อมุ่งสู่ Net Zero</td>
+    <td>สนับสนุนสินเชื่อ ESG, Carbon Credit</td>
+    <td>สินเชื่อยั่งยืน ≥ 25% ของสินเชื่อรวม</td>
+  </tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 11. กลาง 1 -->
+<!-- ======================== -->
+<section id="mid1">
+<h2>🏛️ กลาง 1 — นโยบาย ทิศทางภาครัฐ ESG และเทคโนโลยีนวัตกรรม</h2>
+
+<h3>🌾 Blockchain + IoT ด้านการเกษตร (5 ด้าน)</h3>
+<table>
+  <tr><th>ด้าน</th><th>รายละเอียด</th></tr>
+  <tr><td>🔍 ตรวจสอบสินค้า</td><td>สแกน QR Code ตรวจสอบย้อนกลับจากแหล่งผลิต</td></tr>
+  <tr><td>📊 ควบคุมคุณภาพ</td><td>IoT บันทึกข้อมูลคุณภาพจริง</td></tr>
+  <tr><td>🚚 โลจิสติกส์</td><td>ลดพ่อค้าคนกลาง เร่งการจัดส่ง</td></tr>
+  <tr><td>💰 P2P ลดต้นทุน</td><td>ซื้อขายตรง Peer-to-Peer</td></tr>
+  <tr><td>🌾 จัดการฟาร์ม</td><td>ติดตามบำรุงรักษาฟาร์ม Real-time</td></tr>
+</table>
+
+<h3>📖 การรู้เท่าทันการเงิน (Financial Literacy)</h3>
+<p>เป้าหมายแห่งความสำเร็จ: <span class="highlight">"ผู้สูงอายุสามารถใช้ A-Mobile อย่างปลอดภัย รู้เท่าทันมิจฉาชีพ"</span></p>
+
+<div class="card tip">
+  <strong>💡 ทริค!</strong> เวลาตอบข้อสอบกลาง 1 ให้เลือกคำตอบที่:<br>
+  ✅ ส่งเสริมให้เกษตรกรเติบโตได้เอง (P2P)<br>
+  ✅ เป็นมิตรต่อสิ่งแวดล้อม (T-VER)<br>
+  ✅ ใช้เทคโนโลยีที่ตรวจสอบได้ (Blockchain)
+</div>
+</section>
+
+<!-- ======================== -->
+<!-- 12. Financial Targets -->
+<!-- ======================== -->
+<section id="finance">
+<h2>💰 เป้าหมายทางการเงิน ปี 2569</h2>
+<table>
+  <tr><th>ตัวชี้วัด</th><th>เป้าหมาย</th></tr>
+  <tr><td>ROA</td><td>≥ 0.37%</td></tr>
+  <tr><td>BIS Ratio</td><td>≥ 12%</td></tr>
+  <tr><td>Innovation Value</td><td>1,100 ล้านบาท</td></tr>
+  <tr><td>Digital Transaction</td><td>70 : 30</td></tr>
+  <tr><td>สินเชื่อยั่งยืน</td><td>25,000 ลบ. (สะสม)</td></tr>
+  <tr><td>พัฒนาเกษตรกรกลุ่มพักหนี้/เปราะบาง</td><td>600,000 ราย (สะสม)</td></tr>
+  <tr><td>ลูกค้าผ่านการพัฒนามีรายได้สุทธิเพิ่ม</td><td>≥ 15%</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 13. โครงสร้างองค์กร -->
+<!-- ======================== -->
+<section>
+<h2>🏗️ โครงสร้างองค์กร (ปี 2569)</h2>
+<table>
+  <tr><th>ระดับ</th><th>จำนวน</th></tr>
+  <tr><td>สำนักงานใหญ่</td><td>1</td></tr>
+  <tr><td>ฝ่ายกิจการสาขาภาค</td><td>9 ฝ่าย</td></tr>
+  <tr><td>สำนักงาน ธ.ก.ส. จังหวัด</td><td>77 แห่ง</td></tr>
+  <tr><td>สาขาระดับอำเภอ</td><td>969 สาขา</td></tr>
+  <tr><td>สาขาย่อย</td><td>200 สาขา</td></tr>
+  <tr><td>หน่วยธุรกิจสินเชื่อ</td><td>1,169 หน่วย</td></tr>
+</table>
+</section>
+
+<!-- ======================== -->
+<!-- 14. ขั้นตอนแผนวิสาหกิจ -->
+<!-- ======================== -->
+<section>
+<h2>📋 ขั้นตอนการจัดทำแผนวิสาหกิจ (เรียงลำดับ)</h2>
+<div class="card info">
+  <strong>⚠️ ข้อสอบชอบถาม "เรียงลำดับ":</strong>
+  <ol>
+    <li><strong>วิเคราะห์สภาพแวดล้อม</strong></li>
+    <li><strong>กำหนดตำแหน่งทางยุทธศาสตร์</strong></li>
+    <li><strong>กำหนดแผนยุทธศาสตร์</strong></li>
+  </ol>
+</div>
+</section>
+
+<!-- ======================== -->
+<!-- 15. ข้อควรระวัง -->
+<!-- ======================== -->
+<section id="tips">
+<h2>⚠️ จุดดักข้อสอบ — ระวังให้ดี!</h2>
+
+<div class="card warn">
+  <strong>🚨 ตัวหลอกประจำ!</strong>
+  <ul>
+    <li>"พัฒนาคุณภาพชีวิตของประชาชาติ" — <span class="highlight red">ไม่ใช่</span> เป้าหมาย BCG</li>
+    <li>Blockchain ใช้ "ออกหนังสือรับรองหนี้" — <span class="highlight red">ไม่ใช่</span> (ใช้กับ Trade Finance/Tracking)</li>
+    <li>สับสน SPARK vs HEART — ต้องแยกให้ออกว่าอันไหนคือค่านิยม vs วัฒนธรรม</li>
+    <li>ขั้นตอนแผนวิสาหกิจ — อย่าสลับลำดับ วิเคราะห์ → ตำแหน่ง → แผน</li>
+  </ul>
+</div>
+
+<div class="card tip">
+  <strong>💡 คีย์เวิร์ดที่ควรเจอในข้อสอบ:</strong>
+  <span class="tag s">ความยั่งยืน</span>
+  <span class="tag o">ครบวงจรทันสมัย</span>
+  <span class="tag s">ธรรมาภิบาล</span>
+  <span class="tag o">เทคโนโลยีดิจิทัล</span>
+  <span class="tag s">ESG</span>
+  <span class="tag o">SPARK</span>
+  <span class="tag s">HEART</span>
+  <span class="tag o">BCG Model</span>
+  <span class="tag s">TOWS Matrix</span>
+  <span class="tag o">Finance for all</span>
+</div>
+</section>
+
+<section>
+<h2>🔍 วิธีใช้ GBrain ทบทวน</h2>
+<div class="card">
+  <p>พ่อสามารถถาม GBrain เพิ่มเติมได้จาก terminal:</p>
+  <pre style="background: #0f172a; padding: 12px; border-radius: 8px; margin-top: 8px; font-size: 13px; overflow-x: auto;">
+gbrain think "SPARK HEART คืออะไร ต่างกันยังไง"
+gbrain think "SO1-SO6 มีอะไรบ้าง เป้าหมายเท่าไหร่"
+gbrain think "TOWS Matrix เชิงรุกมีกลยุทธ์อะไรบ้าง"
+gbrain think "BCG Model 3 เป้าหมายหลัก"
+gbrain think "SWOT จุดอ่อนของ ธ.ก.ส. คืออะไร"
+gbrain think "ESG แต่ละมิติ ธ.ก.ส. ทำอะไรบ้าง"
+gbrain search "NPLs เป้าหมาย"</pre>
+</div>
+</section>
+
+<footer>
+  🐶✨ สรุปโดย คาร่า + GBrain + NotebookLM — 27 พฤษภาคม 2569<br>
+  <small>ที่มา: แผนวิสาหกิจ 2567-2571 (ทบทวนปี 2569) ฉบับ 314 หน้า</small>
+</footer>
+
+</div>
+
+</body>
+</html>

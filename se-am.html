@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📋 SE-AM 2569 — สรุปสอบ Genius 9</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&display=swap');
+:root {
+  --bg: #0f172a; --surface: #1e293b; --surface2: #334155;
+  --accent: #f59e0b; --accent2: #10b981; --accent3: #3b82f6; --accent4: #ef4444;
+  --text: #f1f5f9; --text2: #94a3b8; --border: #475569;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans Thai', 'Sarabun', sans-serif;
+  background: var(--bg); color: var(--text); line-height: 1.8; padding: 0;
+}
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 12px 20px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+}
+nav h1 { font-size: 17px; color: var(--accent); margin-right: 12px; white-space: nowrap; }
+nav a {
+  color: var(--text2); text-decoration: none; font-size: 12px; padding: 3px 8px;
+  border-radius: 5px; transition: all 0.2s;
+}
+nav a:hover { background: var(--surface2); color: var(--accent); }
+.container { max-width: 960px; margin: 0 auto; padding: 30px 20px 80px; }
+.hero { text-align: center; padding: 30px 20px; border-bottom: 2px solid var(--border); margin-bottom: 36px; }
+.hero h1 { font-size: 28px; color: var(--accent); margin-bottom: 6px; }
+.hero p { color: var(--text2); font-size: 15px; }
+.badge { display: inline-block; margin: 4px; padding: 5px 14px; border-radius: 16px; font-size: 12px; font-weight: 600; }
+.badge.gold { background: #78350f; color: #fbbf24; }
+.badge.blue { background: #1e3a5f; color: #60a5fa; }
+.badge.green { background: #064e3b; color: #34d399; }
+.badge.purple { background: #3b0764; color: #c4b5fd; }
+section { margin-bottom: 32px; }
+section h2 {
+  font-size: 22px; color: var(--accent); border-left: 4px solid var(--accent);
+  padding-left: 12px; margin-bottom: 16px;
+}
+section h3 { font-size: 17px; color: var(--accent2); margin: 14px 0 8px; }
+section h4 { font-size: 15px; color: var(--accent3); margin: 10px 0 6px; }
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px 20px; margin-bottom: 12px;
+}
+.card.warn { border-left: 4px solid var(--accent4); }
+.card.tip { border-left: 4px solid var(--accent); }
+table {
+  width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 14px;
+}
+th {
+  background: var(--surface2); color: var(--accent);
+  padding: 8px 10px; text-align: left; font-weight: 600;
+}
+td { padding: 7px 10px; border-bottom: 1px solid var(--border); }
+tr:hover td { background: var(--surface2); }
+ul, ol { padding-left: 22px; margin: 6px 0; }
+li { margin-bottom: 3px; }
+blockquote {
+  border-left: 3px solid var(--accent2); padding: 8px 14px; margin: 10px 0;
+  background: var(--surface); border-radius: 0 6px 6px 0; font-style: italic; color: var(--accent2);
+}
+.tag {
+  display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 600; margin: 1px;
+}
+.tag.gold { background: #78350f; color: #fbbf24; }
+.tag.green { background: #064e3b; color: #34d399; }
+.tag.blue { background: #1e3a5f; color: #93c5fd; }
+.tag.red { background: #7f1d1d; color: #fca5a5; }
+footer { text-align: center; padding: 24px; color: var(--text2); font-size: 13px; border-top: 1px solid var(--border); margin-top: 36px; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 640px) { .grid2 { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav>
+  <h1>📋 SE-AM 2569</h1>
+  <a href="#overview">ภาพรวม</a>
+  <a href="#cg">CG & Leadership</a>
+  <a href="#sp">Strategic Planning</a>
+  <a href="#rm">RM & IC</a>
+  <a href="#scm">SCM</a>
+  <a href="#dt">Digital Tech</a>
+  <a href="#hcm">HCM</a>
+  <a href="#km">KM & IM</a>
+  <a href="#ia">Internal Audit</a>
+  <a href="#tips">ทริคสอบ</a>
+</nav>
+<div class="container">
+
+<div class="hero">
+  <h1>📋 หลักเกณฑ์ SE-AM 2569</h1>
+  <p>คู่มือการประเมินกระบวนการปฏิบัติงานและการจัดการ (Core Business Enablers) ของรัฐวิสาหกิจ</p>
+  <p style="font-size:13px; color:var(--text2);">โดย สคร. กระทรวงการคลัง — 298 หน้า — ปรับปรุงปี 2569</p>
+  <div>
+    <span class="badge gold">🏛️ 8 หมวด</span>
+    <span class="badge blue">📊 Core Business Enablers</span>
+    <span class="badge green">📌 SE-AM</span>
+  </div>
+</div>
+
+<!-- ======================== -->
+<section id="overview">
+<h2>📌 ภาพรวม SE-AM</h2>
+<div class="card">
+  <p><strong>SE-AM</strong> (State Enterprise Assessment Model) เป็นระบบประเมินผลรัฐวิสาหกิจ โดย <strong>สคร. (สำนักงานคณะกรรมการนโยบายรัฐวิสาหกิจ)</strong> กระทรวงการคลัง</p>
+  <p>ประเมิน <strong>8 Core Business Enablers</strong> ดังนี้:</p>
+  <table>
+    <tr><th>#</th><th>หมวด</th><th>อังกฤษ</th><th>ย่อ</th></tr>
+    <tr><td>1</td><td>การกำกับดูแลที่ดีและการนำองค์กร</td><td>Corporate Governance & Leadership</td><td><span class="tag gold">CG</span></td></tr>
+    <tr><td>2</td><td>การวางแผนเชิงกลยุทธ์</td><td>Strategic Planning</td><td><span class="tag gold">SP</span></td></tr>
+    <tr><td>3</td><td>การบริหารความเสี่ยงและการควบคุมภายใน</td><td>Risk Management & Internal Control</td><td><span class="tag gold">RM & IC</span></td></tr>
+    <tr><td>4</td><td>การมุ่งเน้นผู้มีส่วนได้ส่วนเสียและลูกค้า</td><td>Stakeholder & Customer Management</td><td><span class="tag gold">SCM</span></td></tr>
+    <tr><td>5</td><td>การพัฒนาเทคโนโลยีดิจิทัล</td><td>Digital Technology</td><td><span class="tag gold">DT</span></td></tr>
+    <tr><td>6</td><td>การบริหารทุนมนุษย์</td><td>Human Capital Management</td><td><span class="tag gold">HCM</span></td></tr>
+    <tr><td>7</td><td>การจัดการความรู้และนวัตกรรม</td><td>KM & Innovation Management</td><td><span class="tag gold">KM & IM</span></td></tr>
+    <tr><td>8</td><td>การตรวจสอบภายใน</td><td>Internal Audit</td><td><span class="tag gold">IA</span></td></tr>
+  </table>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="cg">
+<h2>🏛️ 1. CG & Leadership — 10 หลักเกณฑ์</h2>
+<div class="card">
+  <p>ประเมินบทบาทการกำกับดูแลของคณะกรรมการรัฐวิสาหกิจ ในการขับเคลื่อนให้ฝ่ายจัดการปฏิบัติงานบรรลุผลตามนโยบาย ภารกิจ ยุทธศาสตร์ ที่ผู้ถือหุ้นภาครัฐกำหนด</p>
+  <p><strong>วัตถุประสงค์:</strong></p>
+  <ol>
+    <li>ให้มีระบบการกำกับดูแลที่ดีมาตรฐานเทียบเท่าสากล (OECD Guidelines 2015)</li>
+    <li>ให้คณะกรรมการปฏิบัติหน้าที่ตามความรับผิดชอบอย่างครบถ้วน</li>
+  </ol>
+</div>
+
+<h3>10 หลักเกณฑ์ พร้อมน้ำหนัก</h3>
+<table>
+  <tr><th>#</th><th>หลักเกณฑ์</th><th>น้ำหนัก</th></tr>
+  <tr><td>1</td><td>การสนองบทบาทของภาครัฐ</td><td><span class="tag blue">5%</span></td></tr>
+  <tr><td>2</td><td>บทบาทของรัฐวิสาหกิจเพื่อการตลาดที่เป็นธรรม</td><td><span class="tag blue">10%</span></td></tr>
+  <tr><td>3</td><td>สิทธิและความเท่าเทียมกันของผู้ถือหุ้น</td><td><span class="tag blue">10%</span></td></tr>
+  <tr><td>4</td><td>บทบาทของผู้มีส่วนได้เสีย</td><td><span class="tag blue">10%</span></td></tr>
+  <tr><td>5</td><td>การเปิดเผยข้อมูลและความโปร่งใส</td><td><span class="tag blue">8%</span></td></tr>
+  <tr><td>6</td><td>ความรับผิดชอบของคณะกรรมการ</td><td><span class="tag blue">7%</span></td></tr>
+  <tr><td>7</td><td>การบริหารความเสี่ยงและการควบคุมภายใน</td><td><span class="tag blue">8%</span></td></tr>
+  <tr><td>8</td><td>จรรยาบรรณ</td><td><span class="tag blue">8%</span></td></tr>
+  <tr><td>9</td><td>ความยั่งยืนและนวัตกรรม</td><td><span class="tag blue">12%</span> 🔥</td></tr>
+  <tr><td>10</td><td>การติดตามผลการดำเนินงาน</td><td><span class="tag blue">10%</span></td></tr>
+</table>
+
+<h4>ประเด็นสำคัญ CG ข้อ 9 — ความยั่งยืนและนวัตกรรม (12% มากสุด)</h4>
+<ul>
+  <li>9.1 การจัดให้มีระบบบริหารจัดการนวัตกรรมที่มีประสิทธิภาพ (4%)</li>
+  <li>9.2 การพัฒนาความยั่งยืนเชิงยุทธศาสตร์ (4%)</li>
+  <li>9.3 การจัดทำรายงานการพัฒนาความยั่งยืน (4%)</li>
+</ul>
+
+<div class="card warn">
+  <strong>⚠️ การปรับลดคะแนน พิจารณาจาก:</strong>
+  <ol>
+    <li>ระดับความรุนแรงของผลกระทบ (มูลค่าความเสียหาย จำนวนผู้ได้รับผลกระทบ พื้นที่ ฯลฯ)</li>
+    <li>สาเหตุของปัญหา (ขาดประสิทธิภาพ ระบบมาตรฐาน การกำกับดูแล)</li>
+    <li>การกระทำขององค์กร</li>
+  </ol>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="sp">
+<h2>📊 2. Strategic Planning (SP)</h2>
+<div class="card">
+  <p>กระบวนการกำหนดทิศทางและขอบเขตธุรกิจระยะยาว ใช้ประโยชน์จากทรัพยากรอย่างได้เปรียบภายใต้สภาพแวดล้อมที่เปลี่ยนแปลง</p>
+
+  <h3>องค์ประกอบสำคัญ</h3>
+  <ul>
+    <li><strong>การจัดทำยุทธศาสตร์</strong> — ใช้การพยากรณ์ การคาดคะเน การสร้างสถานการณ์จำลอง</li>
+    <li><strong>การมีส่วนร่วม</strong> — ผู้ส่งมอบ ผู้จัดจำหน่าย คู่ค้า ลูกค้าสำคัญ</li>
+    <li><strong>แผนปฏิบัติการ</strong> — การปฏิบัติการเฉพาะเจาะจง ตอบสนองวัตถุประสงค์เชิงยุทธศาสตร์</li>
+    <li><strong>การถ่ายทอดแผน</strong> — สร้างตัวชี้วัด บูรณาการทั่วทั้งองค์กร</li>
+  </ul>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="rm">
+<h2>⚠️ 3. Risk Management & Internal Control (RM & IC)</h2>
+<div class="card">
+  <p>ตามแนวปฏิบัติ <strong>COSO 2017</strong> (Committee of Sponsoring Organizations of the Treadway Commission)</p>
+  <ul>
+    <li>สร้างวัฒนธรรมความเสี่ยง</li>
+    <li>กำหนดนโยบาย/กลยุทธ์บริหารความเสี่ยง</li>
+    <li>กระบวนการ: ระบุ → ประเมิน → ควบคุม → บริหาร → บูรณาการ</li>
+    <li>มุ่งสร้าง <strong>มูลค่าเพิ่ม (Value Enhancement)</strong> ให้องค์กร</li>
+    <li>บูรณาการการบริหารความเสี่ยงกับการควบคุมภายใน</li>
+    <li>เชื่อมโยงกับการจัดทำยุทธศาสตร์และการควบคุมภายใน</li>
+  </ul>
+
+  <h4>วัตถุประสงค์การควบคุมภายใน (COSO)</h4>
+  <ol>
+    <li>ประสิทธิผลและประสิทธิภาพของการดำเนินงาน</li>
+    <li>ความน่าเชื่อถือของรายงานทางการเงิน</li>
+    <li>การปฏิบัติตามกฎหมายและระเบียบข้อบังคับ</li>
+  </ol>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="scm">
+<h2>🤝 4. Stakeholder & Customer Management (SCM)</h2>
+<div class="card">
+  <p>อ้างอิงมาตรฐานสากล:</p>
+  <ul>
+    <li><strong>AA1000SES</strong> (AccountAbility 1000 Stakeholder Engagement Standard)</li>
+    <li><strong>TQA</strong> (Thailand Quality Award / รางวัลคุณภาพแห่งชาติ)</li>
+    <li><strong>MBNQA</strong> (Malcolm Baldrige National Quality Award — สหรัฐอเมริกา)</li>
+  </ul>
+  <p>เป้าหมาย: ให้รัฐวิสาหกิจรับทราบ เรียนรู้ คาดการณ์ ถึงความต้องการ ความคาดหวัง ข้อกังวล และทัศนคติของผู้มีส่วนได้ส่วนเสีย</p>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="dt">
+<h2>💻 5. Digital Technology (DT)</h2>
+<div class="card">
+  <p>การพัฒนาเทคโนโลยีดิจิทัลของรัฐวิสาหกิจ ครอบคลุม:</p>
+  <ul>
+    <li>ยุทธศาสตร์ดิจิทัล (Digital Strategy) และการขับเคลื่อน</li>
+    <li>ระบบสารสนเทศและโครงสร้างพื้นฐานดิจิทัล</li>
+    <li>การบริหารความมั่นคงปลอดภัยไซเบอร์ (Cybersecurity)</li>
+    <li>ธรรมาภิบาลข้อมูล (Data Governance)</li>
+    <li>นวัตกรรมดิจิทัลเพื่อเพิ่มประสิทธิภาพและสร้างมูลค่า</li>
+  </ul>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="hcm">
+<h2>👥 6. Human Capital Management (HCM)</h2>
+<div class="card">
+  <p>น้ำหนักรวม 100% แบ่งเป็น 4 ด้านหลัก:</p>
+  <table>
+    <tr><th>ด้าน</th><th>น้ำหนัก</th><th>รายละเอียด</th></tr>
+    <tr><td>1. การนำองค์กร</td><td><span class="tag blue">30%</span></td><td>คุณภาพยุทธศาสตร์ (20%), การขับเคลื่อนผู้บริหาร (10%)</td></tr>
+    <tr><td>2. การบริหารทุนมนุษย์</td><td><span class="tag blue">25%</span></td><td>อัตรากำลัง (7.5%), ประเมินผล (15%), ผลตอบแทน (2.5%)</td></tr>
+    <tr><td>3. การพัฒนาทุนมนุษย์</td><td><span class="tag blue">25%</span></td><td>เรียนรู้และพัฒนา (10%), สืบทอดตำแหน่ง/คนเก่ง (10%), สายอาชีพ (5%)</td></tr>
+    <tr><td>4. กลไกสนับสนุน</td><td><span class="tag blue">20%</span></td><td>การเปลี่ยนแปลง (5%), HR Digital (3%), ความปลอดภัย (2%), บทบาท HR (10%)</td></tr>
+  </table>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="km">
+<h2>🧠 7. KM & Innovation Management</h2>
+<div class="card">
+  <p>แยกเป็น 2 ส่วน: <span class="tag green">KM 40%</span> + <span class="tag gold">IM 60%</span></p>
+
+  <h3>7.1 การจัดการความรู้ (KM) — น้ำหนัก 40%</h3>
+  <table>
+    <tr><th>ด้าน</th><th>น้ำหนัก</th></tr>
+    <tr><td>1. การนำองค์กร</td><td>8%</td></tr>
+    <tr><td>2. การวางแผนและทรัพยากร</td><td>4%</td></tr>
+    <tr><td>3. บุคลากร (ความตระหนัก วัฒนธรรม ทีมงาน)</td><td>8%</td></tr>
+    <tr><td>4. กระบวนการจัดการความรู้ (ระบบ เทคโนโลยี)</td><td>8%</td></tr>
+    <tr><td>5. กระบวนการปฏิบัติงาน (ใช้ความรู้เป็นฐาน)</td><td>4%</td></tr>
+    <tr><td>6. ผลลัพธ์ของการจัดการความรู้</td><td>8%</td></tr>
+  </table>
+
+  <h3>7.2 การจัดการนวัตกรรม (IM) — น้ำหนัก 60%</h3>
+  <table>
+    <tr><th>ด้าน</th><th>น้ำหนัก</th></tr>
+    <tr><td>1. การนำองค์กรสู่การจัดการนวัตกรรมที่ยั่งยืน</td><td>8%</td></tr>
+    <tr><td>2. ยุทธศาสตร์ด้านนวัตกรรม</td><td>10%</td></tr>
+    <tr><td>3. นวัตกรรมเพื่อมุ่งเน้นลูกค้าและตลาด</td><td>5%</td></tr>
+    <tr><td>4. ความรู้สู่การสร้างนวัตกรรม</td><td>5%</td></tr>
+    <tr><td>5. วัฒนธรรมเพื่อมุ่งเน้นการสร้างนวัตกรรม</td><td>7%</td></tr>
+    <tr><td>6. กระบวนการนวัตกรรม (ออกแบบ → สร้างสรรค์ → พัฒนา)</td><td>15%</td></tr>
+    <tr><td>7. ผลลัพธ์ด้านนวัตกรรม</td><td>10%</td></tr>
+  </table>
+
+  <div class="card tip">
+    <strong>💡 ตัวชี้วัดนวัตกรรม:</strong>
+    <ul>
+      <li><strong>F3</strong> — ร้อยละการใช้จ่ายงบประมาณด้านนวัตกรรม</li>
+      <li><strong>LG1</strong> — ร้อยละบุคลากรที่มีส่วนร่วมให้ความคิดสร้างสรรค์</li>
+      <li><strong>LG2</strong> — ร้อยละหน่วยงานที่มีนวัตกรรม</li>
+    </ul>
+  </div>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="ia">
+<h2>🔍 8. Internal Audit (IA)</h2>
+<div class="card">
+  <p>แบ่งเป็น 4 ด้านหลัก:</p>
+  <table>
+    <tr><th>ด้าน</th><th>น้ำหนัก</th><th>รายละเอียด</th></tr>
+    <tr><td>1. คณะกรรมการตรวจสอบ</td><td><span class="tag blue">15%</span></td><td>องค์ประกอบ (2%), ปฏิบัติหน้าที่ (12%), ประชุม (1%)</td></tr>
+    <tr><td>2. หน่วยตรวจสอบภายใน (คุณสมบัติ)</td><td><span class="tag blue">15%</span></td><td>บทบาท (3%), อิสระ (3%), เชี่ยวชาญ (5%), ประเมินคุณภาพ (4%)</td></tr>
+    <tr><td>3. หน่วยตรวจสอบภายใน (ปฏิบัติงาน)</td><td><span class="tag blue">65%</span> 🔥</td><td>คู่มือ (5%), วางแผน (10%), ปฏิบัติงาน (15%), รายงาน (15%), ความเชื่อมั่น (10%), ให้คำปรึกษา (5%) + อื่นๆ</td></tr>
+    <tr><td>4. หน่วยรับตรวจ</td><td><span class="tag blue">5%</span></td><td>ความรับผิดชอบของหน่วยรับตรวจ</td></tr>
+  </table>
+</div>
+</section>
+
+<!-- ======================== -->
+<section id="tips">
+<h2>💡 ทริคสอบ SE-AM</h2>
+<div class="card warn">
+  <strong>🚨 จุดที่ควรจำให้แม่น!</strong>
+  <ul>
+    <li>SE-AM = <strong>สคร.</strong> (สำนักงานคณะกรรมการนโยบายรัฐวิสาหกิจ) กระทรวงการคลัง</li>
+    <li>มี <strong>8 Core Business Enablers</strong> (CG, SP, RM, SCM, DT, HCM, KM&IM, IA)</li>
+    <li>CG มี <strong>10 หลักเกณฑ์</strong> (ข้อ 9 ความยั่งยืนฯ หนัก 12% มากสุด)</li>
+    <li>RM & IC อ้างอิง <strong>COSO 2017</strong></li>
+    <li>SCM อ้างอิง <strong>AA1000SES + TQA + MBNQA</strong></li>
+    <li>KM&IM แยกเป็น KM 40% + IM 60%</li>
+    <li>IA หน่วยตรวจสอบภายในด้านปฏิบัติงานหนัก <strong>65%</strong></li>
+    <li>แนวคิด OECD Guidelines on Corporate Governance of State-Owned Enterprises 2015</li>
+    <li>การควบคุมภายในมี 3 วัตถุประสงค์: ดำเนินงาน, รายงานการเงิน, ปฏิบัติตามกฎหมาย</li>
+  </ul>
+</div>
+
+<div class="card tip">
+  <strong>📌 สรุปย่อ 8 หมวด</strong>
+  <table>
+    <tr><th>หมวด</th><th>ชื่อเต็ม</th><th>ประเด็นสำคัญ</th></tr>
+    <tr><td>1. CG</td><td>Corporate Governance & Leadership</td><td>10 เกณฑ์, OECD 2015, Sustainable Banking</td></tr>
+    <tr><td>2. SP</td><td>Strategic Planning</td><td>ยุทธศาสตร์ + แผนปฏิบัติการ, การมีส่วนร่วม</td></tr>
+    <tr><td>3. RM&IC</td><td>Risk Mgmt & Internal Control</td><td>COSO 2017, Value Enhancement</td></tr>
+    <tr><td>4. SCM</td><td>Stakeholder & Customer Mgmt</td><td>AA1000SES, TQA, MBNQA</td></tr>
+    <tr><td>5. DT</td><td>Digital Technology</td><td>ดิจิทัล, Cybersecurity, Data Governance</td></tr>
+    <tr><td>6. HCM</td><td>Human Capital Mgmt</td><td>อัตรากำลัง, พัฒนา, สืบทอดตำแหน่ง, HR Digital</td></tr>
+    <tr><td>7. KM&IM</td><td>KM & Innovation Mgmt</td><td>KM 40% + IM 60%, F3/LG1/LG2 KPIs</td></tr>
+    <tr><td>8. IA</td><td>Internal Audit</td><td>กรรมการตรวจสอบ 15%, ปฏิบัติงาน 65%</td></tr>
+  </table>
+</div>
+</section>
+
+<footer>
+  🐶✨ สรุปโดย คาร่า — 27 พฤษภาคม 2569<br>
+  <small>ที่มา: คู่มือเกณฑ์ SE-AM Manual Book 2569 (298 หน้า) — สคร. กระทรวงการคลัง</small>
+</footer>
+</div>
+</body>
+</html>
