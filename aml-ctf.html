@@ -1,901 +1,1171 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ปปง. | AML/CTF สรุปเนื้อหา + ข้อสอบ | ธ.ก.ส.</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <style>
-    /* ── Reset & Base ── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🛡️ AML/CTF — ปปง. สรุปเนื้อหา + ข้อสอบ | ธ.ก.ส.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #070b14;
+  --bg2: #0d1425;
+  --surface: #131d33;
+  --surface2: #1a2740;
+  --surface3: #22324f;
+  --gold: #d4942f;
+  --gold2: #e8b84f;
+  --gold-dim: rgba(212,148,47,0.12);
+  --gold-soft: rgba(212,148,47,0.06);
+  --green: #22a67e;
+  --green-dim: rgba(34,166,126,0.12);
+  --blue: #4b7bec;
+  --blue-dim: rgba(75,123,236,0.10);
+  --purple: #9772e6;
+  --purple-dim: rgba(151,114,230,0.10);
+  --red: #e55c5c;
+  --red-dim: rgba(229,92,92,0.10);
+  --cyan: #36b5c4;
+  --cyan-dim: rgba(54,181,196,0.10);
+  --orange: #f09b3a;
+  --orange-dim: rgba(240,155,58,0.10);
+  --text: #edf2f7;
+  --text2: #94a3b8;
+  --text3: #5a6a7e;
+  --border: rgba(255,255,255,0.05);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --glow: 0 0 60px rgba(212,148,47,0.04);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Noto Sans Thai', 'Sarabun', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    radial-gradient(ellipse 600px 400px at 15% 40%, rgba(212,148,47,0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 500px 500px at 85% 20%, rgba(75,123,236,0.02) 0%, transparent 60%),
+    radial-gradient(ellipse 400px 400px at 50% 80%, rgba(151,114,230,0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
 
-    :root {
-      --bg-primary: #0b0d14;
-      --bg-secondary: #131720;
-      --bg-card: #1a1f2e;
-      --bg-card-hover: #1f2538;
-      --bg-nav: rgba(11,13,20,0.92);
-      --border: #2a3040;
-      --border-accent: #3b82f6;
-      --text-primary: #e8edf5;
-      --text-secondary: #94a3b8;
-      --text-muted: #64748b;
-      --accent: #3b82f6;
-      --accent-glow: rgba(59,130,246,0.15);
-      --accent-soft: #60a5fa;
-      --success: #22c55e;
-      --warning: #f59e0b;
-      --danger: #ef4444;
-      --danger-bg: rgba(239,68,68,0.12);
-      --success-bg: rgba(34,197,94,0.12);
-      --warning-bg: rgba(245,158,11,0.12);
-      --radius: 12px;
-      --radius-sm: 8px;
-      --radius-xs: 6px;
-      --transition: 0.25s cubic-bezier(0.4,0,0.2,1);
-      --font-thai: 'Noto Sans Thai', 'Sarabun', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    }
+/* ===== TOP NAV ===== */
+.top-nav {
+  position: fixed; top: 0; left: 0; right: 0; height: 52px;
+  background: rgba(7,11,20,0.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 20px; z-index: 100;
+}
+.top-nav a {
+  display: inline-flex; align-items: center; gap: 6px;
+  color: var(--text2); text-decoration: none;
+  font-size: 0.85rem; font-weight: 500;
+  padding: 6px 14px; border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.top-nav a:hover { color: var(--gold2); background: var(--gold-dim); }
+.top-nav .logo { color: var(--gold2); font-weight: 700; font-size: 0.9rem; }
+.top-nav .logo small { font-weight: 400; font-size: 0.75rem; color: var(--text3); }
+.top-nav .nav-links { display: flex; gap: 4px; }
+.top-nav .nav-links a { font-size: 0.8rem; }
+.top-nav .nav-links a.active { color: var(--gold2); background: var(--gold-dim); }
 
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: var(--font-thai);
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.7;
-      min-height: 100vh;
-    }
+/* ===== MAIN ===== */
+.container {
+  position: relative; z-index: 1;
+  max-width: 820px; margin: 0 auto; padding: 80px 20px 120px;
+}
 
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-secondary); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+/* ===== HERO ===== */
+.hero {
+  text-align: center; padding: 48px 0 40px;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 4px 14px; border-radius: 100px;
+  background: var(--gold-dim); color: var(--gold2);
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3px;
+  margin-bottom: 16px; border: 1px solid rgba(212,148,47,0.25);
+}
+.hero h1 {
+  font-size: clamp(28px,5vw,44px); font-weight: 700; line-height: 1.25;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--gold2); }
+.hero p {
+  color: var(--text2); font-size: 0.95rem; max-width: 640px; margin: 0 auto;
+}
+.hero-meta {
+  display: flex; justify-content: center; gap: 24px;
+  margin-top: 20px; font-size: 0.8rem; color: var(--text3);
+  flex-wrap: wrap;
+}
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
 
-    /* ── Navbar ── */
-    .navbar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: var(--bg-nav);
-      backdrop-filter: blur(16px) saturate(1.2);
-      border-bottom: 1px solid var(--border);
-      padding: 0 24px;
-      height: 64px;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .navbar-brand {
-      display: flex; align-items: center; gap: 12px;
-      font-size: 18px; font-weight: 600; color: var(--text-primary);
-      text-decoration: none;
-    }
-    .navbar-brand svg { flex-shrink: 0; }
-    .navbar-brand span { letter-spacing: -0.01em; }
-    .navbar-brand small {
-      font-size: 12px; font-weight: 400;
-      color: var(--text-muted); letter-spacing: 0;
-    }
-    .navbar-links {
-      display: flex; align-items: center; gap: 8px;
-      list-style: none;
-    }
-    .navbar-links a {
-      padding: 8px 16px;
-      border-radius: var(--radius-xs);
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 14px; font-weight: 500;
-      transition: var(--transition);
-    }
-    .navbar-links a:hover,
-    .navbar-links a.active {
-      color: var(--text-primary);
-      background: var(--accent-glow);
-    }
+/* ===== SECTION ===== */
+.section { margin-bottom: 40px; }
+.section-title {
+  font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 16px; display: flex; align-items: center; gap: 10px;
+}
+.section-title .icon {
+  width: 30px; height: 30px; border-radius: var(--radius-sm);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  background: var(--gold-dim); color: var(--gold2); flex-shrink: 0;
+}
 
-    /* ── Main Layout ── */
-    .container {
-      max-width: 820px;
-      margin: 0 auto;
-      padding: 88px 20px 120px;
-    }
+/* ===== CARDS ===== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 14px;
+  transition: all 0.2s;
+}
+.card:hover { border-color: rgba(212,148,47,0.2); }
+.card-title {
+  font-size: 1rem; font-weight: 600;
+  margin-bottom: 8px; color: var(--text);
+}
+.card-title .sub {
+  font-weight: 400; font-size: 0.8rem; color: var(--text3);
+  display: block; margin-top: 2px;
+}
+.card p, .card li { font-size: 0.88rem; color: var(--text2); line-height: 1.8; }
+.card ul, .card ol { padding-left: 18px; margin-top: 6px; }
+.card li { margin-bottom: 4px; }
+.card li strong { color: var(--text); }
 
-    /* ── Hero / Header ── */
-    .hero {
-      text-align: center;
-      padding: 48px 0 40px;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 4px 14px;
-      border-radius: 100px;
-      background: var(--accent-glow);
-      color: var(--accent-soft);
-      font-size: 12px; font-weight: 600;
-      letter-spacing: 0.3px;
-      margin-bottom: 16px;
-      border: 1px solid rgba(59,130,246,0.25);
-    }
-    .hero h1 {
-      font-size: clamp(28px,5vw,44px);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 12px;
-    }
-    .hero h1 span { color: var(--accent-soft); }
-    .hero p {
-      color: var(--text-secondary);
-      font-size: 16px;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    .hero-meta {
-      display: flex; justify-content: center; gap: 32px;
-      margin-top: 24px;
-      font-size: 13px; color: var(--text-muted);
-    }
-    .hero-meta span { display: flex; align-items: center; gap: 6px; }
+/* ===== TAG ===== */
+.tag {
+  display: inline-block; padding: 1px 10px; border-radius: 100px;
+  font-size: 0.7rem; font-weight: 600; margin-right: 4px;
+}
+.tag-gold  { background: var(--gold-dim); color: var(--gold2); }
+.tag-red   { background: var(--red-dim); color: var(--red); }
+.tag-green { background: var(--green-dim); color: var(--green); }
+.tag-blue  { background: var(--blue-dim); color: var(--blue); }
+.tag-purple{ background: var(--purple-dim); color: var(--purple); }
+.tag-cyan  { background: var(--cyan-dim); color: var(--cyan); }
+.tag-orange{ background: var(--orange-dim); color: var(--orange); }
 
-    /* ── Section ── */
-    .section {
-      margin-bottom: 48px;
-    }
-    .section-title {
-      font-size: 22px; font-weight: 700;
-      margin-bottom: 20px;
-      display: flex; align-items: center; gap: 10px;
-    }
-    .section-title .icon {
-      width: 32px; height: 32px;
-      border-radius: var(--radius-xs);
-      display: inline-flex; align-items: center; justify-content: center;
-      font-size: 16px;
-      background: var(--accent-glow);
-      color: var(--accent-soft);
-      flex-shrink: 0;
-    }
+/* ===== ALERT CARD ===== */
+.card-alert { border-left: 3px solid var(--red); }
+.card-warn  { border-left: 3px solid var(--orange); }
+.card-info  { border-left: 3px solid var(--blue); }
+.card-success{ border-left: 3px solid var(--green); }
+.card-aml-red { border-left: 3px solid var(--red); background: var(--red-dim); }
+.card-aml-red .card-title { color: var(--red); }
 
-    /* ── Cards ── */
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 16px;
-      transition: var(--transition);
-    }
-    .card:hover { border-color: var(--border-accent); background: var(--bg-card-hover); }
-    .card h3 {
-      font-size: 17px; font-weight: 600;
-      margin-bottom: 8px;
-      color: var(--text-primary);
-    }
-    .card h3 .sub {
-      font-weight: 400; font-size: 13px; color: var(--text-muted);
-      display: block; margin-top: 2px;
-    }
-    .card p, .card li { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
-    .card ul, .card ol { padding-left: 20px; margin-top: 8px; }
-    .card li { margin-bottom: 6px; }
-    .card li strong { color: var(--text-primary); }
+/* ===== HIGHLIGHT ===== */
+.hl-gold { color: var(--gold2); font-weight: 600; }
+.hl-red  { color: var(--red); font-weight: 600; }
+.hl-green{ color: var(--green); font-weight: 600; }
+.hl-blue { color: var(--blue); font-weight: 600; }
 
-    /* ── Highlight / Tags ── */
-    .tag {
-      display: inline-block;
-      padding: 2px 10px;
-      border-radius: 100px;
-      font-size: 12px; font-weight: 600;
-      margin-right: 4px;
-    }
-    .tag-red    { background: var(--danger-bg);  color: var(--danger); }
-    .tag-green  { background: var(--success-bg); color: var(--success); }
-    .tag-yellow { background: var(--warning-bg); color: var(--warning); }
-    .tag-blue   { background: var(--accent-glow); color: var(--accent-soft); }
-    .hl { color: var(--accent-soft); font-weight: 600; }
+/* ===== FORM TABLE (for reports) ===== */
+.form-list {
+  display: flex; flex-direction: column; gap: 10px;
+}
+.form-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 16px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s;
+}
+.form-item:hover { border-color: rgba(212,148,47,0.15); }
+.form-icon {
+  width: 32px; height: 32px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem; flex-shrink: 0;
+}
+.form-body { flex: 1; }
+.form-body .f-name { font-weight: 600; font-size: 0.9rem; color: var(--text); }
+.form-body .f-detail { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
+.form-body .f-threshold { display: inline-block; margin-top: 4px; font-size: 0.78rem; }
 
-    /* ── Divider ── */
-    .divider {
-      border: 0; height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
-      margin: 48px 0;
-    }
+/* ===== PROCESS FLOW ===== */
+.process-flow {
+  display: flex; align-items: center; justify-content: center;
+  gap: 8px; margin: 14px 0; flex-wrap: wrap;
+}
+.process-step {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-sm); padding: 10px 16px;
+  text-align: center; min-width: 100px;
+}
+.process-step .step-num { font-size: 0.7rem; color: var(--gold2); font-weight: 600; }
+.process-step .step-name { font-size: 0.85rem; color: var(--text); font-weight: 500; }
+.process-step .step-desc { font-size: 0.75rem; color: var(--text3); }
+.process-arrow { color: var(--text3); font-size: 1.1rem; }
 
-    /* ── Exam Section ── */
-    .exam-header {
-      background: linear-gradient(135deg, var(--bg-card), var(--bg-secondary));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      margin-bottom: 28px;
-      text-align: center;
-    }
-    .exam-header h2 {
-      font-size: 24px; font-weight: 700;
-      margin-bottom: 6px;
-    }
-    .exam-header p { color: var(--text-secondary); font-size: 14px; }
+/* ===== DIVIDER ===== */
+.divider {
+  border: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 40px 0;
+}
 
-    .question-card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 24px;
-      margin-bottom: 20px;
-      transition: var(--transition);
-    }
-    .question-card:hover { border-color: var(--border-accent); }
-    .question-number {
-      display: inline-flex; align-items: center; gap: 6px;
-      padding: 2px 12px;
-      border-radius: 100px;
-      background: var(--accent-glow);
-      color: var(--accent-soft);
-      font-size: 12px; font-weight: 600;
-      margin-bottom: 12px;
-    }
-    .question-text {
-      font-size: 16px; font-weight: 500;
-      line-height: 1.7;
-      margin-bottom: 14px;
-      color: var(--text-primary);
-    }
-    .options { display: flex; flex-direction: column; gap: 8px; }
-    .option {
-      display: flex; align-items: flex-start; gap: 10px;
-      padding: 10px 14px;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border);
-      background: var(--bg-secondary);
-      font-size: 14px; line-height: 1.6;
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--text-secondary);
-    }
-    .option:hover {
-      border-color: var(--border-accent);
-      background: var(--bg-card-hover);
-      color: var(--text-primary);
-    }
-    .option .letter {
-      flex-shrink: 0;
-      width: 24px; height: 24px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 50%;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      font-size: 12px; font-weight: 600;
-      color: var(--text-muted);
-      transition: var(--transition);
-    }
-    .option:hover .letter {
-      background: var(--accent-glow);
-      border-color: var(--accent);
-      color: var(--accent-soft);
-    }
-    .option.correct {
-      border-color: var(--success) !important;
-      background: var(--success-bg) !important;
-    }
-    .option.correct .letter {
-      background: var(--success) !important;
-      border-color: var(--success) !important;
-      color: #fff !important;
-    }
-    .option.wrong {
-      border-color: var(--danger) !important;
-      background: var(--danger-bg) !important;
-    }
-    .option.wrong .letter {
-      background: var(--danger) !important;
-      border-color: var(--danger) !important;
-      color: #fff !important;
-    }
+/* ===== QUIZ ===== */
+.quiz-intro {
+  background: linear-gradient(135deg, var(--surface), var(--bg2));
+  border: 1px solid rgba(212,148,47,0.2);
+  border-radius: var(--radius);
+  padding: 20px 22px; margin-bottom: 24px; text-align: center;
+}
+.quiz-intro h2 { font-size: 1.3rem; color: var(--gold2); margin-bottom: 4px; }
+.quiz-intro p { font-size: 0.85rem; color: var(--text2); }
 
-    .answer-reveal {
-      display: none;
-      margin-top: 14px;
-      padding: 16px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-secondary);
-      border-left: 3px solid var(--accent);
-    }
-    .answer-reveal.show { display: block; }
-    .answer-reveal .a-label {
-      font-weight: 600; color: var(--success); margin-bottom: 4px;
-    }
-    .answer-reveal p { font-size: 14px; color: var(--text-secondary); line-height: 1.7; }
+.q-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 22px; margin-bottom: 20px;
+  transition: all 0.2s;
+}
+.q-card:hover { border-color: rgba(212,148,47,0.25); }
+.q-num {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 2px 12px; border-radius: 100px;
+  background: var(--gold-dim); color: var(--gold2);
+  font-size: 0.75rem; font-weight: 600; margin-bottom: 10px;
+}
+.q-text {
+  font-size: 0.95rem; font-weight: 500; line-height: 1.7;
+  margin-bottom: 12px; color: var(--text);
+}
+.q-options { display: flex; flex-direction: column; gap: 6px; }
+.q-opt {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); background: var(--bg2);
+  font-size: 0.85rem; line-height: 1.6; cursor: pointer;
+  transition: all 0.2s; color: var(--text2);
+}
+.q-opt:hover {
+  border-color: var(--gold); background: var(--gold-soft); color: var(--text);
+}
+.q-opt .letter {
+  flex-shrink: 0; width: 24px; height: 24px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--surface); border: 1px solid var(--border);
+  font-size: 0.75rem; font-weight: 600; color: var(--text3);
+  transition: all 0.2s;
+}
+.q-opt:hover .letter {
+  background: var(--gold-dim); border-color: var(--gold); color: var(--gold2);
+}
+.q-opt.correct {
+  border-color: var(--green) !important; background: var(--green-dim) !important;
+}
+.q-opt.correct .letter {
+  background: var(--green) !important; border-color: var(--green) !important;
+  color: #fff !important;
+}
+.q-opt.wrong {
+  border-color: var(--red) !important; background: var(--red-dim) !important;
+}
+.q-opt.wrong .letter {
+  background: var(--red) !important; border-color: var(--red) !important;
+  color: #fff !important;
+}
 
-    .btn-check {
-      display: inline-flex; align-items: center; gap: 6px;
-      margin-top: 10px;
-      padding: 6px 18px;
-      border-radius: var(--radius-xs);
-      border: 1px solid var(--accent);
-      background: transparent;
-      color: var(--accent-soft);
-      font-size: 13px; font-weight: 500;
-      cursor: pointer;
-      transition: var(--transition);
-      font-family: var(--font-thai);
-    }
-    .btn-check:hover {
-      background: var(--accent-glow);
-      color: var(--text-primary);
-    }
+.answer-reveal {
+  display: none; margin-top: 12px;
+  padding: 14px 16px; border-radius: var(--radius-sm);
+  background: var(--bg2); border-left: 3px solid var(--gold);
+}
+.answer-reveal.show { display: block; }
+.answer-reveal .a-label { font-weight: 600; color: var(--gold2); margin-bottom: 4px; font-size: 0.9rem; }
+.answer-reveal .a-ref { font-size: 0.78rem; color: var(--text3); margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--border); }
+.answer-reveal p { font-size: 0.84rem; color: var(--text2); line-height: 1.7; }
 
-    /* ── Floating Back Button ── */
-    .float-back {
-      position: fixed; bottom: 28px; right: 28px; z-index: 99;
-      display: flex; align-items: center; gap: 8px;
-      padding: 12px 20px;
-      border-radius: 100px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      color: var(--text-secondary);
-      font-size: 14px; font-weight: 500;
-      text-decoration: none;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transition: var(--transition);
-      font-family: var(--font-thai);
-    }
-    .float-back:hover {
-      border-color: var(--accent);
-      color: var(--accent-soft);
-      background: var(--bg-card-hover);
-      transform: translateY(-2px);
-    }
+.btn-check {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 10px; padding: 6px 18px; border-radius: var(--radius-sm);
+  border: 1px solid var(--gold); background: transparent;
+  color: var(--gold2); font-size: 0.8rem; font-weight: 500;
+  cursor: pointer; transition: all 0.2s; font-family: inherit;
+}
+.btn-check:hover { background: var(--gold-dim); color: var(--text); }
 
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .container { padding: 80px 14px 100px; }
-      .navbar-links a { padding: 6px 10px; font-size: 12px; }
-      .card { padding: 18px; }
-      .hero-meta { flex-direction: column; gap: 8px; align-items: center; }
-      .float-back { bottom: 16px; right: 16px; padding: 10px 16px; font-size: 13px; }
-    }
+/* ===== FLOATING BACK ===== */
+.float-back {
+  position: fixed; bottom: 28px; right: 28px; z-index: 99;
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 18px; border-radius: 100px;
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text2); text-decoration: none;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  transition: all 0.2s; font-family: inherit; font-size: 0.85rem;
+}
+.float-back:hover {
+  border-color: var(--gold); color: var(--gold2); background: var(--surface2);
+  transform: translateY(-2px);
+}
 
-    /* ── Print friendly ── */
-    @media print {
-      .navbar, .float-back { display: none; }
-      body { background: #fff; color: #111; }
-      .card, .question-card, .exam-header { border-color: #ccc; background: #f9f9f9; }
-      .option { border-color: #ddd; }
-    }
-  </style>
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .container { padding: 72px 14px 100px; }
+  .top-nav { padding: 0 10px; }
+  .top-nav .logo { font-size: 0.8rem; }
+  .top-nav .nav-links a { padding: 4px 8px; font-size: 0.72rem; }
+  .hero-meta { gap: 12px; flex-direction: column; align-items: center; }
+  .card { padding: 16px; }
+  .process-flow { flex-direction: column; }
+  .process-arrow { transform: rotate(90deg); }
+  .form-item { flex-direction: column; }
+  .float-back { bottom: 14px; right: 14px; padding: 8px 14px; font-size: 0.8rem; }
+}
+
+/* ===== PRINT ===== */
+@media print {
+  .top-nav, .float-back { display: none; }
+  body { background: #fff; color: #111; }
+  .card, .q-card, .quiz-intro { border-color: #ccc; background: #f9f9f9; }
+  .q-opt { border-color: #ddd; }
+}
+</style>
 </head>
 <body>
 
-  <!-- ═══ Navbar ═══ -->
-  <nav class="navbar">
-    <a href="#" class="navbar-brand">
-      <!-- shield icon -->
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-      </svg>
-      <span>AML/CTF <small>ธ.ก.ส.</small></span>
-    </a>
-    <ul class="navbar-links">
-      <li><a href="#content" class="active">เนื้อหา</a></li>
-      <li><a href="#exam">ข้อสอบ</a></li>
-    </ul>
-  </nav>
+<!-- ═══ NAVBAR ═══ -->
+<nav class="top-nav">
+  <a href="index.html" class="logo">🛡️ AML/CTF <small>ธ.ก.ส.</small></a>
+  <div class="nav-links">
+    <a href="#content">เนื้อหา</a>
+    <a href="#exam">ข้อสอบ</a>
+    <a href="index.html">← หน้าหลัก</a>
+  </div>
+</nav>
 
-  <!-- ═══ Main ═══ -->
-  <main class="container">
+<!-- ═══ MAIN ═══ -->
+<main class="container">
 
-    <!-- ─── Hero ─── -->
-    <section class="hero">
-      <div class="hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        ธ.ก.ส. อยู่ในกำกับ ปปง.
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="hero-badge">🏦 ธ.ก.ส. อยู่ในกำกับ ปปง.</div>
+    <h1>การป้องกัน &amp; ปราบปราม<br><span>การฟอกเงิน (AML/CTF)</span></h1>
+    <p>สรุปเนื้อหาตาม พ.ร.บ. ป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 และที่แก้ไขเพิ่มเติม ครอบคลุมทุกแบบรายงาน ทุกหน้าที่ของพนักงานธนาคาร พร้อมข้อสอบวิเคราะห์สถานการณ์ 10 ข้อ</p>
+    <div class="hero-meta">
+      <span>📘 15 หัวข้อหลัก</span>
+      <span>✍️ 10 ข้อสอบวิเคราะห์สถานการณ์</span>
+      <span>📋 5 แบบรายงาน ปปง.</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!--  CONTENT  -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <section id="content">
+
+    <!-- ───── 1. พ.ร.บ. ปปง. ───── -->
+    <div class="section" id="s1">
+      <h2 class="section-title"><span class="icon">📜</span> 1. พ.ร.บ. ป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542</h2>
+
+      <div class="card">
+        <div class="card-title">ภาพรวมกฎหมาย</div>
+        <p>พ.ร.บ. ปปง. เป็นกฎหมายหลักในการป้องกันและปราบปรามการฟอกเงินของไทย โดยมี <span class="hl-gold">สำนักงาน ปปง.</span> เป็นหน่วยงานกำกับดูแล</p>
+        <ul>
+          <li><strong>ธ.ก.ส.</strong> มีสถานะเป็น <strong>สถาบันการเงินที่มีหน้าที่รายงาน</strong> ตามมาตรา 13 แห่ง พ.ร.บ. ปปง.</li>
+          <li>ต้องรายงานธุรกรรมตามเกณฑ์ที่กฎหมายกำหนดต่อ ปปง. อย่างเคร่งครัด</li>
+          <li>พนักงานธนาคารทุกคนมีหน้าที่ <strong>แจ้งธุรกรรมที่มีเหตุอันควรสงสัย</strong> (Suspicious Transaction Report — STR)</li>
+          <li>การละเลยไม่ปฏิบัติตามมี <span class="hl-red">โทษทั้งทางวินัยและทางอาญา</span></li>
+          <li>แก้ไขเพิ่มเติมโดย พ.ร.บ. ปปง. (ฉบับที่ 5) พ.ศ. 2565 และ ฉบับที่ 6 พ.ศ. 2567</li>
+        </ul>
       </div>
-      <h1>การป้องกัน &amp; ปราบปราม<br><span>การฟอกเงิน</span></h1>
-      <p>สรุปเนื้อหา AML/CTF ตาม พ.ร.บ. ป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542 พร้อมข้อสอบวิเคราะห์สถานการณ์ 10 ข้อ สำหรับพนักงาน ธ.ก.ส.</p>
-      <div class="hero-meta">
-        <span>📘 6 หัวข้อหลัก</span>
-        <span>✍️ 10 ข้อสอบสถานการณ์</span>
-        <span>🏦 ธ.ก.ส.</span>
+
+      <div class="card card-info">
+        <div class="card-title">📌 คณะกรรมการ ปปง.</div>
+        <p>ประกอบด้วยกรรมการโดยตำแหน่งและผู้ทรงคุณวุฒิ มีอำนาจหน้าที่กำหนดนโยบาย วางมาตรการ ออกระเบียบ/ประกาศ กำกับดูแลผู้มีหน้าที่รายงาน รวมทั้งสั่งอายัดหรือยึดทรัพย์สินที่เกี่ยวกับการกระทำความผิด</p>
       </div>
-    </section>
+    </div>
 
-    <!-- ════════════════════════════════════════════ -->
-    <!--  CONTENT  -->
-    <!-- ════════════════════════════════════════════ -->
-    <section id="content">
+    <!-- ───── 2. ความผิดมูลฐาน ───── -->
+    <div class="section" id="s2">
+      <h2 class="section-title"><span class="icon">🔗</span> 2. ความผิดมูลฐาน (Predicate Offenses)</h2>
 
-      <!-- ─── 1. พ.ร.บ. ปปง. ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">📜</span> 1. พ.ร.บ. ป้องกันและปราบปรามการฟอกเงิน พ.ศ. 2542</h2>
-        <div class="card">
-          <p>พ.ร.บ. ฉบับนี้เป็นกฎหมายหลักในการป้องกันและปราบปรามการฟอกเงินในประเทศไทย โดยกำหนดให้สถาบันการเงิน รวมถึง <strong>ธ.ก.ส.</strong> อยู่ในกำกับของ <span class="hl">สำนักงาน ปปง.</span> (สำนักงานป้องกันและปราบปรามการฟอกเงิน)</p>
+      <div class="card">
+        <p>การฟอกเงินต้องเกิดจาก <strong>ความผิดมูลฐาน</strong> คือความผิดที่เป็นต้นทางของเงินหรือทรัพย์สินที่ถูกฟอก ปัจจุบันมี <span class="hl-gold">28 ประเภทความผิดมูลฐาน</span> ที่เกี่ยวข้อง เช่น</p>
+        <ul>
+          <li><span class="tag tag-red">ยาเสพติด</span> ผลิต/จำหน่าย/นำเข้า/ส่งออกยาเสพติดให้โทษ</li>
+          <li><span class="tag tag-red">การทุจริต</span> ทุจริตต่อตำแหน่งหน้าที่หรือทุจริตต่อภาครัฐ</li>
+          <li><span class="tag tag-red">ค้ามนุษย์</span> การค้ามนุษย์และแรงงานบังคับ</li>
+          <li><span class="tag tag-red">การพนัน</span> การจัดให้มีการเล่นการพนันโดยผิดกฎหมาย</li>
+          <li><span class="tag tag-red">ภาษีอากร</span> การหลีกเลี่ยงภาษีอากรที่มีลักษณะเป็นขบวนการ</li>
+          <li><span class="tag tag-red">หลักทรัพย์</span> การปั่นหุ้น/ฉ้อโกงหลักทรัพย์</li>
+          <li><span class="tag tag-red">คอร์รัปชัน</span> สินบน/คอร์รัปชัน</li>
+          <li><span class="tag tag-red">อาชญากรรมทางเทคโนโลยี</span> แก๊งคอลเซ็นเตอร์, บัญชีม้า, หลอกลวงทางออนไลน์</li>
+          <li>และการผิดอื่น ๆ อีก เช่น การก่อการร้าย, ลักทรัพย์/ฉ้อโกง, ปลอมแปลง, ค้าอาวุธ, ละเมิดลิขสิทธิ์ ฯลฯ</li>
+        </ul>
+        <p style="margin-top:6px; font-size:0.82rem; color:var(--text3);">💡 <strong>ข้อควรจำ:</strong> ความผิดมูลฐานไม่จำเป็นต้องมีคำพิพากษา — แค่มีเหตุน่าเชื่อว่าทรัพย์สินเกี่ยวข้องกับความผิดมูลฐานก็เพียงพอต่อการอายัด</p>
+      </div>
+    </div>
+
+    <!-- ───── 3. กระบวนการฟอกเงิน ───── -->
+    <div class="section" id="s3">
+      <h2 class="section-title"><span class="icon">🔄</span> 3. กระบวนการฟอกเงิน 3 ขั้นตอน</h2>
+
+      <div class="card">
+        <p>การฟอกเงินมักดำเนินการเป็น <strong>3 ขั้นตอน</strong> เพื่อปกปิดแหล่งที่มาของเงินที่ได้จากการกระทำผิด:</p>
+        <div class="process-flow">
+          <div class="process-step">
+            <div class="step-num">ขั้นที่ 1</div>
+            <div class="step-name">📥 การวาง</div>
+            <div class="step-desc">Placement<br>นำเงินสดผิดกฎหมายเข้าสู่ระบบการเงิน</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="step-num">ขั้นที่ 2</div>
+            <div class="step-name">🔀 การแยก</div>
+            <div class="step-desc">Layering<br>โอน/ย้ายผ่านหลายบัญชีหลายชั้น</div>
+          </div>
+          <div class="process-arrow">→</div>
+          <div class="process-step">
+            <div class="step-num">ขั้นที่ 3</div>
+            <div class="step-name">💰 การกลืน</div>
+            <div class="step-desc">Integration<br>เงินกลับเข้าสู่ระบบเศรษฐกิจ</div>
+          </div>
+        </div>
+        <ul>
+          <li><strong>Placement:</strong> ฝากเงินสดเข้าธนาคาร ซื้อทรัพย์สินด้วยเงินสด นำเงินเข้าสู่ระบบ</li>
+          <li><strong>Layering:</strong> โอนเงินข้ามบัญชี เปลี่ยนสกุลเงิน ซื้อขายหลักทรัพย์ สร้างธุรกรรมซับซ้อน</li>
+          <li><strong>Integration:</strong> ใช้เงินในระบบปกติ — ซื้อบ้าน รถยนต์ ลงทุนธุรกิจ ดูเหมือนเงินถูกต้อง</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ───── 4. KYC / CDD ───── -->
+    <div class="section" id="s4">
+      <h2 class="section-title"><span class="icon">🆔</span> 4. KYC / CDD — การตรวจสอบเพื่อทราบข้อเท็จจริงเกี่ยวกับลูกค้า</h2>
+
+      <div class="card">
+        <div class="card-title">หลักการสำคัญ</div>
+        <p>พนักงานธนาคารต้อง <strong>รู้จักและตรวจสอบลูกค้า</strong> ก่อนทำธุรกรรมทุกครั้ง เพื่อป้องกันการใช้ธนาคารเป็นช่องทางฟอกเงิน</p>
+        <div class="card-title" style="margin-top:12px; font-size:0.9rem;">📋 ขั้นตอน CDD ปกติ</div>
+        <ol>
+          <li><strong>ระบุตัวตน (Identification)</strong> — ขอหลักฐานแสดงตน: บัตร ปชช., หนังสือเดินทาง หรือเอกสารราชการอื่น</li>
+          <li><strong>ตรวจสอบตัวตน (Verification)</strong> — ยืนยันว่าลูกค้าตรงกับเอกสาร ตรวจสอบใบหน้า-รูปถ่าย, ลายน้ำ, โฮโลแกรม</li>
+          <li><strong>บันทึกข้อมูล</strong> — จัดเก็บข้อมูลลูกค้าในระบบเพื่อการตรวจสอบย้อนหลัง</li>
+          <li><strong>ประเมินความเสี่ยง</strong> — วิเคราะห์วัตถุประสงค์การเปิดบัญชี, แหล่งที่มาของเงิน, อาชีพ, ธุรกรรมที่คาดหวัง</li>
+        </ol>
+      </div>
+
+      <div class="card">
+        <div class="card-title">📊 ระดับการตรวจสอบ CDD</div>
+        <div class="form-list">
+          <div class="form-item">
+            <div class="form-icon" style="background: var(--green-dim); color: var(--green);">SDD</div>
+            <div class="form-body">
+              <div class="f-name">Simplified Due Diligence (SDD)</div>
+              <div class="f-detail">สำหรับลูกค้าความเสี่ยงต่ำ — ตรวจสอบลดลงได้ เช่น ลูกค้าที่เป็นหน่วยงานรัฐ</div>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="form-icon" style="background: var(--gold-dim); color: var(--gold2);">CDD</div>
+            <div class="form-body">
+              <div class="f-name">Customer Due Diligence (CDD) ปกติ</div>
+              <div class="f-detail">ต้องใช้กับลูกค้าทั่วไปทุกคน — ระบุตัวตน + ตรวจสอบ + บันทึก + ประเมินความเสี่ยง</div>
+            </div>
+          </div>
+          <div class="form-item">
+            <div class="form-icon" style="background: var(--red-dim); color: var(--red);">EDD</div>
+            <div class="form-body">
+              <div class="f-name">Enhanced Due Diligence (EDD)</div>
+              <div class="f-detail">สำหรับลูกค้าความเสี่ยงสูง, PEP, ลูกค้าจากประเทศกลุ่มเสี่ยง — ต้องตรวจสอบเข้มข้นกว่า: แหล่งที่มาเงินละเอียด, โครงสร้างธุรกิจ, การทบทวนถี่ขึ้น</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card-alert">
+        <div class="card-title">⚠️ กรณีลูกค้าไม่ให้ความร่วมมือ</div>
+        <p>หากลูกค้าปฏิเสธหรือไม่ให้ความร่วมมือในการแสดงเอกสารหรือข้อมูล <strong>ต้องปฏิเสธการทำธุรกรรม</strong> ทันที และอาจต้องรายงานเป็นธุรกรรมที่มีเหตุอันควรสงสัย (ปปง. 1-03)</p>
+      </div>
+    </div>
+
+    <!-- ───── 5. การจำแนกความเสี่ยง ───── -->
+    <div class="section" id="s5">
+      <h2 class="section-title"><span class="icon">📊</span> 5. การจำแนกระดับความเสี่ยงลูกค้า (Risk Categorization)</h2>
+
+      <div class="card">
+        <p>สถาบันการเงินต้อง <strong>จำแนกลูกค้าตามระดับความเสี่ยง</strong> ด้าน AML/CTF โดยใช้ปัจจัย:</p>
+        <ul>
+          <li><strong>ปัจจัยด้านประเภทลูกค้า:</strong> บุคคลธรรมดา / นิติบุคคล / PEP / องค์กรไม่แสวงหาผลกำไร</li>
+          <li><strong>ปัจจัยด้านผลิตภัณฑ์/บริการ:</strong> ผลิตภัณฑ์ที่มีความเสี่ยงสูง (บัญชีออมทรัพย์ทั่วไป = ต่ำ, บัญชีนิติบุคคลซับซ้อน = สูง)</li>
+          <li><strong>ปัจจัยด้านช่องทาง:</strong> ทำธุรกรรมผ่านอินเทอร์เน็ต / เคาน์เตอร์ / ตัวแทน</li>
+          <li><strong>ปัจจัยด้านภูมิประเทศ:</strong> ประเทศกลุ่มเสี่ยงสูง (FATF ขึ้นบัญชีดำ/เทา)</li>
+        </ul>
+        <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap;">
+          <span style="padding:4px 14px; border-radius:100px; background:var(--green-dim); color:var(--green); font-size:0.8rem; font-weight:600;">🟢 ความเสี่ยงต่ำ</span>
+          <span style="padding:4px 14px; border-radius:100px; background:var(--gold-dim); color:var(--gold2); font-size:0.8rem; font-weight:600;">🟡 ความเสี่ยงปานกลาง</span>
+          <span style="padding:4px 14px; border-radius:100px; background:var(--red-dim); color:var(--red); font-size:0.8rem; font-weight:600;">🔴 ความเสี่ยงสูง</span>
+        </div>
+        <p style="margin-top:10px;">ต้อง <strong>ทบทวนระดับความเสี่ยง</strong> ของลูกค้าอย่างสม่ำเสมอ อย่างน้อยปีละครั้ง หรือเมื่อมีข้อมูลเปลี่ยนแปลง</p>
+      </div>
+    </div>
+
+    <!-- ───── 6. PEP ───── -->
+    <div class="section" id="s6">
+      <h2 class="section-title"><span class="icon">👤</span> 6. PEP — บุคคลที่ดำรงตำแหน่งทางการเมืองที่สำคัญ</h2>
+
+      <div class="card">
+        <p>PEP (Politically Exposed Persons) คือ <strong>บุคคลที่ดำรงตำแหน่งทางการเมืองที่สำคัญ</strong> หรือเคยดำรงตำแหน่งดังกล่าว ซึ่งมีความเสี่ยงสูงในการฟอกเงินเนื่องจากอาจเข้าถึงเงินงบประมาณหรือทรัพย์สินของรัฐ</p>
+        <div class="card-title" style="margin-top:10px;">📌 ใครคือ PEP?</div>
+        <ul>
+          <li>นายกรัฐมนตรี, รัฐมนตรี, สส., สว.</li>
+          <li>ผู้พิพากษาศาลสูง/ศาลรัฐธรรมนูญ</li>
+          <li>ผู้บริหารระดับสูงของหน่วยงานรัฐ (ปลัดกระทรวง, อธิบดี)</li>
+          <li>ผู้บริหารธนาคารแห่งประเทศไทย</li>
+          <li>บุคคลในครอบครัว (คู่สมรส, บุตร, บิดามารดา) และผู้ใกล้ชิด (known close associates)</li>
+        </ul>
+        <div class="card-title" style="margin-top:10px;">📌 มาตรการสำหรับ PEP</div>
+        <ul>
+          <li>ต้องใช้ <strong>EDD (Enhanced Due Diligence)</strong> สำหรับ PEP ทุกราย</li>
+          <li>ต้องขออนุมัติจาก <strong>ระดับผู้บริหาร</strong> ก่อนเปิดบัญชีหรือทำธุรกรรม</li>
+          <li>ต้องตรวจสอบ <strong>แหล่งที่มาของทรัพย์สินและเงินทุน</strong> อย่างละเอียด</li>
+          <li>ต้อง <strong>ติดตามและทบทวนความสัมพันธ์</strong> อย่างต่อเนื่อง</li>
+          <li>แม้พ้นตำแหน่งแล้ว ยังคงมีความเสี่ยง — ต้องตรวจสอบต่อไปอีกอย่างน้อย <strong>12 เดือน</strong></li>
+        </ul>
+        <div class="card-info" style="margin-top:10px; padding:10px 14px; background:var(--blue-dim); border-radius:var(--radius-sm);">
+          <p style="font-size:0.82rem;">💡 <strong>ข้อควรจำ:</strong> พนักงาน ธ.ก.ส. ต้องสามารถระบุ PEP ได้จากระบบฐานข้อมูลของธนาคาร และต้องรายงานต่อผู้บังคับบัญชาทันทีหากพบว่าลูกค้าเป็น PEP</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── 7. Beneficial Ownership ───── -->
+    <div class="section" id="s7">
+      <h2 class="section-title"><span class="icon">🏢</span> 7. เจ้าของประโยชน์ที่แท้จริง (Beneficial Ownership — BO)</h2>
+
+      <div class="card">
+        <p>การตรวจสอบ <strong>เจ้าของประโยชน์ที่แท้จริง</strong> คือการระบุตัวบุคคลที่เป็นเจ้าของหรือควบคุมนิติบุคคล ไม่ใช่แค่ชื่อที่ปรากฏในเอกสารจดทะเบียน</p>
+        <ul>
+          <li><strong>บังคับใช้กับ:</strong> นิติบุคคลทุกประเภทที่เปิดบัญชีกับ ธ.ก.ส.</li>
+          <li><strong>ต้องตรวจสอบ:</strong> ผู้ที่ถือหุ้นตั้งแต่ <span class="hl-gold">25%</span> ขึ้นไป หรือมีอำนาจควบคุมนิติบุคคล</li>
+          <li><strong>กรณีไม่สามารถระบุ BO ได้:</strong> ต้องตรวจสอบผู้บริหารระดับสูงสุด (CEO/กรรมการผู้จัดการ) เป็น BO แทน</li>
+          <li><strong>ปรับปรุงข้อมูล:</strong> ต้องปรับปรุงข้อมูล BO เป็นระยะ เมื่อมีการเปลี่ยนแปลงโครงสร้างผู้ถือหุ้น</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ───── 8. การรายงานธุรกรรม ───── 💥 KEY SECTION -->
+    <div class="section" id="s8">
+      <h2 class="section-title"><span class="icon">📋</span> 8. การรายงานธุรกรรม — แบบรายงาน ปปง. ทุกประเภท</h2>
+
+      <div class="card card-info">
+        <div class="card-title">📌 ภาพรวมแบบรายงาน ปปง.</div>
+        <p>สถาบันการเงินต้องรายงานธุรกรรมตามที่กฎหมายกำหนดต่อสำนักงาน ปปง. ผ่าน <strong>ระบบ AMRAC</strong> (AML/CFT Risk Assessment & Case Management System) โดยมีแบบรายงานหลัก <strong>5 ประเภท</strong> ดังนี้:</p>
+      </div>
+
+      <div class="form-list">
+
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--gold-dim); color:var(--gold2);">💰</div>
+          <div class="form-body">
+            <div class="f-name">แบบ ปปง. 1-01/1 <span class="tag tag-gold">รายงานธุรกรรมเงินสด</span></div>
+            <div class="f-detail">เงินสดเข้า-ออก ตั้งแต่ <strong>2,000,000 บาท</strong> ขึ้นไปต่อครั้ง/รายการ ต้องรายงานภายใน <strong>5 วันทำการ</strong> นับตั้งแต่วันทำธุรกรรม</div>
+            <div class="f-threshold"><span class="tag tag-blue">รวมถึง:</span> การฝาก ถอน โอน หรือแลกเปลี่ยนเงินสด ธนาคารจะต้องจัดทำรายงานแม้ธุรกรรมนั้นจะถูกปฏิเสธในภายหลังก็ตาม หากได้ดำเนินการในส่วนของเงินสดแล้ว</div>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--purple-dim); color:var(--purple);">💎</div>
+          <div class="form-body">
+            <div class="f-name">แบบ ปปง. 1-01/2 <span class="tag tag-purple">รายงานธุรกรรมทรัพย์สินมีไข่เงินสด</span></div>
+            <div class="f-detail">ทรัพย์สินที่มีไข่เงินสด (เช่น ทองคำ, เพชร, โฉนด, รถ) ที่มีมูลค่าตั้งแต่ <strong>5,000,000 บาท</strong> ขึ้นไป โดยรวมธุรกรรมที่เกี่ยวข้องกันภายในวันเดียวกัน</div>
+          </div>
+        </div>
+
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--cyan-dim); color:var(--cyan);">💻</div>
+          <div class="form-body">
+            <div class="f-name">แบบ ปปง. 1-02 <span class="tag tag-cyan">รายงานธุรกรรมการโอนเงินอิเล็กทรอนิกส์</span></div>
+            <div class="f-detail">
+              <strong>กรณี 1:</strong> การโอนเงินด้วย <strong>เงินสด</strong> ตั้งแต่ <strong>100,000 บาท</strong> ขึ้นไป<br>
+              <strong>กรณี 2:</strong> การโอนเงิน <strong>ผ่านบัญชี</strong> ตั้งแต่ <strong>700,000 บาท</strong> ขึ้นไป ต่อครั้ง/รายการ
+            </div>
+            <div class="f-threshold"><span class="tag tag-blue">หมายเหตุ:</span> รวมถึงการโอนเข้า / โอนออก / โอนต่างประเทศ มีระยะเวลารายงาน 5 วันทำการ</div>
+          </div>
+        </div>
+
+        <div class="form-item" style="border-left: 3px solid var(--red); background: var(--red-dim);">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">🚨</div>
+          <div class="form-body">
+            <div class="f-name">แบบ ปปง. 1-03 <span class="tag tag-red">รายงานธุรกรรมที่มีเหตุอันควรสงสัย (STR)</span></div>
+            <div class="f-detail"><span class="hl-red">ไม่จำกัดจำนวนเงินขั้นต่ำ</span> — แม้เพียง 1 บาท หากมีเหตุอันควรสงสัยก็ต้องรายงาน</div>
+            <div class="f-threshold">
+              <ul style="list-style:disc; margin:4px 0 0 14px;">
+                <li>พนักงานธนาคาร <strong>ต้องเป็นผู้จัดทำแบบรายงานเอง</strong> — ห้ามให้ลูกค้ากรอก</li>
+                <li>ต้องเก็บเป็น <strong>ความลับ</strong> — ห้ามเปิดเผยให้ลูกค้าหรือบุคคลภายนอกรู้</li>
+                <li>ระยะเวลา: รายงานทันที <strong>โดยไม่ชักช้า</strong> (as soon as practicable)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-item" style="border-left: 3px solid var(--orange); background: var(--orange-dim);">
+          <div class="form-icon" style="background:var(--orange-dim); color:var(--orange);">📱</div>
+          <div class="form-body">
+            <div class="f-name">แบบ ปปง. 1-04 <span class="tag tag-orange">รายงานธุรกรรมที่มีเหตุอันควรสงสัย — ทางอิเล็กทรอนิกส์</span></div>
+            <div class="f-detail">ธุรกรรมที่มีเหตุอันควรสงสัยซึ่งดำเนินการผ่าน <strong>ช่องทางอิเล็กทรอนิกส์</strong> (Mobile Banking, Internet Banking) โดยเฉพาะ — ใช้สำหรับกรณีที่ข้อมูลบ่งชี้ความผิดปกติที่เกิดจากพฤติกรรมการใช้ช่องทางดิจิทัล</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card card-aml-red" style="margin-top:14px;">
+        <div class="card-title">⚠️ Tipping-off — ข้อห้ามเด็ดขาด</div>
+        <p>การบอกหรือแจ้งให้ลูกค้าทราบว่าถูก <strong>รายงานต่อ ปปง.</strong> หรือกำลังถูก <strong>สอบสวน</strong> ถือเป็นความผิดตามกฎหมาย มี <span class="hl-red">โทษทั้งจำคุกและปรับ</span> ห้ามเด็ดขาดแม้จะเป็นการบอกโดยสุจริต</p>
+      </div>
+    </div>
+
+    <!-- ───── 9. STR / Structuring ───── -->
+    <div class="section" id="s9">
+      <h2 class="section-title"><span class="icon">🔍</span> 9. ธุรกรรมที่มีเหตุอันควรสงสัย (STR) — พฤติกรรมที่พึงสังเกต</h2>
+
+      <div class="card">
+        <div class="card-title">พฤติกรรมบ่งชี้ที่พบบ่อย</div>
+        <ul>
+          <li><strong>Structuring / Smurfing:</strong> แบ่งฝาก/โอนเงินเป็นจำนวนหลายครั้งในมูลค่าใกล้เคียงกัน เพื่อหลีกเลี่ยงเกณฑ์รายงาน (เช่น ฝากครั้งละ 1.9 ล้านบาท หลายครั้ง)  — <span class="hl-red">ต้องรายงานแม้รายการเดียวไม่ถึงเกณฑ์</span></li>
+          <li><strong>ขาดเหตุผลทางเศรษฐกิจ:</strong> ธุรกรรมไม่สอดคล้องกับฐานะ อาชีพ หรือพฤติกรรมที่ผ่านมา (เช่น เกษตรกรฝาก 1.8 ล้านสด)</li>
+          <li><strong>ซับซ้อนผิดปกติ:</strong> ธุรกรรมหลายขั้นตอนไร้เหตุผลทางการเงิน, โอนเข้าออกหลายบัญชีในเวลารวดเร็ว</li>
+          <li><strong>รีบร้อนผิดปกติ:</strong> ลูกค้าเร่งรัดให้ทำธุรกรรมเร็วผิดปกติ กดดันพนักงาน</li>
+          <li><strong>ไม่สามารถอธิบายที่มา:</strong> ที่มาของเงินไม่ชัดเจน / เอกสารปลอมหรือถูกแก้ไข / คำอธิบายขัดแย้ง</li>
+          <li><strong>เกี่ยวข้องกับประเทศกลุ่มเสี่ยง:</strong> ธุรกรรมจาก/ไปประเทศที่ FATF ขึ้นบัญชี</li>
+          <li><strong>เปลี่ยนพฤติกรรมกะทันหัน:</strong> ลูกค้าที่ปกติไม่เคยทำธุรกรรมสูง อยู่ดี ๆ มีเงินสดจำนวนมาก</li>
+          <li><strong>ใช้บัญชีผู้อื่น:</strong> บุคคลที่สามนำเงินมาฝาก/โอนเข้าบัญชีโดยไม่มีความสัมพันธ์ทางธุรกิจที่ชัดเจน (บัญชีม้า)</li>
+        </ul>
+      </div>
+
+      <div class="card card-warn">
+        <div class="card-title">📝 ขั้นตอนเมื่อพบพฤติกรรมต้องสงสัย</div>
+        <ol>
+          <li><strong>ทำ CDD เพิ่มเติม</strong> — สอบถามที่มาและวัตถุประสงค์ของธุรกรรม</li>
+          <li><strong>ประเมิน</strong> — หากยังไม่หายสงสัย ให้ปฏิเสธธุรกรรม</li>
+          <li><strong>จัดทำ ปปง. 1-03</strong> — รายงานธุรกรรมที่มีเหตุอันควรสงสัย (พนักงานทำเอง ห้ามให้ลูกค้ากรอก)</li>
+          <li><strong>เก็บเป็นความลับ</strong> — ห้าม Tipping-off เด็ดขาด</li>
+          <li><strong>ส่งต่อให้ผู้บังคับบัญชา</strong> — ผช.ผจข. / ผจข. อนุมัติและส่งต่อ ปปง.</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- ───── 10. การเก็บรักษาข้อมูล ───── -->
+    <div class="section" id="s10">
+      <h2 class="section-title"><span class="icon">💾</span> 10. การเก็บรักษาข้อมูลและเอกสาร</h2>
+
+      <div class="card">
+        <p>สถาบันการเงินต้องเก็บรักษาข้อมูลที่เกี่ยวข้องกับ AML/CTF ตามข้อกำหนดของ ปปง.:</p>
+        <ul>
+          <li><strong>ข้อมูลลูกค้า:</strong> เก็บไว้อย่างน้อย <span class="hl-gold">5 ปี</span> นับแต่วันที่สิ้นสุดความสัมพันธ์ทางธุรกิจกับลูกค้า</li>
+          <li><strong>ข้อมูลธุรกรรม:</strong> เก็บไว้อย่างน้อย <span class="hl-gold">5 ปี</span> นับแต่วันที่ทำธุรกรรม</li>
+          <li><strong>แบบรายงาน ปปง.:</strong> เก็บตามระยะเวลาที่กฎหมายกำหนด</li>
+          <li><strong>รูปแบบการเก็บ:</strong> เอกสารหรือข้อมูลอิเล็กทรอนิกส์ก็ได้ ต้องสามารถเรียกตรวจสอบได้เมื่อ ปปง. ร้องขอ</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ───── 11. พ.ร.ก. อาชญากรรมทางเทคโนโลยี ───── -->
+    <div class="section" id="s11">
+      <h2 class="section-title"><span class="icon">🛡️</span> 11. พ.ร.ก. มาตรการป้องกันและปราบปรามอาชญากรรมทางเทคโนโลยี</h2>
+
+      <div class="card">
+        <div class="card-title">พ.ร.ก. อาชญากรรมทางเทคโนโลยี พ.ศ. 2566 และ ฉบับที่ 2 พ.ศ. 2568</div>
+        <p>กฎหมายที่ออกมาเพื่อรับมืออาชญากรรมทางเทคโนโลยี โดยเฉพาะ <strong>บัญชีม้า</strong> และ <strong>แก๊งคอลเซ็นเตอร์</strong> ซึ่งเกี่ยวข้องโดยตรงกับ AML</p>
+        <div style="margin-top:12px;">
+          <div class="card-title" style="font-size:0.9rem;">📌 ประเด็นสำคัญที่เกี่ยวข้องกับธนาคาร</div>
           <ul>
-            <li><strong>ธ.ก.ส.</strong> มีสถานะเป็น <strong>สถาบันการเงินที่มีหน้าที่รายงาน</strong> ตามมาตรา 13 แห่ง พ.ร.บ. ปปง.</li>
-            <li>ต้อง <strong>รายงานธุรกรรม</strong> ตามเกณฑ์ที่กฎหมายกำหนดต่อ ปปง. อย่างเคร่งครัด</li>
-            <li>พนักงานธนาคารทุกคนมีหน้าที่ <strong>แจ้งธุรกรรมที่มีเหตุอันควรสงสัย</strong></li>
-            <li>การละเลยไม่ปฏิบัติตาม มี <strong>โทษทั้งทางวินัยและทางอาญา</strong></li>
+            <li><strong>บัญชีม้า:</strong> การเปิดบัญชีหรือให้ยืมใช้บัญชีแก่ผู้อื่นโดยไม่สุจริต หรือโดยรู้หรือควรรู้ว่าจะนำไปใช้ในการกระทำความผิด มีความผิดตามกฎหมาย — โทษจำคุกไม่เกิน 3 ปี หรือปรับไม่เกิน 300,000 บาท หรือทั้งจำทั้งปรับ</li>
+            <li><strong>มาตรการร่วมรับผิดชอบ:</strong> สถาบันการเงินต้องมีส่วนร่วมรับผิดชอบในความเสียหายของลูกค้าหากไม่ดำเนินการตามมาตรฐานที่ ธปท. กำหนด</li>
+            <li><strong>การอายัด/ระงับธุรกรรม:</strong> เมื่อมีเหตุอันควรสงสัย ให้ธนาคารระงับธุรกรรมไว้ก่อนได้ และแจ้ง ปปง./ตำรวจ</li>
+            <li><strong>การแลกเปลี่ยนข้อมูล:</strong> ธนาคารสามารถเปิดเผยหรือแลกเปลี่ยนข้อมูลระหว่างกันเพื่อป้องกันอาชญากรรมทางเทคโนโลยี</li>
           </ul>
         </div>
       </div>
 
-      <!-- ─── 2. KYC / CDD ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">🆔</span> 2. KYC (Know Your Customer) &amp; CDD (Customer Due Diligence)</h2>
-        <div class="card">
-          <h3>หลักการสำคัญ</h3>
-          <p>พนักงานธนาคารต้อง <strong>รู้จักและตรวจสอบลูกค้า</strong> ก่อนทำธุรกรรมทุกครั้ง เพื่อป้องกันการใช้ธนาคารเป็นช่องทางฟอกเงิน</p>
-          <h3 style="margin-top:14px;">ขั้นตอน KYC / CDD</h3>
-          <ol>
-            <li><strong>ขอหลักฐานแสดงตน</strong> — บัตรประจำตัวประชาชน, หนังสือเดินทาง หรือเอกสารราชการอื่น ๆ</li>
-            <li><strong>ตรวจสอบตัวตน</strong> — ยืนยันว่าลูกค้าเป็นบุคคลเดียวกันกับเอกสารที่แสดง</li>
-            <li><strong>บันทึกข้อมูล</strong> — จัดเก็บข้อมูลลูกค้าในระบบเพื่อการตรวจสอบย้อนหลัง</li>
-            <li><strong>ตรวจสอบความเสี่ยง</strong> — ประเมินระดับความเสี่ยงของลูกค้า (ความเสี่ยงต่ำ/ปานกลาง/สูง)</li>
-          </ol>
+      <div class="card card-alert">
+        <div class="card-title">⚠️ บัญชีม้า — ภัยใกล้ตัว</div>
+        <p>พนักงาน ธ.ก.ส. ต้องสังเกตพฤติกรรมที่เข้าข่ายบัญชีม้า: บุคคลที่สามนำเงินสดมาฝากเข้าบัญชีผู้อื่น, เปิดบัญชีแล้วให้ผู้อื่นใช้, มีการแจ้งรหัส OTP/รหัสบัญชีให้บุคคลอื่น การตรวจสอบ KYC/CDD สำหรับกรณีต้องสงสัยบัญชีม้าต้องเข้มงวดเป็นพิเศษ</p>
+      </div>
+    </div>
+
+    <!-- ───── 12. การอบรมพนักงาน ───── -->
+    <div class="section" id="s12">
+      <h2 class="section-title"><span class="icon">📚</span> 12. การอบรมพนักงานด้าน AML</h2>
+
+      <div class="card">
+        <p>ธ.ก.ส. ในฐานะสถาบันการเงินที่มีหน้าที่รายงาน ต้องจัดให้มีการอบรมพนักงานด้าน AML/CTF อย่างสม่ำเสมอ:</p>
+        <ul>
+          <li>จัดให้มี <strong>การอบรม AML ประจำปี</strong> สำหรับพนักงานทุกคน</li>
+          <li>ครอบคลุมหัวข้อ: กฎหมาย ปปง., KYC/CDD, การรายงานธุรกรรม, การสังเกตพฤติกรรมต้องสงสัย, Tipping-off</li>
+          <li>พนักงานใหม่ต้องได้รับการอบรม AML <strong>ก่อนเริ่มปฏิบัติงาน</strong></li>
+          <li>พนักงานที่เกี่ยวข้องกับธุรกรรมต่างประเทศ / ธุรกรรมขนาดใหญ่ต้องได้รับการอบรม EDD/PEP เฉพาะด้าน</li>
+          <li>ต้องมี <strong>การทดสอบความรู้</strong> หลังการอบรม</li>
+          <li>บันทึกการอบรมต้องเก็บไว้เป็นหลักฐานอย่างน้อย <strong>5 ปี</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ───── 13. ธปท. กำกับดูแล ───── -->
+    <div class="section" id="s13">
+      <h2 class="section-title"><span class="icon">🏛️</span> 13. การกำกับดูแลโดย ธนาคารแห่งประเทศไทย (ธปท.)</h2>
+
+      <div class="card">
+        <p>ธปท. มีบทบาทสำคัญในการกำกับดูแลสถาบันการเงินด้าน AML/CTF ร่วมกับ ปปง.:</p>
+        <ul>
+          <li>กำหนด <strong>มาตรฐานการปฏิบัติ</strong> ด้าน AML สำหรับธนาคารพาณิชย์และ ธ.ก.ส.</li>
+          <li>ตรวจสอบ <strong>Compliance</strong> ของธนาคารในการปฏิบัติตาม พ.ร.บ. ปปง.</li>
+          <li>กำกับดูแลให้ธนาคารมี <strong>ระบบงาน AML</strong> ที่เหมาะสม — ระบบตรวจสอบธุรกรรม (Monitoring System), ระบบคัดกรอง (Screening System)</li>
+          <li>กำหนด <strong>มาตรการร่วมรับผิดชอบ</strong> ตาม พ.ร.ก. อาชญากรรมทางเทคโนโลยี</li>
+          <li>ตรวจสอบ <strong>การอบรมพนักงาน</strong> ด้าน AML ของธนาคาร</li>
+          <li>มีอำนาจ <strong>ลงโทษทางปกครอง</strong> แก่ธนาคารที่ไม่ปฏิบัติตามข้อกำหนด</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ───── 14. บทลงโทษ ───── -->
+    <div class="section" id="s14">
+      <h2 class="section-title"><span class="icon">⚖️</span> 14. บทลงโทษ — แยกตามประเภทความผิด</h2>
+
+      <div class="form-list">
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">🪪</div>
+          <div class="form-body">
+            <div class="f-name">ละเลย KYC/CDD</div>
+            <div class="f-detail">ปรับไม่เกิน <strong>1,000,000 บาท</strong> + ปรับอีกวันละไม่เกิน <strong>10,000 บาท</strong> จนกว่าจะดำเนินการให้ถูกต้อง</div>
+          </div>
         </div>
-        <div class="card" style="border-left: 3px solid var(--danger);">
-          <h3>⚠️ กรณีลูกค้าไม่ให้ความร่วมมือ</h3>
-          <p>หากลูกค้าปฏิเสธหรือไม่ให้ความร่วมมือในการแสดงเอกสารหรือให้ข้อมูลที่เพียงพอ พนักงานธนาคาร <strong>ต้องปฏิเสธการทำธุรกรรม</strong> นั้นทันที และอาจต้องรายงานเป็นธุรกรรมที่มีเหตุอันควรสงสัย</p>
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">📋</div>
+          <div class="form-body">
+            <div class="f-name">ละเลยการรายงาน / ปกปิดข้อมูล</div>
+            <div class="f-detail"><strong>โทษทางวินัย</strong> (ว่ากล่าวตักเตือน ลดขั้นเงินเดือน ไล่ออก) + <strong>โทษทางอาญา</strong> (จำคุกและปรับ) ขึ้นอยู่กับความร้ายแรง</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">🤫</div>
+          <div class="form-body">
+            <div class="f-name">Tipping-off</div>
+            <div class="f-detail"><strong>จำคุกไม่เกิน 2 ปี</strong> หรือปรับไม่เกิน <strong>40,000 บาท</strong> หรือทั้งจำทั้งปรับ (ตามมาตรา 36 แห่ง พ.ร.บ. ปปง.)</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">💸</div>
+          <div class="form-body">
+            <div class="f-name">ความผิดฐานฟอกเงิน</div>
+            <div class="f-detail">จำคุกตั้งแต่ <strong>1-10 ปี</strong> หรือปรับตั้งแต่ <strong>20,000-200,000 บาท</strong> หรือทั้งจำทั้งปรับ (ตามมาตรา 9)</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">🪪</div>
+          <div class="form-body">
+            <div class="f-name">บัญชีม้า (พ.ร.ก. อาชญากรรมทางเทคโนโลยี)</div>
+            <div class="f-detail">จำคุกไม่เกิน <strong>3 ปี</strong> หรือปรับไม่เกิน <strong>300,000 บาท</strong> หรือทั้งจำทั้งปรับ</div>
+          </div>
+        </div>
+        <div class="form-item">
+          <div class="form-icon" style="background:var(--red-dim); color:var(--red);">🏛️</div>
+          <div class="form-body">
+            <div class="f-name">สถาบันการเงินไม่ปฏิบัติตาม</div>
+            <div class="f-detail">ปรับทางปกครองโดย ปปง. — ปรับไม่เกิน <strong>1,000,000 บาท</strong> รวมทั้งอาจถูกเพิกถอนใบอนุญาตโดย ธปท.</div>
+          </div>
         </div>
       </div>
+    </div>
 
-      <!-- ─── 3. การรายงานธุรกรรม ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">📊</span> 3. การรายงานธุรกรรม</h2>
+    <!-- ───── 15. ผช.ผจข. ───── -->
+    <div class="section" id="s15">
+      <h2 class="section-title"><span class="icon">⚠️</span> 15. ข้อควรระวังสำหรับผู้ช่วยผู้จัดการสาขา (ผช.ผจข.)</h2>
 
-        <div class="card">
-          <h3>📄 รายงานธุรกรรมเงินสด <span class="tag tag-blue">แบบ ปปง. 1-01/1</span></h3>
-          <p class="sub">เงินสดเข้า-ออก ตั้งแต่ <span class="hl">2,000,000 บาท</span> ขึ้นไป</p>
-          <ul>
-            <li>ต้องรายงานภายใน <strong>5 วันทำการ</strong> นับตั้งแต่วันทำธุรกรรม</li>
-            <li>รวมถึงการฝาก ถอน โอน หรือแลกเปลี่ยนเงินสด</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>📄 รายงานธุรกรรมการโอนเงินอิเล็กทรอนิกส์</h3>
-          <ul>
-            <li><strong>เงินสด</strong> ตั้งแต่ <span class="hl">100,000 บาท</span> ขึ้นไป</li>
-            <li><strong>โอนผ่านบัญชี</strong> ตั้งแต่ <span class="hl">700,000 บาท</span> ขึ้นไป</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <h3>📄 รายงานธุรกรรมที่มีเหตุอันควรสงสัย <span class="tag tag-yellow">แบบ ปปง. 1-03</span></h3>
-          <ul>
-            <li><strong>ไม่จำกัดจำนวนเงินขั้นต่ำ</strong> — แม้เพียง 1 บาท หากมีเหตุสงสัยก็ต้องรายงาน</li>
-            <li>พนักงานธนาคาร <strong>ต้องเป็นผู้จัดทำแบบรายงานเอง</strong> ห้ามให้ลูกค้ากรอก</li>
-            <li>ห้ามแจ้งให้ลูกค้าทราบว่าถูกรายงาน (Tipping-off)</li>
-          </ul>
-        </div>
-
-        <div class="card" style="border-left: 3px solid var(--danger);">
-          <h3>🔇 Tipping-off</h3>
-          <p>การบอกหรือแจ้งให้ลูกค้าทราบว่าถูก <strong>รายงานต่อ ปปง.</strong> หรือกำลังถูก <strong>สอบสวน</strong> ถือเป็นความผิดตามกฎหมาย มีบทลงโทษทั้งจำคุกและปรับ</p>
-        </div>
+      <div class="card">
+        <div class="card-title">📌 หน้าที่และความรับผิดชอบของ ผช.ผจข. ด้าน AML</div>
+        <ul>
+          <li><strong>ควบคุมพนักงานให้ทำ KYC/CDD ทุกครั้ง</strong> — กำกับดูแลให้พนักงานปฏิบัติตามขั้นตอนอย่างเคร่งครัด</li>
+          <li><strong>อนุมัติรายงาน ปปง. 1-03 อย่างเป็นความลับ</strong> — ห้ามเปิดเผยข้อมูลให้ผู้ไม่เกี่ยวข้องทราบ</li>
+          <li><strong>ควบคุมธุรกรรมเงินสดเกิน 2 ล้านบาท</strong> — ให้ส่งรายงานทันทีภายใน 5 วันทำการ</li>
+          <li><strong>ตรวจสอบการอบรม AML</strong> — ตรวจสอบว่าพนักงานทุกคนผ่านการอบรม AML ประจำปี</li>
+          <li><strong>เป็นแบบอย่างที่ดี</strong> — สร้างวัฒนธรรมการปฏิบัติตามกฎหมายภายในสาขา</li>
+          <li><strong>ติดตามการเปลี่ยนแปลงกฎหมาย</strong> — รับทราบประกาศ/แนวปฏิบัติใหม่จาก ปปง. และ ธปท.</li>
+          <li><strong>รายงานต่อผู้จัดการสาขา</strong> — เมื่อพบความผิดปกติหรือความเสี่ยงด้าน AML ในสาขา</li>
+        </ul>
       </div>
 
-      <!-- ─── 4. ธุรกรรมที่มีเหตุอันควรสงสัย ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">🔍</span> 4. ธุรกรรมที่มีเหตุอันควรสงสัย</h2>
-        <div class="card">
-          <h3>พฤติกรรมที่พึงสังเกต</h3>
-          <ul>
-            <li><strong>ซับซ้อนผิดปกติ</strong> — การทำธุรกรรมหลายขั้นตอนโดยไม่มีเหตุผลทางการเงินที่ชัดเจน</li>
-            <li><strong>ขาดเหตุผลทางเศรษฐกิจ</strong> — เช่น เกษตรกรรายย่อยฝากเงินสดครั้งละหลายล้านบาทโดยไม่มีที่มาชัดเจน</li>
-            <li><strong>เกี่ยวข้องกับความผิดมูลฐาน</strong> — ยาเสพติด การทุจริต ค้ามนุษย์ การพนัน ฯลฯ</li>
-            <li><strong>ทำธุรกรรมเป็นกลุ่มก้อน</strong> — แบ่งฝาก/โอนเงินเป็นจำนวนหลายครั้งเพื่อหลีกเลี่ยงเกณฑ์รายงาน (Structuring / Smurfing)</li>
-          </ul>
+      <div class="card card-alert">
+        <div class="card-title">🚨 ข้อห้ามสำคัญสำหรับ ผช.ผจข.</div>
+        <ul>
+          <li>ห้าม <strong>ละเลย/เมินเฉย</strong> เมื่อพนักงานไม่ทำ KYC/CDD</li>
+          <li>ห้าม <strong>บอกลูกค้า</strong> ว่าถูกรายงาน ปปง. (Tipping-off)</li>
+          <li>ห้าม <strong>อนุมัติรายงานโดยไม่ตรวจสอบ</strong> ความถูกต้อง</li>
+          <li>ห้าม <strong>ปิดบัง</strong> เมื่อพบการกระทำผิดด้าน AML ในสาขา</li>
+        </ul>
+      </div>
+    </div>
+
+  </section>
+
+  <hr class="divider">
+
+  <!-- ══════════════════════════════════════════════════ -->
+  <!--  EXAM  -->
+  <!-- ══════════════════════════════════════════════════ -->
+  <section id="exam">
+
+    <div class="quiz-intro">
+      <h2>📝 ข้อสอบวิเคราะห์สถานการณ์ AML/CTF</h2>
+      <p>10 ข้อ · เลือกตอบ · ครอบคลุม KYC/CDD · การรายงาน · Structuring · PEP · Tipping-off · EDD · บัญชีม้า · พ.ร.ก. อาชญากรรมทางเทคโนโลยี</p>
+    </div>
+
+    <!-- ─── Q1: CDD + STR (farmer 1.8M) ─── -->
+    <div class="q-card" id="q1">
+      <div class="q-num">ข้อ 1 · CDD + STR</div>
+      <div class="q-text">นายแดง เกษตรกรผู้ปลูกข้าวในจังหวัดสุพรรณบุรี เดินทางมาธนาคารพร้อมเงินสด 1.8 ล้านบาท บอกว่าต้องการเปิดบัญชีและฝากเงินจำนวนนี้ เมื่อพนักงานตรวจสอบประวัติและผลผลิตในรอบปี พบว่านายแดงปลูกข้าวเพียง 10 ไร่ ผลผลิตต่ำกว่าค่าเฉลี่ย และในประวัติไม่เคยมีธุรกรรมเงินสดสูงขนาดนี้มาก่อน สิ่งที่พนักงานควรปฏิบัติคืออะไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q1" data-correct="3">
+          <span class="letter">ก</span>
+          เปิดบัญชีและฝากเงินตามปกติ เพราะลูกค้ามาเองและมีบัตรประชาชน — 1.8 ล้านยังไม่ถึงเกณฑ์รายงาน 2 ล้าน
         </div>
-        <div class="card" style="border-left: 3px solid var(--warning);">
-          <h3>📝 การดำเนินการ</h3>
-          <p>พนักงานธนาคารต้อง <strong>จัดทำแบบ ปปง. 1-03</strong> รายงานต่อ ปปง. ด้วยตนเอง โดยเก็บเป็น <strong>ความลับ</strong> และห้ามบอกลูกค้าเด็ดขาด</p>
+        <div class="q-opt" data-q="q1" data-correct="3">
+          <span class="letter">ข</span>
+          ปฏิเสธการทำธุรกรรมทันที เพราะเงินสดจำนวนมากผิดปกติสำหรับเกษตรกรรายย่อย
+        </div>
+        <div class="q-opt" data-q="q1" data-correct="3">
+          <span class="letter">ค</span>
+          ดำเนินการ CDD อย่างละเอียด สอบถามที่มาของเงิน หากยังมีเหตุอันควรสงสัยให้ปฏิเสธธุรกรรมและจัดทำแบบ ปปง. 1-03 รายงานธุรกรรมที่มีเหตุอันควรสงสัย (STR)
+        </div>
+        <div class="q-opt" data-q="q1" data-correct="3">
+          <span class="letter">ง</span>
+          รับฝากเงินไว้ก่อน แล้วให้ลูกค้ากรอกแบบรายงานธุรกรรมเงินสดด้วยตนเอง
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q1')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q1">
+        <div class="a-label">✅ เฉลย: ข้อ ค</div>
+        <p><strong>เหตุผล:</strong> เมื่อที่มาของเงินไม่สอดคล้องกับฐานะของลูกค้า (CDD Section 4) พนักงานต้องทำ CDD อย่างละเอียด (อาจต้องใช้ EDD หากเข้าข่ายความเสี่ยงสูง) หากยังมีเหตุอันควรสงสัยให้ปฏิเสธธุรกรรมและรายงาน ปปง. 1-03 (Section 9 — STR) การให้ลูกค้ากรอกแบบรายงาน (ข้อ ง) เป็นสิ่งต้องห้าม — พนักงานต้องเป็นผู้จัดทำเอง (Section 8 — แบบ 1-03)</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (KYC/CDD) + หัวข้อ 8 (แบบ 1-03) + หัวข้อ 9 (STR)</div>
+      </div>
+    </div>
 
-      <!-- ─── 5. บทลงโทษ ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">⚖️</span> 5. บทลงโทษ</h2>
-        <div class="card">
-          <ul>
-            <li>
-              <span class="tag tag-red">ละเลย KYC/CDD</span>
-              ปรับไม่เกิน <strong>1,000,000 บาท</strong> + ปรับอีกวันละ <strong>10,000 บาท</strong>
-            </li>
-            <li>
-              <span class="tag tag-red">ละเลยรายงาน / ปกปิด</span>
-              โทษทางวินัย + โทษทางอาญา (จำคุกและปรับ)
-            </li>
-            <li>
-              <span class="tag tag-red">บัญชีม้า</span>
-              การเปิดบัญชีหรือให้ยืมบัญชีแก่ผู้อื่นเพื่อใช้ฟอกเงิน มีความผิดตามกฎหมาย
-            </li>
-            <li>
-              <span class="tag tag-red">Tipping-off</span>
-              มีโทษทั้งจำคุกและปรับ
-            </li>
-          </ul>
+    <!-- ─── Q2: KYC identity verification ─── -->
+    <div class="q-card" id="q2">
+      <div class="q-num">ข้อ 2 · KYC + Identity Verification</div>
+      <div class="q-text">นางสาวขวัญมาเปิดบัญชีใหม่ที่ ธ.ก.ส. โดยใช้บัตรประจำตัวประชาชนที่ดูเหมือนของจริง พนักงานตรวจสอบด้วยสายตาพบว่าภาพถ่ายบนบัตรดูไม่เหมือนนางสาวขวัญเท่าใดนัก แต่ลายน้ำและโฮโลแกรมสมบูรณ์ นางสาวขวัญรีบร้อนและบอกว่าต้องการเปิดบัญชีให้เสร็จภายใน 5 นาที พนักงานควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q2" data-correct="2">
+          <span class="letter">ก</span>
+          เปิดบัญชีให้เร็วที่สุดตามที่ลูกค้าต้องการ เพราะเอกสารดูสมบูรณ์
+        </div>
+        <div class="q-opt" data-q="q2" data-correct="2">
+          <span class="letter">ข</span>
+          ขอตรวจสอบเอกสารเพิ่มเติม ตรวจสอบใบหน้าเปรียบเทียบกับบัตรอย่างละเอียด หากยังไม่แน่ใจให้ปฏิเสธการเปิดบัญชีและรายงานตามขั้นตอน
+        </div>
+        <div class="q-opt" data-q="q2" data-correct="2">
+          <span class="letter">ค</span>
+          เปิดบัญชีให้ก่อน แล้วค่อยตรวจสอบทีหลัง
+        </div>
+        <div class="q-opt" data-q="q2" data-correct="2">
+          <span class="letter">ง</span>
+          บอกให้ลูกค้าไปเปิดบัญชีกับธนาคารอื่นแทน
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q2')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q2">
+        <div class="a-label">✅ เฉลย: ข้อ ข</div>
+        <p><strong>เหตุผล:</strong> ตามหลัก KYC/CDD (Section 4) พนักงานต้องระบุตัวตน (Identification) และตรวจสอบตัวตน (Verification) ก่อนทำธุรกรรมทุกครั้ง หากไม่แน่ใจในตัวตนของลูกค้าต้องตรวจสอบเพิ่มเติม ห้ามเปิดบัญชีแล้วตรวจสอบทีหลัง (ข้อ ค) เพราะหากเป็นเอกสารปลอมจะเกิดความเสียหายตามมา หากยังไม่แน่ใจให้ปฏิเสธและรายงาน ข้อ ก และ ง ไม่ใช่แนวทางที่ถูกต้องตามกฎหมาย</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (KYC/CDD — Identification + Verification)</div>
+      </div>
+    </div>
 
-      <!-- ─── 6. ข้อควรระวังสำหรับ ผช.ผจข. ─── -->
-      <div class="section">
-        <h2 class="section-title"><span class="icon">⚠️</span> 6. ข้อควรระวังสำหรับผู้ช่วยผู้จัดการสาขา (ผช.ผจข.)</h2>
-        <div class="card">
-          <ul>
-            <li><strong>ควบคุมให้พนักงานทำ KYC/CDD ทุกครั้ง</strong> — กำกับดูแลให้พนักงานปฏิบัติตามขั้นตอนอย่างเคร่งครัด</li>
-            <li><strong>อนุมัติรายงาน ปปง. 1-03 อย่างเป็นความลับ</strong> — ห้ามเปิดเผยข้อมูลให้ผู้ไม่เกี่ยวข้องทราบ</li>
-            <li><strong>ควบคุมธุรกรรมเงินสดเกิน 2 ล้านบาท</strong> — ให้ส่งรายงานทันทีภายใน 5 วันทำการ</li>
-            <li><strong>เป็นแบบอย่างที่ดี</strong> — สร้างวัฒนธรรมการปฏิบัติตามกฎหมายภายในสาขา</li>
-          </ul>
+    <!-- ─── Q3: Structuring/Smurfing + STR ─── -->
+    <div class="q-card" id="q3">
+      <div class="q-num">ข้อ 3 · Structuring/Smurfing + STR</div>
+      <div class="q-text">ลูกค้าที่เป็นเกษตรกรรายย่อยมาขอโอนเงินออกจากบัญชีจำนวน 750,000 บาท โดยบอกว่าเป็นการชำระค่าสินค้าเกษตร พนักงานตรวจสอบพบว่าบัญชีนี้เพิ่งเปิดได้ 3 วัน มีการฝากเงินสดเข้าหลายครั้งในจำนวน 1.5-1.9 ล้านบาท และเพิ่งมีการโอนเงินออกไปแล้ว 2 ครั้งในสัปดาห์นี้ พนักงานควรดำเนินการอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q3" data-correct="3">
+          <span class="letter">ก</span>
+          โอนเงินให้ตามปกติ เพราะไม่เกินเกณฑ์รายงาน 2 ล้านบาทต่อครั้ง
+        </div>
+        <div class="q-opt" data-q="q3" data-correct="3">
+          <span class="letter">ข</span>
+          จัดทำรายงานธุรกรรมเงินสด (ปปง. 1-01/1) เท่านั้น — เนื่องจากฝากเกิน 2 ล้านรวมกัน
+        </div>
+        <div class="q-opt" data-q="q3" data-correct="3">
+          <span class="letter">ค</span>
+          ทำ CDD เพิ่มเติม และเนื่องจากรูปแบบธุรกรรมเข้าข่าย Structuring/Smurfing — แบ่งฝากเพื่อหลีกเลี่ยงเกณฑ์รายงาน — ให้จัดทำแบบ ปปง. 1-03 รายงานธุรกรรมที่มีเหตุอันควรสงสัย และปฏิเสธธุรกรรม
+        </div>
+        <div class="q-opt" data-q="q3" data-correct="3">
+          <span class="letter">ง</span>
+          แจ้งลูกค้าว่าเข้าข่ายต้องถูกตรวจสอบและขอให้หยุดทำธุรกรรม
         </div>
       </div>
-
-    </section>
-
-    <hr class="divider">
-
-    <!-- ════════════════════════════════════════════ -->
-    <!--  EXAM 10 QUESTIONS  -->
-    <!-- ════════════════════════════════════════════ -->
-    <section id="exam">
-
-      <div class="exam-header">
-        <h2>📝 ข้อสอบวิเคราะห์สถานการณ์</h2>
-        <p>จำนวน 10 ข้อ · แบบเลือกตอบ 4 ตัวเลือก · วิเคราะห์สถานการณ์การฟอกเงินที่พนักงาน ธ.ก.ส. พบเจอได้จริง</p>
+      <button class="btn-check" onclick="reveal('q3')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q3">
+        <div class="a-label">✅ เฉลย: ข้อ ค</div>
+        <p><strong>เหตุผล:</strong> พฤติกรรมเข้าข่าย <strong>Structuring/Smurfing</strong> (Section 9) — การแบ่งฝากเงินครั้งละใกล้เคียง 2 ล้าน เพื่อเลี่ยงเกณฑ์รายงาน (Section 8 — เกณฑ์ 1-01/1 อยู่ที่ 2 ล้าน) บัญชีเพิ่งเปิดและเคลื่อนไหวผิดปกติไม่สมอาชีพเกษตรกร ต้องทำ CDD/EDD เพิ่มเติม (Section 4) และจัดทำ STR 1-03 (Section 8) การแจ้งลูกค้า (ข้อ ง) เข้าข่าย Tipping-off (Section 8) ซึ่งมีความผิดตามกฎหมาย</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (CDD/EDD) + 8 (แบบ 1-01/1, แบบ 1-03) + 9 (Structuring/Smurfing + Tipping-off)</div>
       </div>
+    </div>
 
-      <!-- ─── Q1 ─── -->
-      <div class="question-card" id="q1">
-        <div class="question-number">ข้อ 1</div>
-        <div class="question-text">
-          นายแดงเป็นเกษตรกรผู้ปลูกข้าวในจังหวัดสุพรรณบุรี เดินทางมาธนาคาร ธ.ก.ส. สาขาใกล้บ้าน พร้อมเงินสด 1.8 ล้านบาท บอกว่าต้องการเปิดบัญชีและฝากเงินสดจำนวนนี้ พนักงานสอบถามที่มาของเงิน นายแดงตอบว่า "ปลูกข้าวได้กำไรดีมาก" แต่เมื่อพนักงานตรวจสอบประวัติการกู้ยืมและผลผลิตพืชผล พบว่าในรอบปีที่ผ่านมานายแดงปลูกข้าวเพียง 10 ไร่ และผลผลิตต่ำกว่าค่าเฉลี่ย สิ่งที่พนักงานควรปฏิบัติคืออะไร?
+    <!-- ─── Q4: ผช.ผจข. KYC non-compliance ─── -->
+    <div class="q-card" id="q4">
+      <div class="q-num">ข้อ 4 · ผช.ผจข. — การควบคุมพนักงาน</div>
+      <div class="q-text">ผช.ผจข. ตรวจพบว่าพนักงานในสาขาทำ KYC/CDD ไม่ครบถ้วนสำหรับลูกค้าที่เปิดบัญชีใหม่หลายราย โดยไม่ได้ขอเอกสารแสดงตนและไม่ได้บันทึกข้อมูลในระบบ ผช.ผจข. ควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q4" data-correct="2">
+          <span class="letter">ก</span>
+          ปล่อยผ่าน — เป็นหน้าที่ของพนักงานแต่ละคน
         </div>
-        <div class="options">
-          <div class="option" data-q="q1" data-correct="3">
-            <span class="letter">ก</span>
-            เปิดบัญชีและฝากเงินตามปกติ เพราะลูกค้ามาเองและมีบัตรประชาชน
-          </div>
-          <div class="option" data-q="q1" data-correct="3">
-            <span class="letter">ข</span>
-            ปฏิเสธการทำธุรกรรมเพราะเงินสดเกินกว่าที่เกษตรกรทั่วไปจะมี
-          </div>
-          <div class="option" data-q="q1" data-correct="3">
-            <span class="letter">ค</span>
-            ดำเนินการ KYC/CDD อย่างละเอียด หากยังสงสัยให้ปฏิเสธธุรกรรม และพิจารณาจัดทำแบบ ปปง. 1-03 รายงานธุรกรรมที่มีเหตุอันควรสงสัย
-          </div>
-          <div class="option" data-q="q1" data-correct="3">
-            <span class="letter">ง</span>
-            ให้ลูกค้ากรอกแบบรายงานธุรกรรมเงินสด แล้วฝากเงินตามปกติ
-          </div>
+        <div class="q-opt" data-q="q4" data-correct="2">
+          <span class="letter">ข</span>
+          ตักเตือนพนักงาน ให้ดำเนินการแก้ไขข้อมูลให้ครบถ้วนทันที พร้อมกำชับให้ปฏิบัติตามขั้นตอนอย่างเคร่งครัด และบันทึกไว้เป็นหลักฐาน
         </div>
-        <button class="btn-check" onclick="revealAnswer('q1')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q1">
-          <div class="a-label">✅ เฉลย: ข้อ ค</div>
-          <p><strong>เหตุผล:</strong> เมื่อที่มาของเงินไม่สอดคล้องกับฐานะและอาชีพของลูกค้า พนักงานต้องทำ KYC/CDD อย่างละเอียดยิ่งขึ้น หากยังมีเหตุอันควรสงสัยให้ปฏิเสธธุรกรรมและรายงาน ปปง. 1-03 เนื่องจากเข้าข่าย "ธุรกรรมที่มีเหตุอันควรสงสัย" โดยไม่จำกัดจำนวนเงินขั้นต่ำ การให้ลูกค้ากรอกแบบรายงาน (ข้อ ง) เป็นสิ่งต้องห้าม — พนักงานต้องเป็นผู้จัดทำเอง</p>
+        <div class="q-opt" data-q="q4" data-correct="2">
+          <span class="letter">ค</span>
+          ปิดบัญชีลูกค้าเหล่านั้นทั้งหมดโดยไม่บอกกล่าว
+        </div>
+        <div class="q-opt" data-q="q4" data-correct="2">
+          <span class="letter">ง</span>
+          รายงานไปยังผู้จัดการสาขาและ ปปง. ทันทีโดยไม่ดำเนินการใด ๆ
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q4')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q4">
+        <div class="a-label">✅ เฉลย: ข้อ ข</div>
+        <p><strong>เหตุผล:</strong> ตามข้อควรระวังสำหรับ ผช.ผจข. (Section 15) ต้องควบคุมให้พนักงานทำ KYC/CDD ทุกครั้ง การละเลย KYC/CDD มีโทษปรับไม่เกิน 1 ล้านบาท + ปรับวันละ 10,000 บาท (Section 14) ผช.ผจข. ควรตักเตือนและแก้ไขข้อมูลให้ครบถ้วนทันที การปล่อยผ่าน (ข้อ ก) อาจทำให้สาขาและตนเองมีความรับผิดทางกฎหมาย</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (KYC/CDD) + 14 (บทลงโทษ — ละเลย KYC/CDD) + 15 (ผช.ผจข.)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q2 ─── -->
-      <div class="question-card" id="q2">
-        <div class="question-number">ข้อ 2</div>
-        <div class="question-text">
-          นางสาวขวัญมาเปิดบัญชีใหม่ที่ ธ.ก.ส. โดยใช้บัตรประจำตัวประชาชนที่ดูเหมือนของจริง พนักงานตรวจสอบด้วยสายตาพบว่าภาพถ่ายบนบัตรดูไม่เหมือนนางสาวขวัญเท่าไรนัก แต่ลายน้ำและโฮโลแกรมดูสมบูรณ์ นางสาวขวัญรีบร้อนและบอกว่าต้องการเปิดบัญชีให้เสร็จภายใน 5 นาทีเพราะมีธุระต่อ พนักงานควรทำอย่างไร?
+    <!-- ─── Q5: Intentional structuring + dual reporting ─── -->
+    <div class="q-card" id="q5">
+      <div class="q-num">ข้อ 5 · Structuring + STR</div>
+      <div class="q-text">ลูกค้ามาฝากเงินสด 1.95 ล้านบาท พนักงานสอบถามว่าทำไมไม่นำมาฝากพร้อมกัน 2 ล้านในคราวเดียว ลูกค้าตอบว่า "ไม่อยากให้ถึงเกณฑ์รายงาน จะได้ไม่ยุ่งยาก" พนักงานควรปฏิบัติอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q5" data-correct="3">
+          <span class="letter">ก</span>
+          รับฝากเงินตามปกติเพราะยังไม่ถึง 2 ล้านบาท ไม่ต้องรายงาน
         </div>
-        <div class="options">
-          <div class="option" data-q="q2" data-correct="1">
-            <span class="letter">ก</span>
-            เปิดบัญชีให้เร็วที่สุดตามที่ลูกค้าต้องการ เพราะเอกสารดูสมบูรณ์
-          </div>
-          <div class="option" data-q="q2" data-correct="1">
-            <span class="letter">ข</span>
-            ขอตรวจสอบเอกสารเพิ่มเติม เปรียบเทียบใบหน้ากับบัตรอย่างละเอียด หากยังไม่แน่ใจให้ปฏิเสธการเปิดบัญชีและรายงานตามขั้นตอน
-          </div>
-          <div class="option" data-q="q2" data-correct="1">
-            <span class="letter">ค</span>
-            เปิดบัญชีให้ก่อน แล้วค่อยตรวจสอบทีหลัง
-          </div>
-          <div class="option" data-q="q2" data-correct="1">
-            <span class="letter">ง</span>
-            บอกให้ลูกค้าไปเปิดบัญชีกับธนาคารอื่นแทน
-          </div>
+        <div class="q-opt" data-q="q5" data-correct="3">
+          <span class="letter">ข</span>
+          ข่มขู่ลูกค้าว่าการกระทำนี้ผิดกฎหมายและแจ้งตำรวจ
         </div>
-        <button class="btn-check" onclick="revealAnswer('q2')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q2">
-          <div class="a-label">✅ เฉลย: ข้อ ข</div>
-          <p><strong>เหตุผล:</strong> การ KYC กำหนดให้พนักงานต้องตรวจสอบและรู้จักลูกค้าก่อนทำธุรกรรม หากไม่แน่ใจในตัวตนของลูกค้าต้องตรวจสอบเพิ่มเติม ห้ามเปิดบัญชีแล้วค่อยตรวจสอบทีหลัง (ข้อ ค) เพราะหากเป็นเอกสารปลอมจะเกิดความเสียหายตามมา หากยังไม่แน่ใจให้ปฏิเสธการเปิดบัญชีและรายงานตามขั้นตอน ปปง. ข้อ ก และ ง ไม่ใช่แนวทางปฏิบัติที่ถูกต้องตามกฎหมาย</p>
+        <div class="q-opt" data-q="q5" data-correct="3">
+          <span class="letter">ค</span>
+          รับฝากเงิน แต่ต้องจัดทำทั้งรายงานธุรกรรมเงินสด (ปปง. 1-01/1) แม้เงินสดจะน้อยกว่า 2 ล้าน แต่เมื่อมีพฤติกรรมหลายครั้งรวมกันต้องรายงาน และต้องจัดทำแบบ ปปง. 1-03 เนื่องจากมีเหตุอันควรสงสัย — ลูกค้าพยายามหลีกเลี่ยงเกณฑ์รายงาน
+        </div>
+        <div class="q-opt" data-q="q5" data-correct="3">
+          <span class="letter">ง</span>
+          แจ้ง ปปง. และปฏิเสธธุรกรรมทันที
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q5')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q5">
+        <div class="a-label">✅ เฉลย: ข้อ ค</div>
+        <p><strong>เหตุผล:</strong> คำพูดของลูกค้าส่อเจตนาหลีกเลี่ยงเกณฑ์รายงาน (Section 9 — Structuring) แม้ครั้งนี้ 1.95 ล้านยังไม่ถึงเกณฑ์เดี่ยว แต่ وقتی มีพฤติกรรมหลายครั้งรวมกันที่เข้าข่าย Structuring (Section 9) ต้องรายงาน ปปง. 1-03 (STR — Section 8) ซึ่งไม่จำกัดจำนวนเงินขั้นต่ำ การข่มขู่ลูกค้า (ข้อ ข) หรือแจ้งตำรวจ (ข้อ ง) ไม่ใช่แนวทางที่ถูกต้อง — ต้องรายงานต่อ ปปง. ตามขั้นตอน</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 8 (แบบ 1-01/1 + แบบ 1-03) + หัวข้อ 9 (Structuring/Smurfing)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q3 ─── -->
-      <div class="question-card" id="q3">
-        <div class="question-number">ข้อ 3</div>
-        <div class="question-text">
-          ลูกค้ารายหนึ่งมาขอโอนเงินออกจากบัญชีจำนวน 750,000 บาท โดยบอกว่าเป็นการชำระค่าสินค้าเกษตร พนักงานตรวจสอบพบว่าบัญชีนี้เพิ่งเปิดได้ 3 วัน มีการฝากเงินสดเข้าหลายครั้งในจำนวนที่ใกล้เคียงกัน (ครั้งละ 1.5-1.9 ล้านบาท) และเพิ่งมีการโอนเงินออกไปแล้ว 2 ครั้งในสัปดาห์นี้ ลูกค้าเป็นเกษตรกรรายย่อย พนักงานควรดำเนินการอย่างไร?
+    <!-- ─── Q6: Tipping-off ─── -->
+    <div class="q-card" id="q6">
+      <div class="q-num">ข้อ 6 · Tipping-off</div>
+      <div class="q-text">พนักงานสงสัยว่าลูกค้ารายหนึ่งมีพฤติกรรมฟอกเงิน และจัดทำแบบ ปปง. 1-03 ส่งให้ ผช.ผจข. อนุมัติแล้ว ต่อมาลูกค้าโทรมาถามว่า "เมื่อวานที่มาทำธุรกรรม มีปัญหาอะไรหรือเปล่า ทำไมธนาคารถึงโทรไปหาเบอร์บ้านเรา" พนักงานควรตอบอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q6" data-correct="2">
+          <span class="letter">ก</span>
+          บอกความจริงว่าถูกรายงานต่อ ปปง. เพื่อให้ลูกค้ารับทราบ
         </div>
-        <div class="options">
-          <div class="option" data-q="q3" data-correct="3">
-            <span class="letter">ก</span>
-            โอนเงินให้ตามปกติเพราะไม่เกินเกณฑ์รายงาน 2 ล้านบาท
-          </div>
-          <div class="option" data-q="q3" data-correct="3">
-            <span class="letter">ข</span>
-            จัดทำรายงานธุรกรรมเงินสด (ปปง. 1-01/1) เท่านั้น
-          </div>
-          <div class="option" data-q="q3" data-correct="3">
-            <span class="letter">ค</span>
-            ทำ KYC/CDD เพิ่มเติม ถามที่มาเงิน หากมีเหตุสงสัยให้ปฏิเสธธุรกรรม และจัดทำแบบ ปปง. 1-03 รายงานธุรกรรมที่มีเหตุอันควรสงสัย
-          </div>
-          <div class="option" data-q="q3" data-correct="3">
-            <span class="letter">ง</span>
-            แจ้งลูกค้าว่าเขาเข้าข่ายต้องถูกตรวจสอบและขอให้หยุดทำธุรกรรม
-          </div>
+        <div class="q-opt" data-q="q6" data-correct="2">
+          <span class="letter">ข</span>
+          ปฏิเสธอย่างสุภาพว่าไม่มีอะไรผิดปกติ พร้อมแจ้ง ผช.ผจข. ทราบถึงเหตุการณ์ที่เกิดขึ้น
         </div>
-        <button class="btn-check" onclick="revealAnswer('q3')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q3">
-          <div class="a-label">✅ เฉลย: ข้อ ค</div>
-          <p><strong>เหตุผล:</strong> พฤติกรรมของลูกค้าเข้าข่าย <strong>Structuring / Smurfing</strong> — การแบ่งฝากเงินเป็นจำนวนหลายครั้งเพื่อหลีกเลี่ยงเกณฑ์รายงาน 2 ล้านบาท นอกจากนี้บัญชีเพิ่งเปิดและมีการเคลื่อนไหวผิดปกติไม่สมกับอาชีพเกษตรกรรายย่อย พนักงานต้องทำ KYC/CDD เพิ่มเติม และหากมีเหตุอันควรสงสัยให้ปฏิเสธธุรกรรมและจัดทำ ปปง. 1-03 การแจ้งลูกค้า (ข้อ ง) เข้าข่าย Tipping-off ซึ่งมีความผิดตามกฎหมาย</p>
+        <div class="q-opt" data-q="q6" data-correct="2">
+          <span class="letter">ค</span>
+          วางสายและไม่ตอบคำถาม
+        </div>
+        <div class="q-opt" data-q="q6" data-correct="2">
+          <span class="letter">ง</span>
+          บอกว่าเป็นนโยบายธนาคารที่ต้องโทรหาลูกค้าทุกราย
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q6')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q6">
+        <div class="a-label">✅ เฉลย: ข้อ ข</div>
+        <p><strong>เหตุผล:</strong> การบอกลูกค้าว่าถูกรายงานต่อ ปปง. ถือเป็น <strong>Tipping-off</strong> (Section 8) ซึ่งมีความผิดตามกฎหมาย — จำคุกไม่เกิน 2 ปี หรือปรับไม่เกิน 40,000 บาท หรือทั้งจำทั้งปรับ (Section 14) พนักงานต้องปฏิเสธอย่างสุภาพ ไม่เปิดเผยข้อมูล และรายงานให้ผู้บังคับบัญชาทราบเพื่อจัดการ การวางสาย (ข้อ ค) อาจสร้างความสงสัยมากขึ้น</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 8 (Tipping-off) + หัวข้อ 14 (บทลงโทษ Tipping-off)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q4 ─── -->
-      <div class="question-card" id="q4">
-        <div class="question-number">ข้อ 4</div>
-        <div class="question-text">
-          ผช.ผจข. ตรวจพบว่าพนักงานในสาขาทำ KYC/CDD ไม่ครบถ้วนสำหรับลูกค้าที่เปิดบัญชีใหม่หลายราย โดยไม่ได้ขอเอกสารแสดงตนและไม่ได้บันทึกข้อมูลในระบบ ผช.ผจข. ควรทำอย่างไร?
+    <!-- ─── Q7: Foreign customer + EDD ─── -->
+    <div class="q-card" id="q7">
+      <div class="q-num">ข้อ 7 · CDD + EDD + Foreign Risk</div>
+      <div class="q-text">ลูกค้าต่างชาติเดินทางมาที่สาขาพร้อมเงินสดสกุลต่างประเทศมูลค่าประมาณ 2.5 ล้านบาท ขอเปิดบัญชีและฝากเงินเข้าบัญชี แต่ไม่มีเอกสารที่ทางราชการไทยรับรอง นอกจากหนังสือเดินทางที่กำลังจะหมดอายุ และไม่มีหลักฐานแหล่งที่มาของเงิน พนักงานควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q7" data-correct="1">
+          <span class="letter">ก</span>
+          ปฏิเสธการทำธุรกรรม เนื่องจากไม่สามารถทำ CDD ได้อย่างเพียงพอ (Identification ไม่สมบูรณ์, ไม่มีหลักฐานที่มา) และจัดทำแบบ ปปง. 1-03 ประกอบ — ธุรกรรมเงินสดเกิน 2 ล้านต้องรายงาน 1-01/1 ด้วย
         </div>
-        <div class="options">
-          <div class="option" data-q="q4" data-correct="2">
-            <span class="letter">ก</span>
-            ปล่อยผ่าน เพราะเป็นหน้าที่ของพนักงานแต่ละคน
-          </div>
-          <div class="option" data-q="q4" data-correct="2">
-            <span class="letter">ข</span>
-            ตักเตือนพนักงาน ให้ดำเนินการแก้ไขข้อมูลให้ครบถ้วนทันที พร้อมกำชับให้ปฏิบัติตามขั้นตอนอย่างเคร่งครัด และบันทึกไว้เป็นหลักฐาน
-          </div>
-          <div class="option" data-q="q4" data-correct="2">
-            <span class="letter">ค</span>
-            ปิดบัญชีลูกค้าเหล่านั้นทั้งหมดโดยไม่บอกกล่าว
-          </div>
-          <div class="option" data-q="q4" data-correct="2">
-            <span class="letter">ง</span>
-            รายงานไปยัง ผจข. และ ปปง. ทันทีโดยไม่ต้องดำเนินการใด ๆ
-          </div>
+        <div class="q-opt" data-q="q7" data-correct="1">
+          <span class="letter">ข</span>
+          เปิดบัญชีให้ก่อน แล้วค่อยขอเอกสารเพิ่มเติมทีหลัง
         </div>
-        <button class="btn-check" onclick="revealAnswer('q4')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q4">
-          <div class="a-label">✅ เฉลย: ข้อ ข</div>
-          <p><strong>เหตุผล:</strong> ตามข้อควรระวังสำหรับ ผช.ผจข. ต้องควบคุมให้พนักงานทำ KYC/CDD ทุกครั้ง การละเลย KYC/CDD มีโทษปรับไม่เกิน 1,000,000 บาท + ปรับวันละ 10,000 บาท ผช.ผจข. ควรตักเตือนและแก้ไขข้อมูลให้ครบถ้วนทันที การปล่อยผ่าน (ข้อ ก) อาจทำให้สาขาและตนเองมีความรับผิดทางกฎหมาย</p>
+        <div class="q-opt" data-q="q7" data-correct="1">
+          <span class="letter">ค</span>
+          รับฝากเงินแต่ไม่ต้องเปิดบัญชี
+        </div>
+        <div class="q-opt" data-q="q7" data-correct="1">
+          <span class="letter">ง</span>
+          เปิดบัญชีให้ เพราะต่างชาติมีหนังสือเดินทางก็น่าจะเพียงพอ
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q7')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q7">
+        <div class="a-label">✅ เฉลย: ข้อ ก</div>
+        <p><strong>เหตุผล:</strong> CDD (Section 4) ต้องมีการตรวจสอบตัวตนที่เพียงพอ หากไม่สามารถตรวจสอบได้ (Identification ไม่สมบูรณ์, Verification ไม่ผ่าน) ต้องปฏิเสธ (Section 4 — กรณีลูกค้าไม่ให้ความร่วมมือ) ธุรกรรมเงินสด 2.5 ล้านต้องรายงาน 1-01/1 (Section 8) และมีเหตุอันควรสงสัยชัดเจนต้องรายงาน 1-03 (STR — Section 8, 9) การเปิดบัญชีแล้วตรวจสอบทีหลัง (ข้อ ข) เป็นความเสี่ยงสูงมาก</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (KYC/CDD) + หัวข้อ 8 (แบบ 1-01/1 + แบบ 1-03) + หัวข้อ 5 (Risk Categorization — ภูมิประเทศ)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q5 ─── -->
-      <div class="question-card" id="q5">
-        <div class="question-number">ข้อ 5</div>
-        <div class="question-text">
-          ลูกค้ามาฝากเงินสด 1.95 ล้านบาท พนักงานสอบถามว่าทำไมไม่นำมาฝากพร้อมกัน 2 ล้านในคราวเดียว ลูกค้าตอบว่า "ไม่อยากให้ถึงเกณฑ์รายงาน จะได้ไม่ยุ่งยาก" พนักงานควรปฏิบัติอย่างไร?
+    <!-- ─── Q8: High-risk country + ongoing monitoring ─── -->
+    <div class="q-card" id="q8">
+      <div class="q-num">ข้อ 8 · Ongoing Monitoring + PEP/Foreign Risk</div>
+      <div class="q-text">พนักงานตรวจสอบพบว่าบัญชีของลูกค้ารายหนึ่งซึ่งเป็นสมาชิกกลุ่มเกษตรกร มีการโอนเงินเข้าจากต่างประเทศเดือนละประมาณ 300,000 บาท เป็นประจำ 8 เดือนติดต่อกัน แหล่งที่มาเป็นประเทศกลุ่มเสี่ยงสูงด้านการฟอกเงิน ลูกค้าตอบว่า "เป็นเงินที่ลูกชายส่งมาจากทำงานต่างประเทศ" แต่ตรวจสอบแล้วไม่มีหลักฐานการทำงาน พนักงานควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q8" data-correct="2">
+          <span class="letter">ก</span>
+          เชื่อคำบอกของลูกค้า — ไม่ใช่เงินสด และฝากกันเป็นประจำทุกเดือน
         </div>
-        <div class="options">
-          <div class="option" data-q="q5" data-correct="3">
-            <span class="letter">ก</span>
-            รับฝากเงินตามปกติ เพราะยังไม่ถึง 2 ล้านบาท
-          </div>
-          <div class="option" data-q="q5" data-correct="3">
-            <span class="letter">ข</span>
-            บอกลูกค้าว่าการกระทำนี้ผิดกฎหมายและข่มขู่ลูกค้า
-          </div>
-          <div class="option" data-q="q5" data-correct="3">
-            <span class="letter">ค</span>
-            รับฝากเงิน แต่ต้องรายงานธุรกรรมเงินสด (ปปง. 1-01/1) และจัดทำแบบ ปปง. 1-03 เนื่องจากมีเหตุอันควรสงสัย — ลูกค้าพยายามหลีกเลี่ยงเกณฑ์รายงานโดยเจตนา
-          </div>
-          <div class="option" data-q="q5" data-correct="3">
-            <span class="letter">ง</span>
-            แจ้งตำรวจทันที
-          </div>
+        <div class="q-opt" data-q="q8" data-correct="2">
+          <span class="letter">ข</span>
+          ดำเนิน EDD (Enhanced Due Diligence) — ขอหลักฐานการทำงาน/ที่มาของเงินอย่างละเอียด ตรวจสอบความสัมพันธ์กับประเทศกลุ่มเสี่ยง หากยังสงสัยให้จัดทำ ปปง. 1-03
         </div>
-        <button class="btn-check" onclick="revealAnswer('q5')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q5">
-          <div class="a-label">✅ เฉลย: ข้อ ค</div>
-          <p><strong>เหตุผล:</strong> คำพูดของลูกค้าส่อเจตนาหลีกเลี่ยงเกณฑ์รายงานชัดเจน แม้จำนวนเงินยังไม่ถึง 2 ล้านบาท แต่พฤติกรรมเข้าข่าย "ธุรกรรมที่มีเหตุอันควรสงสัย" ซึ่งไม่จำกัดจำนวนเงินขั้นต่ำ พนักงานต้องจัดทำทั้งรายงานเงินสด (ปปง. 1-01/1) และรายงานธุรกรรมที่มีเหตุอันควรสงสัย (ปปง. 1-03) การข่มขู่ลูกค้า (ข้อ ข) หรือแจ้งตำรวจ (ข้อ ง) ไม่ใช่แนวทางที่ถูกต้อง — ต้องรายงานต่อ ปปง. ตามขั้นตอน</p>
+        <div class="q-opt" data-q="q8" data-correct="2">
+          <span class="letter">ค</span>
+          บล็อกบัญชีลูกค้าทันทีโดยไม่ต้องสอบถาม
+        </div>
+        <div class="q-opt" data-q="q8" data-correct="2">
+          <span class="letter">ง</span>
+          แจ้งลูกค้าว่าจะต้องรายงานธุรกรรมนี้ให้ ปปง. ทราบ
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q8')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q8">
+        <div class="a-label">✅ เฉลย: ข้อ ข</div>
+        <p><strong>เหตุผล:</strong> เมื่อข้อมูลไม่สอดคล้องกับโปรไฟล์ (Section 5 — Risk Categorization — ประเทศกลุ่มเสี่ยงสูง) ต้องใช้ <strong>EDD</strong> (Section 4 — EDD) ซึ่งเป็นการตรวจสอบที่เข้มข้นขึ้น หากยังมีเหตุอันควรสงสัยให้รายงาน 1-03 (Section 8) การแจ้งลูกค้าว่าจะรายงาน ปปง. (ข้อ ง) เข้าข่าย Tipping-off ซึ่งผิดกฎหมาย (Section 8) การบล็อกบัญชีทันที (ข้อ ค) ไม่ใช่แนวทาง — ต้องสอบสวนข้อเท็จจริงก่อน</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 4 (CDD/EDD) + 5 (Risk Categorization — ภูมิประเทศ) + 8 (แบบ 1-03, Tipping-off)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q6 ─── -->
-      <div class="question-card" id="q6">
-        <div class="question-number">ข้อ 6</div>
-        <div class="question-text">
-          พนักงานสงสัยว่าลูกค้ารายหนึ่งมีพฤติกรรมฟอกเงิน และได้จัดทำแบบ ปปง. 1-03 ส่งต่อให้ ผช.ผจข. อนุมัติแล้ว ต่อมาลูกค้ารายนั้นโทรศัพท์มาถามพนักงานว่า "เมื่อวานที่มาทำธุรกรรม มีปัญหาอะไรหรือเปล่า ทำไมธนาคารถึงโทรไปหาเบอร์บ้านเรา" พนักงานควรตอบอย่างไร?
+    <!-- ─── Q9: Behaviour change + STR ─── -->
+    <div class="q-card" id="q9">
+      <div class="q-num">ข้อ 9 · Behaviour Change + ผช.ผจข. oversight</div>
+      <div class="q-text">ผช.ผจข. ได้รับแจ้งจากพนักงานว่ามีธุรกรรมเงินสดเข้า 2.3 ล้านบาท จากลูกค้าที่เป็นสมาชิก ธ.ก.ส. มา 10 ปี ไม่เคยมีประวัติผิดปกติ พนักงานทำรายงาน ปปง. 1-01/1 เรียบร้อยแล้ว แต่สังเกตว่าลูกค้ารายนี้ปกติไม่เคยทำธุรกรรมเงินสดสูงขนาดนี้มาก่อน ผช.ผจข. ควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q9" data-correct="2">
+          <span class="letter">ก</span>
+          อนุมัติรายงานและถือว่าจบ — ลูกค้ามีประวัติดี ไม่ต้องสงสัย
         </div>
-        <div class="options">
-          <div class="option" data-q="q6" data-correct="2">
-            <span class="letter">ก</span>
-            บอกความจริงว่าถูกรายงานต่อ ปปง. เพื่อให้ลูกค้ารับทราบ
-          </div>
-          <div class="option" data-q="q6" data-correct="2">
-            <span class="letter">ข</span>
-            ปฏิเสธอย่างสุภาพ บอกว่าไม่มีอะไรผิดปกติ พร้อมแจ้งให้ ผช.ผจข. ทราบถึงเหตุการณ์ที่เกิดขึ้น
-          </div>
-          <div class="option" data-q="q6" data-correct="2">
-            <span class="letter">ค</span>
-            วางสายและไม่ตอบคำถาม
-          </div>
-          <div class="option" data-q="q6" data-correct="2">
-            <span class="letter">ง</span>
-            บอกว่าเป็นนโยบายธนาคารที่ต้องโทรศัพท์หาลูกค้าทุกราย
-          </div>
+        <div class="q-opt" data-q="q9" data-correct="2">
+          <span class="letter">ข</span>
+          สั่งให้พนักงานสอบถามเพิ่มเติมถึงที่มาของเงิน หากมีความผิดปกติแม้เพียงเล็กน้อยให้จัดทำ ปปง. 1-03 เพิ่มเติม และเก็บเป็นความลับ
         </div>
-        <button class="btn-check" onclick="revealAnswer('q6')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q6">
-          <div class="a-label">✅ เฉลย: ข้อ ข</div>
-          <p><strong>เหตุผล:</strong> การบอกลูกค้าว่าถูกรายงานต่อ ปปง. ถือเป็น <strong>Tipping-off</strong> ซึ่งมีความผิดตามกฎหมาย พนักงานต้องปฏิเสธอย่างสุภาพ ไม่เปิดเผยข้อมูล พร้อมรายงานเหตุการณ์ให้ผู้บังคับบัญชาทราบเพื่อการจัดการต่อไป การวางสาย (ข้อ ค) อาจสร้างความสงสัยมากขึ้น และการโกหกว่าเป็นนโยบาย (ข้อ ง) ก็ไม่เหมาะสมเช่นกัน</p>
+        <div class="q-opt" data-q="q9" data-correct="2">
+          <span class="letter">ค</span>
+          โทรศัพท์หาลูกค้าเพื่อสอบถามด้วยตนเอง
+        </div>
+        <div class="q-opt" data-q="q9" data-correct="2">
+          <span class="letter">ง</span>
+          ละเว้นการรายงานเพราะลูกค้าเป็นสมาชิกเก่าแก่
         </div>
       </div>
+      <button class="btn-check" onclick="reveal('q9')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q9">
+        <div class="a-label">✅ เฉลย: ข้อ ข</div>
+        <p><strong>เหตุผล:</strong> แม้ลูกค้าจะมีประวัติดี แต่การเปลี่ยนแปลงพฤติกรรมกะทันหัน (Behaviour Change — Section 9) เป็นเหตุอันควรสงสัย — โดยเฉพาะธุรกรรมเงินสด 2.3 ล้านที่ต้องรายงาน 1-01/1 (Section 8) และพฤติกรรมผิดปกติที่ต้องตรวจสอบต่อ ผช.ผจข. ต้องสั่งการให้พนักงานสอบถามเพิ่มเติม (Section 15) หากมีเหตุสงสัยให้รายงาน 1-03 การโทรหาลูกค้าเอง (ข้อ ค) อาจเกิด Tipping-off โดยไม่ตั้งใจ</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 8 (แบบ 1-01/1 + แบบ 1-03) + 9 (Behaviour Change) + 15 (ผช.ผจข.)</div>
+      </div>
+    </div>
 
-      <!-- ─── Q7 ─── -->
-      <div class="question-card" id="q7">
-        <div class="question-number">ข้อ 7</div>
-        <div class="question-text">
-          ลูกค้าต่างชาติเดินทางมาที่สาขา พร้อมเงินสดสกุลต่างประเทศ มูลค่าประมาณ 2.5 ล้านบาท ขอเปิดบัญชีและฝากเงินเข้าบัญชี แต่ไม่มีเอกสารแสดงตนที่ทางราชการไทยรับรอง มีเพียงหนังสือเดินทางที่กำลังจะหมดอายุ และไม่มีหลักฐานแหล่งที่มาของเงิน พนักงานควรทำอย่างไร?
+    <!-- ─── Q10: Group structuring + BO + Beneficial Ownership ─── -->
+    <div class="q-card" id="q10">
+      <div class="q-num">ข้อ 10 · Group Structuring + BO + STR</div>
+      <div class="q-text">พนักงานพบว่าลูกค้า 3 คนมาเปิดบัญชีพร้อมกัน แต่ละคนนำเงินสดมาฝากคนละ 1.9 ล้านบาทในวันเดียวกัน ทั้งสามคนอ้างว่าเป็นเงินจากการขายที่ดินแปลงเดียวกัน แต่พนักงานตรวจสอบพบว่าที่ดินเป็นของบุคคลอื่นซึ่งไม่ได้มาธนาคารด้วย และเอกสารสัญญาซื้อขายที่ลูกค้าแสดงดูถูกแก้ไข พนักงานตรวจสอบเพิ่มเติมพบว่าทั้งสามคนมีส่วนเกี่ยวข้องกับบุคคลเดียวกันในฐานะผู้ถือหุ้นนิติบุคคลแห่งหนึ่ง พนักงานควรทำอย่างไร?</div>
+      <div class="q-options">
+        <div class="q-opt" data-q="q10" data-correct="3">
+          <span class="letter">ก</span>
+          รับฝากเงินทั้ง 3 ราย เพราะรายละไม่ถึง 2 ล้านบาท
         </div>
-        <div class="options">
-          <div class="option" data-q="q7" data-correct="3">
-            <span class="letter">ก</span>
-            ปฏิเสธการทำธุรกรรม เนื่องจากไม่สามารถ KYC/CDD ได้อย่างเพียงพอ และพิจารณาจัดทำแบบ ปปง. 1-03
-          </div>
-          <div class="option" data-q="q7" data-correct="3">
-            <span class="letter">ข</span>
-            เปิดบัญชีให้ก่อน แล้วค่อยขอเอกสารเพิ่มเติมทีหลัง
-          </div>
-          <div class="option" data-q="q7" data-correct="3">
-            <span class="letter">ค</span>
-            รับฝากเงินแต่ไม่ต้องเปิดบัญชี
-          </div>
-          <div class="option" data-q="q7" data-correct="3">
-            <span class="letter">ง</span>
-            เปิดบัญชีให้ เพราะต่างชาติมีหนังสือเดินทางก็น่าจะเพียงพอ
-          </div>
+        <div class="q-opt" data-q="q10" data-correct="3">
+          <span class="letter">ข</span>
+          รับฝากเงินแต่ขอเอกสารเพิ่มเติมทีหลัง
         </div>
-        <button class="btn-check" onclick="revealAnswer('q7')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q7">
-          <div class="a-label">✅ เฉลย: ข้อ ก</div>
-          <p><strong>เหตุผล:</strong> การ KYC/CDD ต้องมีการตรวจสอบตัวตนที่เพียงพอ หากไม่สามารถตรวจสอบได้ (เอกสารไม่ครบ ไม่มีหลักฐานที่มาของเงิน) ต้องปฏิเสธการทำธุรกรรม นอกจากนี้ธุรกรรมเงินสดเกิน 2 ล้านบาทต้องรายงาน ปปง. 1-01/1 และมีเหตุอันควรสงสัยชัดเจน ต้องรายงาน ปปง. 1-03 ด้วย การเปิดบัญชีแล้วค่อยตรวจสอบทีหลัง (ข้อ ข) เป็นความเสี่ยงสูงมาก</p>
+        <div class="q-opt" data-q="q10" data-correct="3">
+          <span class="letter">ค</span>
+          ปฏิเสธธุรกรรมทุกราย ตรวจสอบข้อมูลเพิ่มเติม รวมถึงการตรวจสอบ Beneficial Ownership (BO) ว่ามีเจ้าของประโยชน์ที่แท้จริงร่วมกันหรือไม่ และจัดทำแบบ ปปง. 1-03 สำหรับทั้ง 3 ราย เนื่องจากเป็นการร่วมกันกระทำการเพื่อหลีกเลี่ยงเกณฑ์รายงาน (Structuring)
+        </div>
+        <div class="q-opt" data-q="q10" data-correct="3">
+          <span class="letter">ง</span>
+          รับฝากไว้ก่อน แล้วค่อยแจ้งตำรวจทีหลัง
         </div>
       </div>
-
-      <!-- ─── Q8 ─── -->
-      <div class="question-card" id="q8">
-        <div class="question-number">ข้อ 8</div>
-        <div class="question-text">
-          พนักงานตรวจสอบพบว่าบัญชีของลูกค้ารายหนึ่ง ซึ่งเป็นสมาชิกกลุ่มเกษตรกร มีการโอนเงินเข้าจากต่างประเทศเดือนละประมาณ 300,000 บาท เป็นประจำทุกเดือนติดต่อกัน 8 เดือน ลูกค้าเป็นเกษตรกรรายย่อย ไม่เคยเดินทางไปต่างประเทศ พนักงานสอบถามลูกค้าได้คำตอบว่า "เป็นเงินที่ลูกชายส่งมาจากทำงานต่างประเทศ" แต่เมื่อตรวจสอบรายละเอียดพบว่าแหล่งที่มาเป็นประเทศกลุ่มเสี่ยงสูงด้านการฟอกเงิน พนักงานควรทำอย่างไร?
-        </div>
-        <div class="options">
-          <div class="option" data-q="q8" data-correct="3">
-            <span class="letter">ก</span>
-            เชื่อคำบอกของลูกค้าเพราะไม่ใช่เงินสด
-          </div>
-          <div class="option" data-q="q8" data-correct="3">
-            <span class="letter">ข</span>
-            ดำเนินการตรวจสอบเพิ่มเติม ขอหลักฐานการทำงานของลูกชาย และประเมินความเสี่ยง หากยังสงสัยให้รายงาน ปปง. 1-03
-          </div>
-          <div class="option" data-q="q8" data-correct="3">
-            <span class="letter">ค</span>
-            บล็อกบัญชีลูกค้าทันที
-          </div>
-          <div class="option" data-q="q8" data-correct="3">
-            <span class="letter">ง</span>
-            แจ้งลูกค้าว่าจะต้องรายงานธุรกรรมนี้ให้ปปง.ทราบ
-          </div>
-        </div>
-        <button class="btn-check" onclick="revealAnswer('q8')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q8">
-          <div class="a-label">✅ เฉลย: ข้อ ข</div>
-          <p><strong>เหตุผล:</strong> เมื่อมีข้อมูลที่ไม่สอดคล้องกับโปรไฟล์ของลูกค้า (เกษตรกรรายย่อย แต่มีเงินโอนจากต่างประเทศสม่ำเสมอจากประเทศกลุ่มเสี่ยงสูง) พนักงานต้องตรวจสอบเพิ่มเติม หากยังมีเหตุอันควรสงสัยให้รายงาน ปปง. 1-03 การแจ้งลูกค้าว่าจะรายงานปปง. (ข้อ ง) เข้าข่าย Tipping-off ซึ่งผิดกฎหมาย</p>
-        </div>
+      <button class="btn-check" onclick="reveal('q10')">✅ เฉลย</button>
+      <div class="answer-reveal" id="ans-q10">
+        <div class="a-label">✅ เฉลย: ข้อ ค</div>
+        <p><strong>เหตุผล:</strong> พฤติกรรมของลูกค้าทั้ง 3 คนเข้าข่าย <strong>Structuring/Smurfing</strong> (Section 9) อย่างชัดเจน — แบ่งฝากคนละ 1.9 ล้านเพื่อเลี่ยงเกณฑ์รายงาน 2 ล้าน (Section 8 — แบบ 1-01/1) ร่วมกับเอกสารสัญญาที่ถูกแก้ไข การที่ทั้งสามคนมีส่วนเกี่ยวข้องกับนิติบุคคลเดียวกันต้องตรวจสอบ <strong>Beneficial Ownership (BO)</strong> (Section 7) ว่ามีเจ้าของประโยชน์ที่แท้จริงร่วมกันหรือไม่ ต้องรายงาน STR 1-03 (Section 8) สำหรับทุกราย</p>
+        <div class="a-ref">📖 อ้างอิง: หัวข้อ 7 (Beneficial Ownership) + 8 (แบบ 1-01/1, 1-03) + 9 (Structuring/Smurfing)</div>
       </div>
+    </div>
 
-      <!-- ─── Q9 ─── -->
-      <div class="question-card" id="q9">
-        <div class="question-number">ข้อ 9</div>
-        <div class="question-text">
-          ผช.ผจข. ได้รับแจ้งจากพนักงานว่ามีธุรกรรมเงินสดเข้า 2.3 ล้านบาท จากลูกค้าที่เป็นสมาชิก ธ.ก.ส. มา 10 ปี ไม่เคยมีประวัติผิดปกติมาก่อน พนักงานได้ทำรายงาน ปปง. 1-01/1 เรียบร้อยแล้ว แต่มีข้อสังเกตว่าลูกค้ารายนี้ปกติไม่เคยทำธุรกรรมเงินสดสูงขนาดนี้มาก่อน ผช.ผจข. ควรทำอย่างไร?
-        </div>
-        <div class="options">
-          <div class="option" data-q="q9" data-correct="3">
-            <span class="letter">ก</span>
-            อนุมัติรายงานและถือว่าจบ เพราะลูกค้ามีประวัติดี ไม่ต้องสงสัยอะไรเพิ่ม
-          </div>
-          <div class="option" data-q="q9" data-correct="3">
-            <span class="letter">ข</span>
-            สั่งให้พนักงานสอบถามเพิ่มเติม หาสาเหตุของเงินจำนวนนี้ หากมีความผิดปกติแม้เพียงเล็กน้อย ให้จัดทำ ปปง. 1-03 เพิ่มเติม และเก็บเป็นความลับ
-          </div>
-          <div class="option" data-q="q9" data-correct="3">
-            <span class="letter">ค</span>
-            โทรศัพท์หาลูกค้าเพื่อสอบถามด้วยตนเอง
-          </div>
-          <div class="option" data-q="q9" data-correct="3">
-            <span class="letter">ง</span>
-            ละเว้นการรายงานเพราะลูกค้าเป็นสมาชิกเก่าแก่
-          </div>
-        </div>
-        <button class="btn-check" onclick="revealAnswer('q9')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q9">
-          <div class="a-label">✅ เฉลย: ข้อ ข</div>
-          <p><strong>เหตุผล:</strong> แม้ลูกค้าจะมีประวัติดี แต่พฤติกรรมที่เปลี่ยนไปอย่างผิดปกติก็เป็นเหตุอันควรสงสัยได้ โดยเฉพาะธุรกรรมเงินสดสูงที่ไม่เคยทำมาก่อน ต้องสอบถามเพิ่มเติมและหากมีเหตุสงสัยให้รายงาน ปปง. 1-03 และเก็บเป็นความลับ การละเว้นการรายงาน (ข้อ ง) มีโทษทั้งทางวินัยและอาญา การโทรศัพท์หาลูกค้าเอง (ข้อ ค) อาจทำให้เกิด Tipping-off โดยไม่ตั้งใจ</p>
-        </div>
-      </div>
+  </section>
 
-      <!-- ─── Q10 ─── -->
-      <div class="question-card" id="q10">
-        <div class="question-number">ข้อ 10</div>
-        <div class="question-text">
-          พนักงานพบว่าลูกค้ารายหนึ่งเปิดบัญชีพร้อมกับเพื่อนอีก 2 คน โดยแต่ละคนนำเงินสดมาฝากคนละ 1.9 ล้านบาทในวันเดียวกัน โดยทั้งสามคนให้ข้อมูลว่าเป็นเงินจากการขายที่ดินแปลงเดียวกัน แต่พนักงานตรวจสอบพบว่าที่ดินแปลงดังกล่าวเป็นที่ดินของบุคคลอื่นซึ่งไม่ได้มาธนาคารด้วย และเอกสารสัญญาซื้อขายที่ลูกค้าแสดงดูเหมือนถูกแก้ไข พนักงานควรทำอย่างไร?
-        </div>
-        <div class="options">
-          <div class="option" data-q="q10" data-correct="3">
-            <span class="letter">ก</span>
-            รับฝากเงินทั้ง 3 ราย เพราะรายละไม่ถึง 2 ล้านบาท ไม่ต้องรายงานอะไร
-          </div>
-          <div class="option" data-q="q10" data-correct="3">
-            <span class="letter">ข</span>
-            รับฝากเงินแต่ขอเอกสารเพิ่มเติมทีหลัง
-          </div>
-          <div class="option" data-q="q10" data-correct="3">
-            <span class="letter">ค</span>
-            ปฏิเสธธุรกรรมทุกราย สอบถามและตรวจสอบเอกสารเพิ่มเติม และจัดทำแบบ ปปง. 1-03 สำหรับทั้ง 3 ราย เนื่องจากเป็นการร่วมกันกระทำการเพื่อหลีกเลี่ยงเกณฑ์รายงาน (Structuring)
-          </div>
-          <div class="option" data-q="q10" data-correct="3">
-            <span class="letter">ง</span>
-            รับฝากไว้ก่อน แล้วค่อยแจ้งตำรวจทีหลัง
-          </div>
-        </div>
-        <button class="btn-check" onclick="revealAnswer('q10')">✅ เฉลย</button>
-        <div class="answer-reveal" id="ans-q10">
-          <div class="a-label">✅ เฉลย: ข้อ ค</div>
-          <p><strong>เหตุผล:</strong> พฤติกรรมของลูกค้าทั้ง 3 คนเข้าข่าย <strong>Structuring / Smurfing</strong> อย่างชัดเจน — แบ่งฝากเงินคนละ 1.9 ล้านบาทเพื่อหลีกเลี่ยงเกณฑ์รายงาน 2 ล้านบาท ร่วมกับเอกสารที่ดูถูกแก้ไข ยิ่งเพิ่มเหตุอันควรสงสัย พนักงานต้องปฏิเสธธุรกรรม ตรวจสอบเพิ่มเติม และจัดทำ ปปง. 1-03 สำหรับทุกราย การรับฝากแล้วค่อยว่า (ข้อ ข, ง) เป็นความเสี่ยงสูงมาก</p>
-        </div>
-      </div>
+</main>
 
-    </section>
+<!-- ═══ FLOATING BACK ═══ -->
+<a href="index.html" class="float-back">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  กลับหน้าหลัก
+</a>
 
-  </main>
+<!-- ═══ JS ═══ -->
+<script>
+function reveal(id) {
+  const el = document.getElementById('ans-' + id);
+  if (el) el.classList.toggle('show');
+}
 
-  <!-- ═══ Floating Back Button ═══ -->
-  <a href="#" class="float-back" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-    กลับด้านบน
-  </a>
-
-  <!-- ═══ JS ═══ -->
-  <script>
-    function revealAnswer(id) {
-      const el = document.getElementById('ans-' + id);
-      if (el) {
-        el.classList.toggle('show');
-      }
+document.querySelectorAll('.q-opt').forEach(opt => {
+  opt.addEventListener('click', function() {
+    const qid = this.dataset.q;
+    const correct = this.dataset.correct;
+    const siblings = this.closest('.q-options').querySelectorAll('.q-opt');
+    siblings.forEach(s => s.classList.remove('correct', 'wrong'));
+    const idx = Array.from(siblings).indexOf(this) + 1;
+    if (String(idx) === correct) {
+      this.classList.add('correct');
+    } else {
+      this.classList.add('wrong');
+      siblings[parseInt(correct) - 1].classList.add('correct');
     }
-
-    // ── Click-to-select option ──
-    document.querySelectorAll('.option').forEach(opt => {
-      opt.addEventListener('click', function() {
-        const qid = this.dataset.q;
-        const correct = this.dataset.correct; // '1'='ก', '2'='ข', '3'='ค', '4'='ง'
-        // Reset siblings
-        const siblings = this.closest('.options').querySelectorAll('.option');
-        siblings.forEach(s => {
-          s.classList.remove('correct', 'wrong');
-        });
-        // Mark clicked
-        const idx = Array.from(siblings).indexOf(this) + 1;
-        if (String(idx) === correct) {
-          this.classList.add('correct');
-        } else {
-          this.classList.add('wrong');
-          // Also highlight correct answer
-          siblings[parseInt(correct) - 1].classList.add('correct');
-        }
-        // Auto-show reveal
-        const ansEl = document.getElementById('ans-' + qid);
-        if (ansEl) ansEl.classList.add('show');
-      });
-    });
-  </script>
+    const ansEl = document.getElementById('ans-' + qid);
+    if (ansEl) ansEl.classList.add('show');
+  });
+});
+</script>
 
 </body>
 </html>
