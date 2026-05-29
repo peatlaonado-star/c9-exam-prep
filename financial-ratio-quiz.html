@@ -1177,7 +1177,7 @@ function renderQuestion() {
       <div class="q-text">${q.q} ${typeTag}</div>
       <div class="options">${optionsHTML}</div>
       <div class="explanation" id="exp-${i}">
-        <strong>${q.correct === answered[i] ? '✅ ถูกต้อง!' : '❌ ไม่ถูกต้อง'}</strong><br>
+        <strong id="exp-label-${i}"></strong><br>
         ${q.explain}
       </div>
     `;
@@ -1212,6 +1212,8 @@ function selectAnswer(qIdx, optIdx) {
   // Show explanation
   const exp = document.getElementById('exp-' + qIdx);
   exp.className = 'explanation show ' + (isCorrect ? 'correct' : 'wrong');
+  const expLabel = document.getElementById('exp-label-' + qIdx);
+  expLabel.textContent = isCorrect ? '✅ ถูกต้อง!' : '❌ ไม่ถูกต้อง';
 
   updateProgress();
 
