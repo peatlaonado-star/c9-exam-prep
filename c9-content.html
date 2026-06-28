@@ -73,6 +73,30 @@ details[open] summary h2{color:#f59e0b!important}
 .sc{text-align:center;padding:10px;background:#1e293b;border:1px solid #334155;border-radius:10px;margin-top:10px}
 .sc span{font-size:24px;font-weight:700;color:#f59e0b}
 h4.div{margin:12px 0 6px;color:#f59e0b;border-bottom:1px solid #334155;padding-bottom:3px}
+
+/* Quiz ebanking */
+.q-card{background:#1e293b;border:1px solid #334155;border-left:4px solid #f59e0b;border-radius:10px;padding:14px 16px;margin-bottom:10px;transition:border-color .2s}
+.q-card:hover{border-color:#f59e0b}
+.q-card.correct{border-left-color:#10b981;background:#0d2e23}
+.q-card.wrong{border-left-color:#ef4444;background:#2e1414}
+.q-num{display:inline-block;background:#f59e0b;color:#0f172a;font-weight:700;padding:2px 10px;border-radius:12px;font-size:11px;margin-bottom:6px;margin-right:6px}
+.q-topic{display:inline-block;background:#3b0764;color:#c4b5fd;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:600}
+.opt{padding:7px 10px;margin:3px 0;border-radius:6px;background:#0f172a;border:1px solid #334155;cursor:pointer;font-size:13px;transition:.2s}
+.opt:hover{border-color:#3b82f6;background:#1e293b}
+.opt.sel{border-color:#f59e0b;background:#2e1f0a}
+.opt.sel.correct{border-color:#10b981;background:#0d2e23}
+.opt.sel.wrong{border-color:#ef4444;background:#2e1414}
+.opt.disabled{pointer-events:none;opacity:.6}
+.opt.disabled.correct{opacity:1;border-color:#10b981;background:#0d2e23;color:#34d399;font-weight:600}
+.answer-hint{display:none;margin-top:8px;padding:8px 12px;background:#1e3a5f;border:1px solid #3b82f6;border-radius:6px;font-size:12px;color:#93c5fd}
+.q-card.show-hint .answer-hint{display:block}
+.quiz-actions{text-align:center;margin-top:14px}
+.quiz-actions button{background:#3b82f6;color:#fff;border:none;padding:8px 20px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600;margin:0 4px;transition:.2s}
+.quiz-actions button:hover{background:#2563eb}
+.quiz-actions button.reset{background:#6b7280}
+.quiz-actions button.reset:hover{background:#4b5563}
+.quiz-score{text-align:center;padding:12px;background:#1e293b;border:1px solid #f59e0b;border-radius:10px;margin-top:14px;font-size:14px}
+.quiz-score span{font-size:24px;font-weight:700;color:#f59e0b}
 </style>
 </head>
 <body>
@@ -535,10 +559,285 @@ h4.div{margin:12px 0 6px;color:#f59e0b;border-bottom:1px solid #334155;padding-b
 
 <section id="s8">
 <h2 class="sec-title">📱 ธุรกิจอิเล็กทรอนิกส์</h2>
-<div class="grid2">
-<div class="c"><b>ATM:</b> คณะกรรมการ 3 คน · ทดสอบถอน 2,800 บ. · ห้ามคืนเงินสดลูกค้า</div>
-<div class="c"><b>BAAC Mobile:</b> ≥15ปี · iOS≥13/Android≥7 · 1CIF=1User+1device · e-KYC</div>
+
+<div class="mnemo">🔑 กุญแจชุด ก / ข / ค · คณะกรรมการ 3 คน · ทดสอบถอน 2,800 บาท · ห้ามคืนเงินสดลูกค้า · TOATM/TIATM · ใช้ EC แก้ไข</div>
+
+<h3>🔐 1. การถือกุญแจและรหัสตู้นิรภัยเครื่อง ATM</h3>
+<div class="c info">
+<b>ผู้รับผิดชอบการถือกุญแจ ATM</b> — แบ่งตามจำนวนตำแหน่งผู้ช่วยผู้จัดการสาขา
+<table>
+<tr><th>กรณี</th><th>ผู้รับผิดชอบ</th><th>ผู้รับผิดชอบแทน</th></tr>
+<tr><td>สาขามี ผช.ผจข. 2 อัตรา</td><td>ผช.ผจข. #1</td><td>ผช.ผจข. #2</td></tr>
+<tr><td>สาขามี ผช.ผจข. 1 อัตรา</td><td>ผช.ผจข.</td><td>ผจข. (ผู้จัดการสาขา)</td></tr>
+</table>
 </div>
+
+<div class="c tip">
+<b>📌 จุดควบคุมสำคัญ (3 ข้อ)</b>
+<ol>
+<li><b>ห้ามมอบกุญแจ ATM ชุดอื่น</b> นอกเหนือจากชุดที่เคยถือมาก่อน + ผู้รับผิดชอบแทน <b>ห้ามถือกุญแจเกิน 1 ชุด</b> ในเวลาเดียวกัน</li>
+<li>กรณีมอบหมาย <b>พนักงานพัฒนาธุรกิจระดับ 4-7</b> เป็นผู้ถือกุญแจแทน → ให้มอบ<b>ตามระดับตำแหน่ง</b> (มากไปน้อย)</li>
+<li><b>จัดเก็บกุญแจ</b> ที่สาขา ชุดละ 1 ดอก + ส่งมอบกุญแจชุดสำรองไปเก็บที่ <b>สนจ.</b></li>
+</ol>
+</div>
+
+<div class="c warn">
+<b>⚠️ กรณีผู้รับผิดชอบไม่อยู่/ไม่สามารถปฏิบัติหน้าที่</b> → ให้มอบกุญแจแก่ผู้รับผิดชอบแทนตามลำดับ <b>ทุกครั้ง</b> + จัดทำ<b>บันทึกการส่งมอบ-รับมอบกุญแจ</b> + ลงลายมือชื่อใน "รายละเอียดการส่งมอบ-รับมอบกุญแจ"
+</div>
+
+<h3>💵 2. ซักซ้อมการเปลี่ยนกล่องเงิน (ATM/CDM)</h3>
+
+<div class="c info">
+<b>📋 ขั้นตอนการเปลี่ยนกล่องเงิน (5 ขั้น)</b>
+<ol>
+<li><b>กระทบยอดเงินสดคงเหลือ</b> ในเครื่อง ATM/CDM (ก่อนเปลี่ยน)</li>
+<li><b>จัดเตรียมเงินสดและบรรจุกล่องเงิน</b> — ใช้ธนบัตรใหม่/ค่อนข้างใหม่ ไม่มีรอยพับ รอยปะชำรุด บันทึก TOATM</li>
+<li><b>เปลี่ยนกล่องเงิน</b> — ผู้ถือกุญแจชุด ข + ชุด ค ร่วมกัน + <b>ทดสอบถอน 2,800 บาท</b> (ป้องกันบรรจุผิดกล่อง)</li>
+<li><b>ตรวจนับเงินสดหลังเปลี่ยน</b> — คณะกรรมการ 3 คน ตรวจนับหน้ากล้อง CCTV + บันทึก TIATM</li>
+<li><b>กระทบยอดเงินสดคงเหลือเครื่อง</b> (วันถัดไป) — พิมพ์รายงาน ATM/CDM Data Check</li>
+</ol>
+</div>
+
+<div class="c warn">
+<b>🔴 ข้อห้ามสำคัญ (3 ข้อ)</b>
+<ol>
+<li><b>ห้ามทำ Clear Balance อีก</b> หลังเปิดเครื่องให้บริการแล้ว</li>
+<li><b>ห้ามเปิดเครื่อง</b> หากยังเปลี่ยนกล่องไม่สำเร็จ + ยังไม่ได้ทดสอบถอน</li>
+<li><b>ห้ามสาขาคืนเงินสดให้ลูกค้าเอง</b> — ถ้าลูกค้ายื่นคำร้อง ให้สาขาเปลี่ยนกล่องทันที (เด็ดขาด)</li>
+</ol>
+</div>
+
+<div class="c tip">
+<b>📌 กรณีพิเศษ — เงินสดขาด-เกินบัญชี</b>
+<ul>
+<li>บันทึก <b>ลูกหนี้/เจ้าหนี้ ATM/CDM</b> รอดำเนินการในวันทำการถัดไป</li>
+<li>ถ้าเงินสด<b>ขาดบัญชี ≥10,000 บาท</b> → ให้สาขาทำบันทึก (รายละเอียดในเอกสารต้นฉบับ)</li>
+<li>ห้ามนำ Slip Cash Counters (Clear Counter) มาบันทึก</li>
+</ul>
+</div>
+
+<h3>📱 3. BAAC Mobile</h3>
+
+<div class="c info">
+<b>📋 หลักเกณฑ์การสมัครใช้บริการ BAAC Mobile (8 ข้อ)</b>
+<ol>
+<li><b>บัญชีเงินฝากที่สมัครได้</b> — ออมทรัพย์ / กระแสรายวัน / เจ้าของคนเดียว (Single)</li>
+<li><b>สถานะบัญชี Active</b> และไม่ติดสถานะอายัด</li>
+<li><b>อายุผู้สมัคร ≥15 ปีบริบูรณ์</b> · สัญชาติไทย</li>
+<li><b>อุปกรณ์</b> — iOS เวอร์ชัน 13 ขึ้นไป / Android เวอร์ชัน 7 ขึ้นไป</li>
+<li><b>เบอร์โทรศัพท์</b> ที่จดทะเบียนในไทย (AIS, Dtac, TrueMove, NTPLC)</li>
+</ol>
+</div>
+
+<div class="c info">
+<b>📋 เงื่อนไขการผูกความสัมพันธ์บัญชี (6 ข้อหลัก)</b>
+<ol>
+<li>ลูกค้าต้องลงทะเบียน <b>e-KYC</b> (พิสูจน์และยืนยันตัวตนทางอิเล็กทรอนิกส์)</li>
+<li>1 CIF = <b>1 User + 1 อุปกรณ์</b> เท่านั้น</li>
+<li>ลูกค้าเพิ่มบัญชีเงินฝากได้ ตามที่ธนาคารอนุญาต</li>
+<li>เพิ่ม <b>บัญชีหลักได้ 1 บัญชี</b> + เปลี่ยนแปลงได้ด้วยตนเองผ่านแอป</li>
+<li><b>บัญชีกระแสรายวันที่รองรับ OD (Overdraft)</b> → <b>ห้ามผูก</b> ใน BAAC Mobile</li>
+<li>บัญชีเจ้าของคนเดียว (Single) และลูก...</li>
+</ol>
+</div>
+
+<div class="c ok">
+<b>💰 การขอวงเงินชั่วคราวผ่าน BAAC Mobile (3 ระดับ)</b>
+<table>
+<tr><th>ระดับ</th><th>วงเงิน</th><th>เงื่อนไข</th></tr>
+<tr><td>1</td><td><b>ไม่เกิน 50,000 บาท</b></td><td>ลูกค้าใหม่ทุกราย (ค่าเริ่มต้น)</td></tr>
+<tr><td>2</td><td><b>50,001 – 200,000 บาท</b></td><td>ต้องมีเหตุจำเป็น + ผ่านเงื่อนไข</td></tr>
+<tr><td>3</td><td><b>มากกว่า 200,000 บาท</b></td><td>ต้องมีเหตุจำเป็นร้ายแรง (ค่าศึกษา/ค่ารักษาพยาบาล)</td></tr>
+</table>
+<p style="margin-top:6px"><b>เหตุจำเป็นที่ใช้ได้</b>: ค่าบำรุงการศึกษา, ค่ารักษาพยาบาล — ลูกค้าทำได้ด้วยตนเอง (Self Service)</p>
+</div>
+
+<h3>🏪 4. ตัวแทนธนาคาร (Banking Agent)</h3>
+<div class="c info">
+<b>📋 ช่องทางการให้บริการผ่านตัวแทน</b>
+<ul>
+<li><b>รับฝากเงินสด</b></li>
+<li><b>ถอนเงินสด</b></li>
+<li><b>รับชำระค่าสินค้าและบริการ</b></li>
+</ul>
+<p style="margin-top:6px"><b>วัตถุประสงค์</b>: อำนวยความสะดวกผู้ใช้บริการ · ลดปริมาณคนที่เคาน์เตอร์สาขา · สร้างโอกาสทางธุรกิจขยายฐานลูกค้า</p>
+</div>
+
+<h3>💻 5. ผลิตภัณฑ์และบริการดิจิทัล</h3>
+<div class="c info">
+<b>ช่องทางดิจิทัลของ ธ.ก.ส.</b> — รายละเอียดเพิ่มเติมดูได้ที่ <a href="https://www.baac.or.th" target="_blank" style="color:#60a5fa">baac.or.th</a> และในแอป BAAC Mobile
+</div>
+
+<h3>📝 แบบทดสอบ — ธุรกิจอิเล็กทรอนิกส์ (15 ข้อ)</h3>
+<div class="quiz-block" data-quiz="ebanking">
+
+<div class="q-card" data-q="1" data-answer="b">
+<div class="q-num">ข้อ 1</div>
+<div class="q-topic">🔐 กุญแจ ATM</div>
+<p><b>กรณีสาขามีตำแหน่งผู้ช่วยผู้จัดการสาขา 2 อัตรา ผู้รับผิดชอบถือกุญแจ ATM คือใคร?</b></p>
+<div class="opt" data-opt="a">ผู้จัดการสาขา</div>
+<div class="opt" data-opt="b">ผู้ช่วยผู้จัดการสาขา #1</div>
+<div class="opt" data-opt="c">ผู้ช่วยผู้จัดการสาขา #2</div>
+<div class="opt" data-opt="d">พนักงานพัฒนาธุรกิจ</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ข) ผู้ช่วยผู้จัดการสาขา #1 (และผช.ผจข. #2 เป็นผู้รับผิดชอบแทน)</div>
+</div>
+
+<div class="q-card" data-q="2" data-answer="c">
+<div class="q-num">ข้อ 2</div>
+<div class="q-topic">🔐 กุญแจ ATM</div>
+<p><b>ผู้รับผิดชอบแทน สามารถถือกุญแจ ATM ได้กี่ชุดในเวลาเดียวกัน?</b></p>
+<div class="opt" data-opt="a">2 ชุด</div>
+<div class="opt" data-opt="b">3 ชุด</div>
+<div class="opt" data-opt="c">ไม่เกิน 1 ชุด</div>
+<div class="opt" data-opt="d">ได้ไม่จำกัด</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ค) ไม่เกิน 1 ชุด (จุดควบคุมข้อ 1)</div>
+</div>
+
+<div class="q-card" data-q="3" data-answer="b">
+<div class="q-num">ข้อ 3</div>
+<div class="q-topic">🔐 กุญแจ ATM</div>
+<p><b>กรณีผู้รับผิดชอบถือกุญแจไม่อยู่ ต้องทำอย่างไร?</b></p>
+<div class="opt" data-opt="a">รอจนกว่าจะกลับมา</div>
+<div class="opt" data-opt="b">มอบกุญแจให้ผู้รับผิดชอบแทน + จัดทำบันทึกส่งมอบ-รับมอบ</div>
+<div class="opt" data-opt="c">ให้ลูกค้ารอ</div>
+<div class="opt" data-opt="d">ปิดเครื่อง ATM ชั่วคราว</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ข) มอบกุญแจให้ผู้รับผิดชอบแทน + จัดทำบันทึกการส่งมอบ-รับมอบกุญแจ + ลงลายมือชื่อทุกครั้ง</div>
+</div>
+
+<div class="q-card" data-q="4" data-answer="a">
+<div class="q-num">ข้อ 4</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>การเปลี่ยนกล่องเงิน ATM ต้องทดสอบถอนเงินจำนวนเท่าไหร่?</b></p>
+<div class="opt" data-opt="a">2,800 บาท</div>
+<div class="opt" data-opt="b">1,000 บาท</div>
+<div class="opt" data-opt="c">5,000 บาท</div>
+<div class="opt" data-opt="d">10,000 บาท</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ก) 2,800 บาท — เพื่อป้องกันการบรรจุธนบัตรผิดกล่อง</div>
+</div>
+
+<div class="q-card" data-q="5" data-answer="d">
+<div class="q-num">ข้อ 5</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>คณะกรรมการตรวจนับเงินสดในเครื่อง ATM/CDM มีกี่คน?</b></p>
+<div class="opt" data-opt="a">1 คน</div>
+<div class="opt" data-opt="b">2 คน</div>
+<div class="opt" data-opt="c">4 คน</div>
+<div class="opt" data-opt="d">3 คน</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ง) 3 คน (ตรวจนับหน้ากล้อง CCTV)</div>
+</div>
+
+<div class="q-card" data-q="6" data-answer="c">
+<div class="q-num">ข้อ 6</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>การเปลี่ยนกล่องเงิน ATM ผู้ถือกุญแจชุดใดร่วมกัน?</b></p>
+<div class="opt" data-opt="a">ชุด ก + ข</div>
+<div class="opt" data-opt="b">ชุด ก + ค</div>
+<div class="opt" data-opt="c">ชุด ข + ค</div>
+<div class="opt" data-opt="d">ชุด ก + ข + ค</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ค) ชุด ข และ ชุด ค</div>
+</div>
+
+<div class="q-card" data-q="7" data-answer="a">
+<div class="q-num">ข้อ 7</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>กรณีลูกค้ายื่นคำร้องขอใช้บริการ ATM แต่เครื่องมีปัญหา สาขาต้องทำอย่างไร?</b></p>
+<div class="opt" data-opt="a">เปลี่ยนกล่องเงินทันที</div>
+<div class="opt" data-opt="b">คืนเงินสดให้ลูกค้า</div>
+<div class="opt" data-opt="c">แนะนำให้ไปสาขาอื่น</div>
+<div class="opt" data-opt="d">ปิดเครื่อง ATM</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ก) เปลี่ยนกล่องเงินทันที — <b>ห้ามสาขาคืนเงินสดให้ลูกค้าเองโดยเด็ดขาด</b></div>
+</div>
+
+<div class="q-card" data-q="8" data-answer="b">
+<div class="q-num">ข้อ 8</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>การบันทึกรายการผิดพลาดในระบบ TI/TO ATM ต้องแก้ไขอย่างไร?</b></p>
+<div class="opt" data-opt="a">แก้ไขโดยบันทึก TI/TO กลับรายการ</div>
+<div class="opt" data-opt="b">ยกเลิกรายการ (EC: Error Correct)</div>
+<div class="opt" data-opt="c">ลบแล้วบันทึกใหม่</div>
+<div class="opt" data-opt="d">แจ้งผู้บริหาร</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ข) ยกเลิกรายการ (EC) — <b>ห้ามแก้ไขโดยการบันทึก TI/TO กลับรายการ</b></div>
+</div>
+
+<div class="q-card" data-q="9" data-answer="d">
+<div class="q-num">ข้อ 9</div>
+<div class="q-topic">💵 เปลี่ยนกล่องเงิน</div>
+<p><b>หากเงินสดใน ATM ขาดบัญชีตั้งแต่เท่าไหร่ ต้องทำบันทึกพิเศษ?</b></p>
+<div class="opt" data-opt="a">1,000 บาท</div>
+<div class="opt" data-opt="b">5,000 บาท</div>
+<div class="opt" data-opt="c">20,000 บาท</div>
+<div class="opt" data-opt="d">10,000 บาท</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ง) 10,000 บาทขึ้นไป</div>
+</div>
+
+<div class="q-card" data-q="10" data-answer="c">
+<div class="q-num">ข้อ 10</div>
+<div class="q-topic">📱 BAAC Mobile</div>
+<p><b>ลูกค้าสมัคร BAAC Mobile ได้ตั้งแต่อายุเท่าไหร่?</b></p>
+<div class="opt" data-opt="a">18 ปีบริบูรณ์</div>
+<div class="opt" data-opt="b">20 ปีบริบูรณ์</div>
+<div class="opt" data-opt="c">15 ปีบริบูรณ์ขึ้นไป</div>
+<div class="opt" data-opt="d">12 ปีบริบูรณ์</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ค) 15 ปีบริบูรณ์ขึ้นไป (สัญชาติไทย)</div>
+</div>
+
+<div class="q-card" data-q="11" data-answer="b">
+<div class="q-num">ข้อ 11</div>
+<div class="q-topic">📱 BAAC Mobile</div>
+<p><b>อุปกรณ์ที่รองรับ BAAC Mobile ต้องใช้ iOS เวอร์ชันเท่าไหร่?</b></p>
+<div class="opt" data-opt="a">iOS 10 ขึ้นไป</div>
+<div class="opt" data-opt="b">iOS 13 ขึ้นไป</div>
+<div class="opt" data-opt="c">iOS 15 ขึ้นไป</div>
+<div class="opt" data-opt="d">iOS 17 ขึ้นไป</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ข) iOS เวอร์ชัน 13 ขึ้นไป (Android 7 ขึ้นไป)</div>
+</div>
+
+<div class="q-card" data-q="12" data-answer="a">
+<div class="q-num">ข้อ 12</div>
+<div class="q-topic">📱 BAAC Mobile</div>
+<p><b>1 CIF สามารถลงทะเบียน BAAC Mobile ได้กี่ User + กี่อุปกรณ์?</b></p>
+<div class="opt" data-opt="a">1 User + 1 อุปกรณ์</div>
+<div class="opt" data-opt="b">1 User + 2 อุปกรณ์</div>
+<div class="opt" data-opt="c">2 User + 1 อุปกรณ์</div>
+<div class="opt" data-opt="d">2 User + 2 อุปกรณ์</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ก) 1 User + 1 อุปกรณ์ (เท่านั้น)</div>
+</div>
+
+<div class="q-card" data-q="13" data-answer="c">
+<div class="q-num">ข้อ 13</div>
+<div class="q-topic">📱 BAAC Mobile</div>
+<p><b>ลูกค้าใหม่ทุกราย สามารถขอวงเงินชั่วคราวผ่าน BAAC Mobile ได้สูงสุดเท่าไหร่?</b></p>
+<div class="opt" data-opt="a">10,000 บาท</div>
+<div class="opt" data-opt="b">30,000 บาท</div>
+<div class="opt" data-opt="c">50,000 บาท</div>
+<div class="opt" data-opt="d">200,000 บาท</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ค) 50,000 บาท (วงเงินไม่เกิน 50,000 บาท — ระดับ 1)</div>
+</div>
+
+<div class="q-card" data-q="14" data-answer="b">
+<div class="q-num">ข้อ 14</div>
+<div class="q-topic">📱 BAAC Mobile</div>
+<p><b>เหตุจำเป็นที่ใช้ขอวงเงินชั่วคราวผ่าน BAAC Mobile ได้ คือข้อใด?</b></p>
+<div class="opt" data-opt="a">ซื้อของชำ</div>
+<div class="opt" data-opt="b">ค่าบำรุงการศึกษา / ค่ารักษาพยาบาล</div>
+<div class="opt" data-opt="c">จ่ายค่าเทอม</div>
+<div class="opt" data-opt="d">ซื้อรถ</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ข) ค่าบำรุงการศึกษา / ค่ารักษาพยาบาล (เท่านั้น)</div>
+</div>
+
+<div class="q-card" data-q="15" data-answer="c">
+<div class="q-num">ข้อ 15</div>
+<div class="q-topic">🏪 Banking Agent</div>
+<p><b>ตัวแทนธนาคาร (Banking Agent) ให้บริการอะไรบ้าง?</b></p>
+<div class="opt" data-opt="a">เปิดบัญชีใหม่</div>
+<div class="opt" data-opt="b">อนุมัติสินเชื่อ</div>
+<div class="opt" data-opt="c">รับฝากเงินสด / ถอนเงินสด / รับชำระค่าสินค้าและบริการ</div>
+<div class="opt" data-opt="d">โอนเงินระหว่างประเทศ</div>
+<div class="answer-hint" data-show="false"><b>✅ คำตอบ:</b> ค) รับฝากเงินสด / ถอนเงินสด / รับชำระค่าสินค้าและบริการ</div>
+</div>
+
+</div>
+<p style="text-align:center;margin-top:14px;color:#94a3b8;font-size:12px">💡 คลิกที่คำตอบเพื่อดูเฉลย | กด "ดูเฉลย" ทุกข้อเพื่อทบทวน</p>
 </section>
 
 <section id="s9">
@@ -773,6 +1072,7 @@ h4.div{margin:12px 0 6px;color:#f59e0b;border-bottom:1px solid #334155;padding-b
 </section>
 
 
+<script>
 // === Floating back to top ===
 (function(){
   const btn = document.createElement('a');
@@ -793,6 +1093,79 @@ h4.div{margin:12px 0 6px;color:#f59e0b;border-bottom:1px solid #334155;padding-b
   if(sb) sb.addEventListener('input',function(){
     const v = this.value.toLowerCase().trim();
     document.querySelectorAll('details').forEach(d=>{d.open=v.length>0?d.textContent.toLowerCase().includes(v):false});
+  });
+  // ====== E-BANKING QUIZ (inline in c9-content master) ======
+  function initEbankingQuiz(){
+    const block = document.querySelector('.quiz-block[data-quiz="ebanking"]');
+    if(!block) { console.warn('quiz block not found'); return; }
+    const cards = block.querySelectorAll('.q-card');
+    if(!cards.length) { console.warn('no quiz cards'); return; }
+
+    // make options clickable
+    cards.forEach(card=>{
+      const correct = card.dataset.answer;
+      card.querySelectorAll('.opt').forEach(opt=>{
+        opt.addEventListener('click', function(){
+          if(card.classList.contains('show-hint')) return;
+          card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel','correct','wrong','disabled'));
+          opt.classList.add('sel');
+          if(opt.dataset.opt === correct){
+            opt.classList.add('correct');
+            card.classList.add('correct','show-hint');
+          } else {
+            opt.classList.add('wrong');
+            card.classList.add('wrong','show-hint');
+            const right = card.querySelector('.opt[data-opt="'+correct+'"]');
+            if(right){ right.classList.add('correct','disabled'); }
+          }
+        });
+      });
+    });
+
+    // quiz actions
+    const actions = document.createElement('div');
+    actions.className = 'quiz-actions';
+    actions.innerHTML = '<button class="show-all" type="button">ดูเฉลยทั้งหมด</button><button class="reset" type="button">รีเซ็ต</button>';
+    block.parentNode.insertBefore(actions, block.nextSibling);
+
+    // score display
+    const score = document.createElement('div');
+    score.className = 'quiz-score';
+    score.style.display = 'none';
+    block.parentNode.insertBefore(score, actions.nextSibling);
+
+    function showAll(){
+      let correctCount = 0;
+      cards.forEach(card=>{
+        const ans = card.dataset.answer;
+        card.querySelectorAll('.opt').forEach(o=>{
+          o.classList.remove('sel','wrong');
+          o.classList.add('disabled');
+          if(o.dataset.opt === ans) o.classList.add('correct');
+        });
+        card.classList.add('show-hint');
+        if(card.querySelector('.opt[data-opt="'+ans+'"]').classList.contains('correct')) correctCount++;
+      });
+      score.innerHTML = '🏆 คุณตอบถูก <span>'+correctCount+'</span> / '+cards.length+' ข้อ';
+      score.style.display = 'block';
+    }
+    function reset(){
+      cards.forEach(card=>{
+        card.classList.remove('show-hint','correct','wrong');
+        card.querySelectorAll('.opt').forEach(o=>o.classList.remove('sel','correct','wrong','disabled'));
+      });
+      score.style.display = 'none';
+    }
+    actions.querySelector('.show-all').addEventListener('click', showAll);
+    actions.querySelector('.reset').addEventListener('click', reset);
+  }
+  // เรียกทันที + ลองหลาย triggers (DOM พร้อมอยู่แล้ว)
+  try { initEbankingQuiz(); } catch(e) { console.error('init err:', e); }
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', initEbankingQuiz);
+  }
+  window.addEventListener('load', function(){
+    setTimeout(initEbankingQuiz, 100);
   });
 })();
 </script>
