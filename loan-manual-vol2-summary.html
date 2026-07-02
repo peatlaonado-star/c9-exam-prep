@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📘 คู่มือปฏิบัติงานสินเชื่อด้านเกษตรกร เล่ม 2 — สรุปเนื้อหา | Genius 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--bg2:#0d1425;--surface:#131d33;--surface2:#1a2740;--surface3:#22324f;--gold:#d4942f;--gold2:#e8b84f;--gold-dim:rgba(212,148,47,0.12);--gold-soft:rgba(212,148,47,0.06);--green:#22a67e;--green-dim:rgba(34,166,126,0.12);--blue:#4b7bec;--blue-dim:rgba(75,123,236,0.10);--purple:#9772e6;--purple-dim:rgba(151,114,230,0.10);--red:#e55c5c;--red-dim:rgba(229,92,92,0.10);--cyan:#36b5c4;--cyan-dim:rgba(54,181,196,0.10);--text:#edf2f7;--text2:#94a3b8;--text3:#5a6a7e;--border:rgba(255,255,255,0.05);--radius:12px;--glow:0 0 60px rgba(212,148,47,0.04)}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:'Noto Sans Thai','Sarabun',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 600px 400px at 20% 30%,rgba(212,148,47,0.03),transparent 60%),radial-gradient(ellipse 500px 500px at 80% 20%,rgba(75,123,236,0.02),transparent 60%);pointer-events:none;z-index:0}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 12px;display:flex;gap:4px;flex-wrap:wrap;align-items:center;overflow-x:auto}
+nav a{color:var(--text2);text-decoration:none;font-size:12px;padding:4px 8px;border-radius:6px;white-space:nowrap;transition:.2s}
+nav a:hover{background:var(--gold-dim);color:var(--gold)}
+nav h1{font-size:13px;color:var(--gold);margin-right:8px;white-space:nowrap;font-weight:700}
+.ct{max-width:1000px;margin:0 auto;padding:20px 14px 80px;position:relative;z-index:1}
+.hero{text-align:center;padding:28px 12px 24px;border-bottom:2px solid var(--gold-dim);margin-bottom:24px}
+.hero h1{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2),#eacc7a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.hero p{color:var(--text2);font-size:14px}
+.badge{display:inline-block;margin:2px;padding:3px 10px;border-radius:14px;font-size:11px;font-weight:600}
+.badge.gold{background:rgba(212,148,47,0.15);color:#fbbf24}
+.badge.blue{background:rgba(75,123,236,0.15);color:#93c5fd}
+.badge.green{background:rgba(34,166,126,0.15);color:#34d399}
+.badge.red{background:rgba(229,92,92,0.15);color:#fca5a5}
+.badge.purple{background:rgba(151,114,230,0.15);color:#c4b5fd}
+.badge.cyan{background:rgba(54,181,196,0.15);color:#67e8f9}
+h2{font-size:20px;color:var(--gold);border-left:4px solid var(--gold);padding-left:12px;margin:28px 0 14px}
+h3{font-size:17px;color:var(--green);margin:18px 0 8px}
+h4{font-size:15px;color:var(--blue);margin:14px 0 6px}
+h5{font-size:14px;color:var(--cyan);margin:10px 0 4px}
+.c{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.c.info{border-left:4px solid var(--blue)}
+.c.warn{border-left:4px solid var(--red)}
+.c.tip{border-left:4px solid var(--gold)}
+.c.ok{border-left:4px solid var(--green)}
+.c.purple{border-left:4px solid var(--purple)}
+table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px;border-radius:8px;overflow:hidden}
+th{background:var(--surface2);color:var(--gold);padding:8px 10px;text-align:left;font-weight:600}
+td{padding:7px 10px;border-bottom:1px solid var(--border)}
+tr:hover td{background:var(--surface2)}
+ul,ol{padding-left:20px;margin:6px 0}
+li{margin-bottom:4px;font-size:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+details{margin:8px 0;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:6px 12px}
+details[open]{border-color:var(--green)}
+summary{cursor:pointer;padding:8px 0;font-weight:600;color:var(--blue);font-size:14px}
+summary::before{content:"▶";color:var(--gold);margin-right:8px;font-size:11px}
+details[open] summary::before{content:"▼"}
+.mnemo{background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid var(--gold);border-radius:var(--radius);padding:10px 14px;margin:8px 0;font-size:13px;color:#fbbf24;text-align:center}
+.scenario{background:var(--surface);border:1px dashed var(--blue);border-radius:var(--radius);padding:10px 14px;margin:8px 0;font-size:13px;color:#93c5fd}
+.table-wrap{overflow-x:auto}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:2px}
+.tag.r{background:var(--red-dim);color:#fca5a5}
+.tag.g{background:var(--green-dim);color:#34d399}
+.tag.b{background:var(--blue-dim);color:#93c5fd}
+.tag.y{background:var(--gold-dim);color:#fbbf24}
+.tag.p{background:var(--purple-dim);color:#c4b5fd}
+.flow{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;margin:6px 0;font-size:13px}
+.flow .step{background:var(--surface2);border-radius:6px;padding:4px 10px;color:var(--gold);font-weight:600}
+.flow .arrow{color:var(--text3);font-size:16px}
+.section-link{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;border-radius:8px;background:var(--gold-dim);color:var(--gold);font-size:12px;text-decoration:none;margin:4px 0;transition:.2s}
+.section-link:hover{background:var(--gold-dim);color:var(--gold2);transform:translateY(-1px)}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>📘 เล่ม 2</h1>
+  <a href="index.html">🏠 หน้าแรก</a>
+  <a href="loan-manual-vol2-quiz.html">📝 แบบทดสอบ</a>
+  <a href="#sec1">📌 วัตถุประสงค์การกู้</a>
+  <a href="#sec2">📌 หลักการให้กู้</a>
+  <a href="#sec3">📌 ขั้นตอนสินเชื่อ</a>
+  <a href="#sec4">📌 วิเคราะห์วงเงิน</a>
+  <a href="#sec5">📌 ประเภทสินเชื่อ</a>
+  <a href="#sec6">📌 พัฒนาคุณภาพชีวิต</a>
+  <a href="#sec7">📌 สินเชื่อพิเศษ</a>
+  <a href="#sec8">📌 สรุปสำคัญ</a>
+</nav>
+
+<div class="ct">
+
+<div class="hero">
+  <div><span class="badge gold">📋 คู่มือปฏิบัติงานสินเชื่อด้านเกษตรกร เล่ม 2</span></div>
+  <h1>ว่าด้วยการให้สินเชื่อ</h1>
+  <p>สรุปเนื้อหาจากคู่มือปฏิบัติงานสินเชื่อด้านเกษตรกร เล่ม 2 — ครอบคลุมหลักเกณฑ์ ข้อบังคับ กระบวนการ และประเภทสินเชื่อต่าง ๆ ของ ธ.ก.ส.</p>
+  <div style="margin-top:10px">
+    <span class="badge blue">📄 78 หน้า</span>
+    <span class="badge green">🎯 20 ข้อสอบท้ายเล่ม</span>
+    <span class="badge purple">📌 ฉ.44 + ฉ.45</span>
+  </div>
+</div>
+
+<!-- ====== สารบัญ ====== -->
+<details open>
+<summary>📑 สารบัญ (คลิกเพื่อเปิด/ปิด)</summary>
+<div class="c" style="font-size:13px">
+<ol>
+  <li><a href="#sec1" style="color:var(--gold);text-decoration:none">วัตถุประสงค์และหลักเกณฑ์การกู้เงิน (ข้อ 6, 8, 11, 12, 15)</a></li>
+  <li><a href="#sec2" style="color:var(--gold);text-decoration:none">หลักการให้กู้เงิน — แบ่งตามอาชีพและลักษณะการใช้เงินกู้</a></li>
+  <li><a href="#sec3" style="color:var(--gold);text-decoration:none">ขั้นตอนกระบวนการให้กู้เงินและเงื่อนไข (6 ขั้นตอน)</a></li>
+  <li><a href="#sec4" style="color:var(--gold);text-decoration:none">การวิเคราะห์เงินกู้ — 3 ระดับวงเงิน</a></li>
+  <li><a href="#sec5" style="color:var(--gold);text-decoration:none">การกำหนดมาตรฐานผลผลิต + หนังสือกู้เงิน (คสก./คสร.)</a></li>
+  <li><a href="#sec6" style="color:var(--gold);text-decoration:none">เงินกู้เพื่อพัฒนาคุณภาพชีวิต (ความรู้, การศึกษา, ที่อยู่อาศัย, สุขภาพ)</a></li>
+  <li><a href="#sec7" style="color:var(--gold);text-decoration:none">สินเชื่อพิเศษ — A-Cash, A-Cash Gold, ซื้อที่ดิน, สิ่งแวดล้อม</a></li>
+  <li><a href="#sec8" style="color:var(--gold);text-decoration:none">ตารางสรุปสำคัญสำหรับทบทวนก่อนสอบ</a></li>
+</ol>
+</div>
+</details>
+
+<!-- ==================================================================================== -->
+<!-- SEC 1: วัตถุประสงค์และหลักเกณฑ์ -->
+<!-- ==================================================================================== -->
+<section id="sec1">
+<h2>1. วัตถุประสงค์และหลักเกณฑ์การกู้เงิน</h2>
+
+<h3>ข้อ 6 — วัตถุประสงค์การกู้เงิน</h3>
+<div class="c info">
+  <strong>📌 วัตถุประสงค์การกู้เงินของเกษตรกร</strong> ให้เป็นไปตาม <span class="tag y">ข้อ 15 แห่งข้อบังคับฉบับที่ 44</span>
+  <ul>
+    <li>ธนาคารกำหนด <strong>อัตราส่วนขั้นต่ำแห่งการลงทุนของผู้กู้</strong> ไม่น้อยกว่า <span class="tag r">ร้อยละ 20</span> แห่งค่าลงทุนตามแผนงานหรือโครงการ</li>
+    <li>กรณีที่อัตราส่วนขั้นต่ำฯ <strong>น้อยกว่าร้อยละ 20</strong> → ให้อยู่ในอำนาจ <span class="tag b">ผู้ช่วยผู้จัดการสายงานบริหารงานสินเชื่อ</span></li>
+  </ul>
+</div>
+
+<h3>ข้อ 8 — การผ่อนผันราคาประเมินและวงเงินจำนอง</h3>
+<div class="c info">
+  <strong>📌 กรณีผ่อนผันราคาประเมินและวงเงินจำนอง</strong> — ให้ลูกค้ากู้เงินมากกว่าร้อยละ 50 แต่ไม่เกินร้อยละ 80
+  <ul>
+    <li>✅ อยู่ในอำนาจ <span class="tag y">ผู้จัดการสาขา</span> สามารถดำเนินการแทนธนาคารได้</li>
+    <li>✅ ผู้ช่วยผู้จัดการสาขาทำการแทนได้ โดยผู้จัดการสาต้องมอบหมายหน้าที่ให้เป็นลายลักษณ์อักษร</li>
+  </ul>
+</div>
+
+<h3>ข้อ 11 — การอนุมัติรายงานเบิกเงิน</h3>
+<div class="c info">
+  <strong>📌 ผู้อนุมัติรายงานเบิกเงิน</strong> — ให้เป็นไปตามระเบียบที่กำหนด โดยผู้มีอำนาจตามระดับชั้น
+</div>
+
+<h3>ข้อ 12 — การตรวจงานตามแผนงาน</h3>
+<div class="c info">
+  <strong>📌 การตรวจงานตามแผนงาน/โครงการที่ใช้เงินกู้</strong> อยู่ในอำนาจของ:
+  <ul>
+    <li>ผู้จัดการสาขา</li>
+    <li>ผู้ช่วยผู้จัดการสาขา</li>
+    <li>หัวหน้าหน่วยอำเภอ</li>
+    <li>พนักงานพัฒนาธุรกิจ</li>
+  </ul>
+</div>
+
+<h3>ข้อ 15 (แห่งข้อบังคับฉบับที่ 44) — วัตถุประสงค์การให้เกษตรกรกู้เงิน</h3>
+<div class="c tip">
+  <strong>⭐ วัตถุประสงค์ 7 ประการ</strong>
+  <ol>
+    <li><strong>ค่าใช้จ่ายในการประกอบอาชีพ</strong> หรือฟื้นฟูการประกอบอาชีพ</li>
+    <li><strong>ค่าลงทุน</strong> — สินทรัพย์ที่มีอายุการใช้ > 1 ปี</li>
+    <li><strong>ชำระหนี้สินภายนอก</strong> — แก้ไขหนี้ที่มีดอกเบี้ยสูง</li>
+    <li><strong>พัฒนาความรู้</strong> — อบรม สัมมนา ดูงาน ฝึกงาน</li>
+    <li><strong>พัฒนาคุณภาพชีวิต</strong> — การศึกษา รักษาพยาบาล ที่อยู่อาศัย</li>
+    <li><strong>รอการขายผลิตผล</strong> — ชะลอการขายเพื่อไม่ให้ถูกกดราคา</li>
+    <li><strong>ค่าใช้จ่าย/ค่าลงทุนตามโครงการ</strong> ที่ได้รับความเห็นชอบจากคณะกรรมการ</li>
+  </ol>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 2: หลักการให้กู้เงิน -->
+<!-- ==================================================================================== -->
+<section id="sec2">
+<h2>2. หลักการให้กู้เงิน</h2>
+
+<h3>2.1 ตามลักษณะของการประกอบอาชีพ</h3>
+<div class="c">
+  <ul>
+    <li>🌾 <strong>ทำนา, ทำไร่, ทำสวน</strong> — อาชีพเกษตรกรรมหลัก</li>
+    <li>🐄 <strong>เลี้ยงสัตว์, ทำประมง</strong> — ปศุสัตว์และประมง</li>
+    <li>🪱 <strong>เลี้ยงไหม, ทำนาเกลือ</strong> — อาชีพเฉพาะทาง</li>
+    <li>🌲 <strong>ปลูกไม้สน, ปลูกป่า</strong> — อาชีพระยะยาว</li>
+  </ul>
+</div>
+
+<h3>2.2 ตามลักษณะของการใช้เงินกู้</h3>
+<div class="grid2">
+<div class="c tip">
+  <strong>💰 ค่าใช้จ่าย</strong><br>
+  เงินทุนหมุนเวียนในรอบปี (ผลิตรอบเดียวหรือหลายรอบ)
+</div>
+<div class="c purple">
+  <strong>🏗️ ค่าลงทุน</strong><br>
+  สินทรัพย์ที่มีระยะเวลา > 1 ปี จึงจะให้ผลตอบแทนคุ้มค่า
+</div>
+<div class="c ok">
+  <strong>🔄 ฟื้นฟูอาชีพ</strong><br>
+  เพิ่มรายได้ให้ลูกค้าที่ประสบปัญหาจนไม่สามารถชำระหนี้
+</div>
+<div class="c info">
+  <strong>📚 พัฒนาความรู้</strong><br>
+  อบรม สัมมนา ดูงาน หรือฝึกงานด้านเกษตร/อาชีพอื่น
+</div>
+<div class="c gold" style="border-left:4px solid var(--gold);background:var(--gold-dim)">
+  <strong>🏡 พัฒนาคุณภาพชีวิต</strong><br>
+  การศึกษา รักษาพยาบาล ปรับปรุง/ซ่อมแซมที่อยู่อาศัย
+</div>
+<div class="c warn">
+  <strong>💳 ชำระหนี้สินภายนอก</strong><br>
+  แก้หนี้ที่มีดอกเบี้ยสูง เสี่ยงสูญเสียที่ดินทำกิน
+</div>
+<div class="c" style="border-left:4px solid var(--cyan)">
+  <strong>📦 รอการขายผลิตผล</strong><br>
+  ชะลอการขายผลิตผลเกษตรที่ผลิตพร้อมกันจำนวนมาก
+</div>
+<div class="c" style="border-left:4px solid var(--purple)">
+  <strong>📋 ค่าใช้จ่าย/ลงทุนตามโครงการ</strong><br>
+  โดยได้รับความเห็นชอบจากคณะกรรมการ
+</div>
+</div>
+
+<h3>2.3 หลักเกณฑ์วิเคราะห์ตัวผู้กู้ (5Cs + เพิ่มเติม)</h3>
+<div class="c info">
+  <strong>🧑‍🌾 ปัจจัยที่ต้องวิเคราะห์:</strong>
+  <div class="grid2" style="margin-top:8px">
+    <div><span class="tag b">💰</span> ฐานะทางการเงิน</div>
+    <div><span class="tag y">⭐</span> ชื่อเสียง ความซื่อสัตย์สุจริต</div>
+    <div><span class="tag g">📊</span> ประวัติการใช้/ชำระหนี้</div>
+    <div><span class="tag p">🎓</span> ความรู้/ประสบการณ์เกี่ยวกับอาชีพ</div>
+    <div><span class="tag b">📋</span> ความต้องการเงินกู้ตามแผนงาน</div>
+    <div><span class="tag g">💵</span> รายได้</div>
+    <div><span class="tag y">✅</span> ความสามารถชำระหนี้</div>
+    <div><span class="tag r">🏠</span> หลักประกันเงินกู้</div>
+  </div>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 3: ขั้นตอนกระบวนการให้กู้เงิน -->
+<!-- ==================================================================================== -->
+<section id="sec3">
+<h2>3. ขั้นตอนกระบวนการให้กู้เงินและเงื่อนไข (6 ขั้นตอน)</h2>
+
+<div class="c tip">
+  <strong>⏱️ กระบวนการ 6 ขั้นตอนตามข้อบังคับฉบับที่ 44 และ ฉ.45</strong>
+</div>
+
+<div class="flow">
+  <span class="step">1</span> รับแจ้ง + ชี้แจง
+  <span class="arrow">→</span>
+  <span class="step">2</span> สอบ สืบ ปรับปรุง
+  <span class="arrow">→</span>
+  <span class="step">3</span> วิเคราะห์เงินกู้
+  <span class="arrow">→</span>
+  <span class="step">4</span> ตรวจทาน + ให้ความเห็น
+  <span class="arrow">→</span>
+  <span class="step">5</span> พิจารณาอนุมัติ
+  <span class="arrow">→</span>
+  <span class="step">6</span> แจ้งผล + จ่ายเงิน
+</div>
+
+<h3>ขั้นตอนที่ 1 — รับแจ้งความประสงค์ / ชี้แจงหลักเกณฑ์</h3>
+<div class="c">
+  <ul>
+    <li>🔍 ตรวจสอบคุณสมบัติเบื้องต้น — สถานะบุคคลล้มละลาย, บุคคลเฝ้าระวัง, ประวัติการเงิน</li>
+    <li>📢 ชี้แจงหลักเกณฑ์ เงื่อนไข และขั้นตอนให้ลูกค้าเข้าใจครบถ้วน</li>
+  </ul>
+</div>
+
+<h3>ขั้นตอนที่ 2 — สอบ สืบ ปรับปรุงข้อมูล</h3>
+<div class="c">
+  <ul>
+    <li>📝 สอบถามวัตถุประสงค์ จำนวนเงินกู้ ทรัพย์สิน หนี้สิน รายได้ รายจ่าย</li>
+    <li>🔄 ปรับปรุงข้อมูลลูกค้าให้เป็นปัจจุบัน — บันทึกใบคำขอสินเชื่อ + จัดทำเอกสารประกอบ</li>
+    <li>📊 สืบค้นรายงานข้อมูลเครดิต — ตรวจประวัติชำระหนี้ ภาระหนี้ ความสามารถก่อหนี้</li>
+  </ul>
+</div>
+
+<h3>ขั้นตอนที่ 3 — วิเคราะห์เงินกู้</h3>
+<div class="c info">
+  <p><strong>แบ่งตามวงเงินกู้ 3 ระดับ</strong> (ดูรายละเอียดใน <a href="#sec4" style="color:var(--gold)">หัวข้อ 4</a>)</p>
+  <ul>
+    <li>💰 ≤ 500,000 บาท → Mini CAP / W/C</li>
+    <li>💰 500,001 – 3,000,000 บาท → AGRI CAP Branch / SMAE CAP Branch</li>
+    <li>💰 > 3,000,000 บาท → โครงการละเอียด + อัตราส่วนทางการเงิน</li>
+  </ul>
+</div>
+
+<h3>ขั้นตอนที่ 4 — ตรวจทานและให้ความเห็น</h3>
+<div class="c">
+  <p>ตรวจสอบความถูกต้องครบถ้วนของเอกสาร + วิเคราะห์กลั่นกรองข้อมูล</p>
+  <table>
+    <tr><th>ระดับวงเงิน</th><th>ผู้มีอำนาจ</th></tr>
+    <tr><td>≤ 500,000 บาท</td><td>หัวหน้าหน่วยอำเภอ</td></tr>
+    <tr><td>≤ 1,000,000 บาท</td><td>ผู้ช่วยผู้จัดการสาขา</td></tr>
+    <tr><td>≤ 3,000,000 บาท</td><td>ผู้จัดการสาขา</td></tr>
+  </table>
+</div>
+
+<h3>ขั้นตอนที่ 5 — พิจารณาอนุมัติ</h3>
+<div class="c">
+  <p>อำนาจการอนุมัติตามระเบียบฉบับที่ 89 ว่าด้วยการพิจารณาอนุมัติสินเชื่อ</p>
+</div>
+
+<h3>ขั้นตอนที่ 6 — แจ้งผลและจ่ายเงิน</h3>
+<div class="c">
+  <ul>
+    <li>📨 พนักงานพัฒนาธุรกิจ (พพธ.) แจ้งผลอนุมัติและเงื่อนไขให้ลูกค้าทราบ</li>
+    <li>📄 หนังสือกู้เงินที่อนุมัติแล้ว — รับเงินกู้ภายใน <span class="tag r">3 เดือน</span> นับจากวันอนุมัติ (ถ้าครบกำหนด → ประทับ "ยกเลิก")</li>
+    <li>💀 <strong>กรณีลูกค้าถึงแก่ความตาย:</strong>
+      <ul>
+        <li>ก่อนวันนัดโอนเงิน → ยกเลิกการโอน ปรับปรุงบัญชี</li>
+        <li>ตั้งแต่วันที่ระบุโอน → ถือว่าถูกต้อง ไม่ต้องปรับปรุง</li>
+      </ul>
+    </li>
+    <li>⏰ กรณีสิ้นสุดสัญญา + ไม่มีหนี้คงเหลือ → ยกเลิกหนังสือกู้โดยปริยาย</li>
+    <li>🔄 กรณีหนังสือกู้ฉบับเดิมสิ้นสุด ยกเลิก หรือเปลี่ยนวงเงิน → ดำเนินการตามระเบียบ</li>
+  </ul>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 4: วิเคราะห์วงเงินกู้ -->
+<!-- ==================================================================================== -->
+<section id="sec4">
+<h2>4. การวิเคราะห์เงินกู้ — 3 ระดับวงเงิน</h2>
+
+<h3>ระดับที่ 1: วงเงินรวม ≤ 500,000 บาท</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>ประเภท</th><th>สูตร/หลักเกณฑ์</th></tr>
+  <tr>
+    <td>🌾 เกษตร</td>
+    <td><strong>Mini CAP</strong> — ค่าใช้จ่ายในการผลิต แต่ไม่เกิน <span class="tag r">70%</span> ของรายได้ (ไม่นำค่าใช้จ่ายในครัวเรือนมากำหนดวงเงินกู้)</td>
+  </tr>
+  <tr>
+    <td>💼 อาชีพอื่น</td>
+    <td><strong>W/C</strong> = ลูกหนี้การค้า + สต็อก — เจ้าหนี้การค้า<br>
+    ใช้อัตราส่วน: DSCR, ICR, LTV, WCR</td>
+  </tr>
+</table>
+</div>
+
+<h3>ระดับที่ 2: วงเงิน > 500,000 บาท แต่ ≤ 3,000,000 บาท</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>ประเภท</th><th>สูตร/หลักเกณฑ์</th></tr>
+  <tr>
+    <td>🌾 เกษตร</td>
+    <td><strong>AGRI CAP Branch</strong> — ประมาณการรายได้-ค่าใช้จ่ายใน 1 รอบการผลิต ตามข้อเท็จจริงของผู้ขอกู้</td>
+  </tr>
+  <tr>
+    <td>💼 อาชีพอื่น</td>
+    <td><strong>SMAE CAP Branch</strong> หรือ <strong>W/C</strong> = ลูกหนี้การค้า + สต็อก — เจ้าหนี้การค้า<br>
+    อัตราส่วน: D/E, DSCR, ICR, LTV, WCR</td>
+  </tr>
+</table>
+</div>
+<ul>
+  <li>✅ กำหนดวงเงินกู้ได้ไม่เกิน <span class="tag r">80%</span> ของค่าลงทุน</li>
+  <li>📊 วิเคราะห์ DSCR, ICR, LTV, D/E, LTD/E, NPV, IRR, B/C, PB</li>
+  <li>⭐ <strong>หลักสำคัญ:</strong> พิจารณาความสามารถชำระหนี้เป็นหลัก</li>
+  <li>💰 รายได้รวมทั้งหมด — ต้นทุนการผลิต — ค่าใช้จ่าย = ความสามารถชำระหนี้</li>
+</ul>
+
+<h3>ระดับที่ 3: วงเงิน > 3,000,000 บาท</h3>
+<div class="c purple">
+  <strong>📋 ต้องจัดทำเป็นโครงการโดยละเอียด</strong>
+  <ul>
+    <li>แสดงข้อมูลโดยละเอียดของแผนการลงทุน</li>
+    <li>ใช้เครื่องมือวิเคราะห์ทางการเงิน: NPV, IRR, B/C Ratio, Payback Period</li>
+    <li>ประเมินความเสี่ยงและผลตอบแทนของโครงการ</li>
+  </ul>
+</div>
+
+<h3>หลักเกณฑ์การวิเคราะห์โดยรวม</h3>
+<div class="c info">
+  <ul>
+    <li>✅ กำหนดวงเงินกู้ได้ไม่เกิน <span class="tag r">80%</span> ของมูลค่าการลงทุน (ตามข้อมูลที่พิสูจน์และเชื่อถือได้)</li>
+    <li>✅ ได้ส่วนร่วมของผู้กู้ไม่น้อยกว่า <span class="tag r">20%</span> ของค่าลงทุน</li>
+    <li>⭐ <strong>พิจารณาความสามารถชำระหนี้เป็นหลักสำคัญที่สุด</strong></li>
+  </ul>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 5: มาตรฐานผลผลิต + หนังสือกู้ -->
+<!-- ==================================================================================== -->
+<section id="sec5">
+<h2>5. การกำหนดมาตรฐานผลผลิต + หนังสือกู้เงิน</h2>
+
+<h3>5.1 การกำหนดมาตรฐานผลผลิตและมูลค่าผลิตภัณฑ์</h3>
+<div class="c info">
+  <strong>วัตถุประสงค์</strong>
+  <ol>
+    <li>📊 เป็นเกณฑ์ในการประเมินรายได้และค่าใช้จ่ายในการผลิต</li>
+    <li>🌾 กำหนดมาตรฐานผลผลิตทางการเกษตรของแต่ละพื้นที่</li>
+    <li>🏦 เป็นเครื่องมืออำนวยสินเชื่อธนาคารที่มีมาตรฐาน</li>
+    <li>📉 ลดความเสี่ยงในการให้สินเชื่อธนาคาร</li>
+    <li>🛡️ ป้องกันความเสียหายที่จะเกิดขึ้นจากการประกอบอาชีพ</li>
+  </ol>
+</div>
+<div class="c">
+  <strong>ขั้นตอนปฏิบัติงาน</strong><br>
+  รวบรวมข้อมูลการผลิตทางการเกษตรทั้งด้านพืชและสัตว์ของแต่ละพื้นที่ → กำหนดมาตรฐาน → ใช้เป็นเกณฑ์สินเชื่อ
+</div>
+
+<h3>5.2 หนังสือกู้เงิน — เครดิตเงินสด</h3>
+
+<h4>5.2.1 เงินกู้เครดิตเงินสดแบบรับรองรับผิดอย่างลูกหนี้ร่วมกัน (คสก.)</h4>
+<div class="c">
+  <ul>
+    <li><strong>วงเงินสูงสุด:</strong> ต่อรายไม่เกิน <span class="tag r">200,000 บาท</span></li>
+    <li><strong>ผู้กู้:</strong> ลูกค้าในกลุ่มเดียวกัน <span class="tag r">อย่างน้อย 5 คน</span> ขึ้นไป</li>
+    <li><strong>ลูกค้าแต่ละคน</strong> อาจเป็นผู้รับรองรับผิดในสัญญา คสก. มากกว่า 1 สัญญาได้</li>
+    <li><strong>ระยะเวลาหนังสือกู้:</strong> ตามความเหมาะสม แต่ไม่เกิน <span class="tag r">5 ปี</span> นับแต่วันทำหนังสือกู้</li>
+    <li><strong>ชำระคืนต้นเงินกู้:</strong> ภายในไม่เกิน 12 เดือน (มีเหตุพิเศษไม่เกิน 18 เดือน)</li>
+  </ul>
+</div>
+
+<h4>5.2.2 เงินกู้เครดิตเงินสดแบบรายคน (คสร.)</h4>
+<div class="c">
+  <ul>
+    <li><strong>วงเงิน:</strong> ตามความเหมาะสมของค่าใช้จ่ายการผลิต</li>
+    <li><strong>หลักประกัน:</strong> บุคคลค้ำประกัน / จำนอง / อื่น ๆ ตามธนาคารกำหนด</li>
+  </ul>
+</div>
+
+<div class="c warn">
+  <strong>⚠️ ข้อควรจำ</strong>
+  <ul>
+    <li>จำนวนต้นเงินกู้ที่จะเบิก + ต้นเงินกู้คงเป็นหนี้ <strong>ต้องไม่เกินวงเงินกู้ที่ธนาคารกำหนด</strong></li>
+    <li>กำหนดระยะเวลาหนังสือกู้ตามความเหมาะสม แต่ไม่เกิน <span class="tag r">5 ปี</span></li>
+  </ul>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 6: เงินกู้ค่าลงทุน + พัฒนาคุณภาพชีวิต -->
+<!-- ==================================================================================== -->
+<section id="sec6">
+<h2>6. ประเภทเงินกู้พิเศษและพัฒนาคุณภาพชีวิต</h2>
+
+<h3>6.1 เงินกู้เพื่อเป็นค่าลงทุนในการประกอบอาชีพเกษตรกรรม</h3>
+<div class="c info">
+  <strong>📌 หลักเกณฑ์สำคัญ</strong>
+  <ul>
+    <li>💰 ผู้กู้ต้องมีส่วนร่วมลงทุนเองไม่น้อยกว่า <span class="tag r">20%</span> ของค่าลงทุนทั้งหมด (กรณีกู้ > 50,000 บาท)</li>
+    <li>📅 จ่ายเงินกู้เป็นรายงวดตามความก้าวหน้าโครงการ</li>
+    <li>🚫 หากใช้เงินกู้ไม่ถูกต้องตามวัตถุประสงค์ → ระงับงวดถัดไป</li>
+    <li>📢 แจ้งธนาคารหากจะลงทุนเพิ่ม (กระทบกระแสเงินสด)</li>
+    <li>⏰ ระยะเวลาชำระหนี้ไม่เกิน <span class="tag r">15 ปี</span> (มีเหตุพิเศษไม่เกิน <span class="tag r">20 ปี</span>) — ปลอดต้นไม่เกิน 5 ปีแรก</li>
+    <li>🏗️ ก่อสร้าง 100,000 - 500,000 บาท ต้องมีแบบแปลนคร่าว ๆ</li>
+    <li>🏠 ใช้ที่ตั้งโครงการเป็นหลักประกันลำดับแรก (ยกเว้นมีเหตุผ่อนผัน)</li>
+  </ul>
+</div>
+
+<details>
+<summary>🌳 กรณีที่ดินในเขตป่าสงวน/เขตหวงห้าม</summary>
+<div class="c" style="margin-top:6px">
+  <ul>
+    <li>ต้องมีหนังสืออนุญาตให้เข้าทำประโยชน์</li>
+    <li>ที่ดินเช่า → ต้องมีหนังสือแสดงสิทธิ + สัญญาเช่าทุกกรณี</li>
+    <li>ที่ดินถือครองมือเปล่า → ต้องไม่อยู่ในเขตป่าสงวน/สาธารณะประโยชน์ + มีลู่ทางได้กรรมสิทธิ์ในอนาคต</li>
+  </ul>
+</div>
+</details>
+
+<h3>6.2 เงินกู้เพื่อพัฒนาความรู้</h3>
+<div class="c">
+  <strong>📌 หลักเกณฑ์</strong>
+  <ul>
+    <li>ผู้กู้ต้องเป็นลูกค้า <span class="tag y">ฉ.44</span> หรือ <span class="tag y">ฉ.45</span></li>
+    <li>ผู้เข้ารับการพัฒนาความรู้ = ลูกค้า หรือบุคคลในครอบครัว</li>
+    <li>ต้องมีคุณสมบัติตามระเบียบที่แหล่งให้ความรู้กำหนด</li>
+  </ul>
+  <strong>💰 วงเงินกู้:</strong>
+  <ul>
+    <li>✅ <strong>มีรายได้สุทธิเพียงพอ</strong> ชำระหนี้ได้ภายในรอบปีการผลิต → กู้เป็น <span class="tag g">ค่าใช้จ่าย</span></li>
+    <li>❌ <strong>มีรายได้สุทธิไม่เพียงพอ</strong> → กู้เป็น <span class="tag b">ค่าลงทุน</span> (ใช้หลักประกันตามข้อบังคับ)</li>
+  </ul>
+</div>
+
+<h3>6.3 เงินกู้เพื่อพัฒนาคุณภาพชีวิตด้านการศึกษา</h3>
+<div class="c info">
+  <strong>📌 หลักเกณฑ์</strong>
+  <ul>
+    <li>ผู้กู้ต้องเป็นลูกค้า <span class="tag y">ฉ.44</span> หรือ <span class="tag y">ฉ.45</span></li>
+    <li>ต้องมีคุณสมบัติตามระเบียบการคัดเลือกบุคคลเข้าศึกษา</li>
+    <li>ต้องเป็นผู้ที่ <strong>ไม่ได้รับเงินกู้ยืมเพื่อการศึกษาจากแหล่งอื่น</strong> หรือไม่อยู่ระหว่างขอกู้ยืม</li>
+  </ul>
+  <strong>💵 ค่าใช้จ่ายที่ครอบคลุม:</strong>
+  <ul>
+    <li>ค่าบำรุง / ค่าเล่าเรียน / ค่าลงทะเบียน / ค่าธรรมเนียม</li>
+    <li>ค่าอุปกรณ์การศึกษา / ค่าครองชีพ (ค่าเครื่องเขียน, ที่พัก, ค่าใช้จ่ายส่วนตัว)</li>
+  </ul>
+</div>
+
+<h3>6.4 เงินกู้เพื่อพัฒนาคุณภาพชีวิตด้านที่อยู่อาศัย</h3>
+<div class="c tip">
+  <strong>🏠 วัตถุประสงค์</strong>
+  <ul>
+    <li>ซื้อที่ดินเพื่อปลูกสร้างที่อยู่อาศัย</li>
+    <li>ซื้อที่ดินพร้อมสิ่งปลูกสร้าง</li>
+    <li>ซื้อที่อยู่อาศัย</li>
+    <li>สร้าง / ต่อเติม / ปรับปรุง / ซ่อมแซมที่อยู่อาศัย</li>
+  </ul>
+  <strong>💰 วงเงินกู้ขั้นสูง</strong>
+  <ul>
+    <li>📉 รายได้ไม่ประจำ → กู้ไม่เกิน <span class="tag r">3 เท่า</span> ของรายได้หลังหักค่าใช้จ่ายต่อปี</li>
+    <li>📈 รายได้ประจำและชำระหนี้ได้ทุกเดือน → กู้ไม่เกิน <span class="tag r">30 เท่า</span> ของรายได้ประจำต่อเดือนหลังหักค่าใช้จ่าย</li>
+    <li>⚠️ รวมสัญญาเงินกู้พัฒนาคุณภาพชีวิตด้านที่อยู่อาศัย <strong>ต้องไม่เกิน 3 ล้านบาท</strong></li>
+  </ul>
+</div>
+
+<h4>📌 หลักประกันเงินกู้ที่อยู่อาศัย</h4>
+<div class="c">
+  <ul>
+    <li>🏠 อสังหาริมทรัพย์จำนอง / พันธบัตรรัฐบาล / เงินฝาก</li>
+    <li>👥 ลูกค้าประจำสาขาหรือบุคคลอื่นค้ำประกัน <span class="tag r">อย่างน้อย 2 คน</span></li>
+    <li>📝 กรณีเจตนาให้บุคคลในครอบครัวเป็นเจ้าของ → ต้องทำหนังสือรับรองรับผิดอย่างลูกหนี้ร่วม</li>
+    <li>🛡️ กรณีกู้เพื่อตนเองแต่มีครอบครัวอยู่อาศัยร่วม → ต้องให้บุคคลดังกล่าวทำหนังสือค้ำประกันเพิ่ม</li>
+    <li>🔥 แนะนำทำประกันวินาศภัยสิ่งปลูกสร้าง (จ่ายเป็นรายปี ห้ามบังคับจ่ายคราวเดียว)</li>
+    <li>⚠️ <strong>ห้ามบังคับ</strong> ให้ลูกค้าสมัครสมาคมฌาปนกิจสงเคราะห์ผู้ฝากเงิน ธ.ก.ส. หรือทำประกันชีวิต (แนะนำได้เท่านั้น)</li>
+  </ul>
+</div>
+
+<h4>📌 ระยะเวลาชำระคืนที่อยู่อาศัย</h4>
+<div class="c" style="text-align:center;font-size:15px">
+  ⏰ ชำระคืนเสร็จไม่เกิน <span class="tag r">15 ปี</span> (มีเหตุพิเศษไม่เกิน <span class="tag r">20 ปี</span>)
+</div>
+
+<h3>6.5 เงินกู้เพื่อพัฒนาคุณภาพชีวิตด้านสุขภาพ/รักษาพยาบาล</h3>
+<div class="c ok">
+  <strong>📌 คุณสมบัติผู้ใช้เงินกู้</strong> — ผู้กู้หรือบุคคลในครอบครัว
+  <ul>
+    <li>🩺 จัดทำหลักประกันสุขภาพ (ซื้อประกันชีวิต/สุขภาพ)</li>
+    <li>💉 ป้องกันตนเองจากโรคภัย (ตรวจสุขภาพประจำปี, ฉีดวัคซีน)</li>
+    <li>🏥 รักษาพยาบาลในสถานพยาบาลรัฐหรือเอกชน</li>
+  </ul>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 7: สินเชื่อพิเศษ -->
+<!-- ==================================================================================== -->
+<section id="sec7">
+<h2>7. สินเชื่อพิเศษ — A-Cash, A-Cash Gold, ซื้อที่ดิน, สิ่งแวดล้อม</h2>
+
+<h3>7.1 สินเชื่อเงินด่วน (A-Cash)</h3>
+<div class="c cyan" style="border-left:4px solid var(--cyan);background:var(--cyan-dim)">
+  <strong>⚡ สินเชื่อเงินด่วนสำหรับเกษตรกร — A-Cash</strong>
+  <p>สินเชื่อที่ให้วงเงินกู้หมุนเวียนระยะสั้นแก่ลูกค้าเกษตรกร เพื่อเป็นค่าใช้จ่ายในการประกอบอาชีพหรือค่าใช้จ่ายฉุกเฉิน</p>
+</div>
+
+<h4>📌 คุณสมบัติผู้กู้ A-Cash</h4>
+<div class="c">
+  <ul>
+    <li>✅ ต้องเป็นลูกค้าชั้นดี <span class="tag y">AA ขึ้นไป</span></li>
+    <li>✅ ชำระหนี้ต่อเนื่อง ≥ <span class="tag r">1 ปี</span></li>
+    <li>✅ ต้องไม่มีบัญชี A-Cash หรือ A-Cash Gold ค้างอยู่</li>
+    <li>✅ ไม่มีหนี้ค้างชำระ หรือสัญญา TDR (ปรับปรุงโครงสร้างหนี้)</li>
+  </ul>
+</div>
+
+<h4>💰 วงเงินและเงื่อนไข A-Cash</h4>
+<div class="table-wrap">
+<table>
+  <tr><th>รายการ</th><th>รายละเอียด</th></tr>
+  <tr><td>วงเงินกู้สูงสุด</td><td><span class="tag r">50,000 บาท</span> ต่อราย ต่อครั้ง</td></tr>
+  <tr><td>วัตถุประสงค์</td><td>ค่าใช้จ่ายจำเป็นในครัวเรือน</td></tr>
+  <tr><td>หลักประกัน</td><td>อสังหาริมทรัพย์จำนอง (80%), พันธบัตร (80%), หรือค้ำประกัน 2 คน</td></tr>
+  <tr><td>ดอกเบี้ย</td><td><span class="tag y">MRR</span></td></tr>
+  <tr><td>ช่องทางเบิก</td><td>🏦 สาขา | 💳 ATM | 📱 BAAC Mobile</td></tr>
+  <tr><td>ชำระคืน</td><td>ภายใน <span class="tag r">12 เดือน</span></td></tr>
+  <tr><td>Market Code</td><td><span class="tag b">1005</span></td></tr>
+</table>
+</div>
+
+<h3>7.2 สินเชื่อเงินด่วนสำหรับลูกค้าชั้นดี (A-Cash Gold)</h3>
+<div class="c gold" style="border-left:4px solid var(--gold);background:var(--gold-dim)">
+  <strong>🥇 A-Cash Gold — สำหรับลูกค้าชั้นดี (AAA/AAA+)</strong>
+  <ul>
+    <li>✅ เป็นลูกค้าตาม <span class="tag y">ฉ.44</span> ที่ได้รับการจัดประวัติการชำระหนี้เป็น <span style="color:var(--gold);font-weight:700">AAA หรือ AAA+</span></li>
+    <li>💰 วงเงินสูงสุด <span class="tag r">100,000 บาท</span> ต่อราย</li>
+    <li>🏠 หลักประกันใช้ได้ถึง <span class="tag r">95%</span> ของวงเงินจำนอง</li>
+    <li>💵 ดอกเบี้ย <span class="tag y">MRR</span></li>
+    <li>⚡ อนุมัติรวดเร็ว เอกสารน้อยกว่า A-Cash ปกติ</li>
+    <li>📌 Market Code: <span class="tag b">2409</span></li>
+  </ul>
+</div>
+
+<h3>7.3 การให้กู้เงินเพื่อซื้อที่ดินทำการเกษตร</h3>
+<div class="c info">
+  <strong>📌 หลักเกณฑ์และเงื่อนไข</strong>
+  <ol>
+    <li><strong>ที่ดินที่จะซื้อ</strong> ต้องเป็นที่ดินเพื่อใช้ทำการเกษตรหรือใช้เป็นที่อยู่อาศัยเท่าที่จำเป็น</li>
+    <li><strong>คุณสมบัติผู้กู้:</strong> ไม่มีที่ดินของตนเอง / มีน้อยไม่เพียงพอแก่การครองชีพ / น้อยกว่าเกณฑ์เฉลี่ยของจังหวัด</li>
+    <li>💰 จำนวนเงินขอกู้ต้องไม่เกินวงเงินที่กู้ได้โดยใช้บุคคลค้ำประกันและ/หรือจำนอง</li>
+    <li>📌 ลูกค้าโครงการพิเศษ → ซื้อที่ดินได้เฉพาะเพื่อความสำเร็จของโครงการ</li>
+    <li>🚫 <strong>ห้ามให้เงินกู้เพื่อซื้อที่ดินที่...</strong> (ต้องตรวจสอบเพิ่มเติมตามระเบียบ)</li>
+  </ol>
+</div>
+
+<h3>7.4 การตรวจสอบและประเมินผลกระทบสิ่งแวดล้อม</h3>
+<div class="c warn">
+  <strong>🌿 การประเมินผลกระทบสิ่งแวดล้อมเพื่อประกอบการพิจารณาสินเชื่อ</strong>
+  <ul>
+    <li>📌 ใช้กับ <strong>กุ้ง สุกร โคเนื้อ โคนม</strong> เท่านั้น</li>
+    <li>💰 วงเงินกู้ตั้งแต่ <span class="tag r">300,000 บาทขึ้นไป</span> ต่อสัญญา</li>
+    <li>📋 ต้องมีมาตรการป้องกันและจัดการสิ่งแวดล้อมก่อนอนุมัติสินเชื่อ</li>
+    <li>⚠️ การสร้างความตระหนักและแนวทางป้องกันแก้ไขปัญหาร่วมกันระหว่างลูกค้ากับธนาคารเป็นสำคัญ</li>
+    <li>📎 อ้างอิง: เอกสาร 301.06 คู่มือปฏิบัติงานสินเชื่อด้านเกษตรกร เล่ม 2</li>
+  </ul>
+</div>
+</section>
+
+<!-- ==================================================================================== -->
+<!-- SEC 8: ตารางสรุป -->
+<!-- ==================================================================================== -->
+<section id="sec8">
+<h2>8. 🔑 ตารางสรุปสำคัญสำหรับทบทวนก่อนสอบ</h2>
+
+<h3>สรุปจำนวนเงินและวงเงินสำคัญ</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>รายการ</th><th>จำนวน</th></tr>
+  <tr><td>อัตราส่วนขั้นต่ำแห่งการลงทุนของผู้กู้</td><td><span class="tag r">≥ 20%</span></td></tr>
+  <tr><td>ผ่อนผันราคาประเมินให้กู้เกิน 50%</td><td>ไม่เกิน <span class="tag r">80%</span> (อำนาจ ผจก.สาขา)</td></tr>
+  <tr><td>วงเงิน คสก. ต่อรายสูงสุด</td><td><span class="tag r">200,000 บาท</span></td></tr>
+  <tr><td>จำนวนผู้กู้ คสก. ขั้นต่ำ</td><td><span class="tag r">5 คน</span></td></tr>
+  <tr><td>ชำระคืนต้นเงินกู้ คสก./คสร.</td><td>ไม่เกิน <span class="tag r">12 เดือน</span> (พิเศษ 18 เดือน)</td></tr>
+  <tr><td>ระยะเวลาหนังสือกู้เครดิตเงินสด</td><td>ไม่เกิน <span class="tag r">5 ปี</span></td></tr>
+  <tr><td>รับเงินกู้หลังอนุมัติ</td><td>ภายใน <span class="tag r">3 เดือน</span></td></tr>
+  <tr><td>ระยะเวลาชำระหนี้ค่าลงทุน</td><td><span class="tag r">15 ปี</span> (พิเศษ 20 ปี) ปลอดต้นไม่เกิน 5 ปี</td></tr>
+  <tr><td>ระยะเวลาชำระหนี้ที่อยู่อาศัย</td><td><span class="tag r">15 ปี</span> (พิเศษ 20 ปี)</td></tr>
+  <tr><td>วงเงินกู้ที่อยู่อาศัยสูงสุด</td><td><span class="tag r">3 ล้านบาท</span></td></tr>
+  <tr><td>กู้พัฒนาความรู้ — มีรายได้เพียงพอ</td><td>เป็นค่าใช้จ่าย</td></tr>
+  <tr><td>กู้พัฒนาความรู้ — รายได้ไม่เพียงพอ</td><td>เป็นค่าลงทุน</td></tr>
+  <tr><td>วิเคราะห์ ≤ 500K</td><td>Mini CAP (เกษตร) / W/C (อื่น)</td></tr>
+  <tr><td>วิเคราะห์ 500K-3M</td><td>AGRI CAP Branch / SMAE CAP Branch</td></tr>
+  <tr><td>กำหนดวงเงินกู้ไม่เกิน</td><td><span class="tag r">80%</span> ของค่าลงทุน</td></tr>
+</table>
+</div>
+
+<h3>สรุปอำนาจอนุมัติ</h3>
+<div class="table-wrap">
+<table>
+  <tr><th>รายการ</th><th>ผู้มีอำนาจ</th></tr>
+  <tr><td>อัตราส่วนลงทุน < 20%</td><td>ผช.ผจก.สายงานบริหารสินเชื่อ</td></tr>
+  <tr><td>ผ่อนผันราคาประเมิน >50% แต่ ≤ 80%</td><td>ผจก.สาขา (ผช.ผจก.สาขาทำแทนได้ถ้ามอบหมาย)</td></tr>
+  <tr><td>ตรวจทาน ≤ 500K</td><td>หัวหน้าหน่วยอำเภอ</td></tr>
+  <tr><td>ตรวจทาน ≤ 1M</td><td>ผช.ผจก.สาขา</td></tr>
+  <tr><td>ตรวจทาน ≤ 3M</td><td>ผจก.สาขา</td></tr>
+  <tr><td>อนุมัติสินเชื่อ</td><td>ตามระเบียบฉบับที่ 89</td></tr>
+</table>
+</div>
+
+<h3>Mnemonics</h3>
+<div class="mnemo">
+  📝 <strong>7 วัตถุประสงค์กู้เงิน (ข้อ 15 ฉ.44):</strong><br>
+  "จ่าย ทุน หนี้ รู้ ชีวิต ขาย โครงการ"<br>
+  <span style="font-size:12px;color:var(--text3)">ค่าใช้จ่าย → ค่าลงทุน → ชำระหนี้ → พัฒนาความรู้ → พัฒนาคุณภาพชีวิต → รอขายผลิตผล → ตามโครงการ</span>
+</div>
+
+<div class="mnemo">
+  📝 <strong>6 ขั้นตอนกระบวนการ:</strong><br>
+  "แจ้ง → สอบ → วิเคราะห์ → ตรวจ → อนุมัติ → จ่าย"<br>
+  <span style="font-size:12px;color:var(--text3)">(จำแค่คำแรก: รับ-สอบ-วิเคราะห์-ตรวจ-อนุมัติ-แจ้ง)</span>
+</div>
+
+<div class="mnemo">
+  📝 <strong>8 ปัจจัยวิเคราะห์ผู้กู้:</strong><br>
+  "ฐาน ชื่อ ประวัติ ความรู้ ต้องการ รายได้ ความสามารถ หลักประกัน"
+</div>
+
+<!-- Quick links -->
+<div style="text-align:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)">
+  <a href="loan-manual-vol2-quiz.html" style="display:inline-block;padding:10px 28px;background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0f172a;font-weight:700;border-radius:12px;text-decoration:none;font-size:15px">
+    📝 ไปทำแบบทดสอบ (ครบ 20+ ข้อ)
+  </a>
+  <br><br>
+  <a href="index.html" style="color:var(--text2);font-size:13px">← กลับหน้าแรก</a>
+</div>
+
+</div><!-- end ct -->
+</body>
+</html>

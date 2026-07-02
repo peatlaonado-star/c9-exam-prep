@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📝 แบบทดสอบ — คู่มือสินเชื่อด้านเกษตรกร เล่ม 2 | Genius 9</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070b14;--bg2:#0d1425;--surface:#131d33;--surface2:#1a2740;--surface3:#22324f;--gold:#d4942f;--gold2:#e8b84f;--gold-dim:rgba(212,148,47,0.12);--green:#22a67e;--green-dim:rgba(34,166,126,0.12);--blue:#4b7bec;--blue-dim:rgba(75,123,236,0.10);--purple:#9772e6;--purple-dim:rgba(151,114,230,0.10);--red:#e55c5c;--red-dim:rgba(229,92,92,0.10);--cyan:#36b5c4;--cyan-dim:rgba(54,181,196,0.10);--text:#edf2f7;--text2:#94a3b8;--text3:#5a6a7e;--border:rgba(255,255,255,0.05);--radius:12px;--glow:0 0 60px rgba(212,148,47,0.04)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans Thai','Sarabun',sans-serif;background:var(--bg);color:var(--text);line-height:1.8;min-height:100vh;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse 600px 400px at 20% 30%,rgba(212,148,47,0.03),transparent 60%),radial-gradient(ellipse 500px 500px at 80% 20%,rgba(75,123,236,0.02),transparent 60%);pointer-events:none;z-index:0}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,11,20,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:10px 12px;display:flex;gap:4px;flex-wrap:wrap;align-items:center;overflow-x:auto}
+nav h1{font-size:13px;color:var(--gold);margin-right:8px;white-space:nowrap;font-weight:700}
+nav a{color:var(--text2);text-decoration:none;font-size:12px;padding:4px 8px;border-radius:6px;white-space:nowrap;transition:.2s}
+nav a:hover{background:var(--gold-dim);color:var(--gold)}
+.ct{max-width:960px;margin:0 auto;padding:20px 14px 80px;position:relative;z-index:1}
+.hero{text-align:center;padding:28px 12px 24px;border-bottom:2px solid var(--gold-dim);margin-bottom:24px}
+.hero h1{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:800;background:linear-gradient(135deg,var(--gold),var(--gold2),#eacc7a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.hero p{color:var(--text2);font-size:14px}
+.badge{display:inline-block;margin:2px;padding:3px 10px;border-radius:14px;font-size:11px;font-weight:600}
+.badge.gold{background:rgba(212,148,47,0.15);color:#fbbf24}
+.badge.blue{background:rgba(75,123,236,0.15);color:#93c5fd}
+.badge.green{background:rgba(34,166,126,0.15);color:#34d399}
+.badge.red{background:rgba(229,92,92,0.15);color:#fca5a5}
+.badge.purple{background:rgba(151,114,230,0.15);color:#c4b5fd}
+h2{font-size:20px;color:var(--gold);border-left:4px solid var(--gold);padding-left:12px;margin:28px 0 14px}
+.c{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px;margin:8px 0;font-size:14px;line-height:1.8}
+.c.tip{border-left:4px solid var(--gold)}
+.c.info{border-left:4px solid var(--blue)}
+.c.warn{border-left:4px solid var(--red)}
+.c.ok{border-left:4px solid var(--green)}
+.q{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:14px;margin:10px 0}
+.q p{font-size:14px;margin-bottom:8px;color:var(--text)}
+.q label{display:block;font-size:13px;padding:5px 0;color:var(--text2);cursor:pointer;border-radius:6px;transition:.15s;padding-left:8px}
+.q label:hover{background:var(--surface2);color:var(--text)}
+.q .btn{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0f172a;border:none;border-radius:8px;padding:6px 18px;font-size:13px;font-weight:700;cursor:pointer;margin-top:8px;transition:.2s}
+.q .btn:hover{opacity:.85;transform:translateY(-1px)}
+.q .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.rb.ok{color:#34d399;font-size:13px;padding:6px 0;margin-top:4px;background:rgba(34,166,126,0.08);border-radius:6px;padding:6px 10px}
+.rb.no{color:#fca5a5;font-size:13px;padding:6px 0;margin-top:4px;background:rgba(229,92,92,0.08);border-radius:6px;padding:6px 10px}
+.sc{margin:8px 0;font-size:15px;color:var(--text2);padding:10px 0;text-align:center}
+.sc .btn{background:var(--surface2);color:var(--gold);border:1px solid var(--gold-dim);border-radius:8px;padding:5px 14px;font-size:12px;font-weight:600;cursor:pointer;margin-left:8px;transition:.2s}
+.sc .btn:hover{background:var(--gold-dim);color:var(--gold2)}
+details{margin:8px 0;background:var(--surface);border-radius:var(--radius);border:1px solid var(--border);padding:6px 12px}
+details[open]{border-color:var(--green)}
+summary{cursor:pointer;padding:8px 0;font-weight:600;color:var(--blue);font-size:14px}
+summary::before{content:"▶";color:var(--gold);margin-right:8px}
+details[open] summary::before{content:"▼"}
+.tag{display:inline-block;padding:2px 8px;border-radius:10px;font-size:11px;font-weight:600;margin:2px}
+.tag.r{background:var(--red-dim);color:#fca5a5}
+.tag.g{background:var(--green-dim);color:#34d399}
+.tag.b{background:var(--blue-dim);color:#93c5fd}
+.tag.y{background:var(--gold-dim);color:#fbbf24}
+</style>
+</head>
+<body>
+
+<nav>
+  <h1>📝 แบบทดสอบ</h1>
+  <a href="loan-manual-vol2-summary.html">📘 กลับไปสรุปเนื้อหา</a>
+  <a href="index.html">🏠 หน้าแรก</a>
+</nav>
+
+<div class="ct">
+
+<div class="hero">
+  <h1>📝 แบบทดสอบ — คู่มือปฏิบัติงานสินเชื่อด้านเกษตรกร เล่ม 2</h1>
+  <p>ครอบคลุมเนื้อหาทั้งหมด 25 ข้อ — กดตรวจคำตอบเพื่อดูเฉลย</p>
+  <div>
+    <span class="badge gold">📋 25 ข้อ</span>
+    <span class="badge green">🔑 มีเฉลยละเอียด</span>
+    <span class="badge blue">📖 อิงจากคู่มือเล่ม 2</span>
+  </div>
+</div>
+
+<div class="c info">
+  <strong>📌 คำแนะนำ:</strong> เลือกคำตอบที่ถูกต้องที่สุด แล้วกด "ตรวจ" เพื่อดูเฉลยทันที สามารถทำซ้ำได้จากปุ่ม "🔄 ทำใหม่"
+</div>
+
+<div id="qz-container"></div>
+<div class="sc" id="score-bar">⭐ คะแนน: <span id="score-display">0</span> / 25 <button class="btn" onclick="resetQuiz()">🔄 ทำใหม่</button></div>
+
+<div style="text-align:center;margin-top:24px;padding-top:16px;border-top:1px solid var(--border)">
+  <a href="loan-manual-vol2-summary.html" style="display:inline-block;padding:8px 24px;background:var(--gold-dim);color:var(--gold);border-radius:8px;text-decoration:none;font-size:14px;font-weight:600">
+    📘 ทบทวนเนื้อหาก่อนสอบ
+  </a>
+</div>
+
+</div>
+
+<script>
+const Q = [
+  {
+    q: 'ข้อ 6 กำหนดอัตราส่วนขั้นต่ำแห่งการลงทุนของผู้กู้ไม่น้อยกว่าร้อยละเท่าใดแห่งค่าลงทุนตามแผนงาน?',
+    c: [
+      'ร้อยละ 10',
+      'ร้อยละ 15',
+      'ร้อยละ 20',
+      'ร้อยละ 25'
+    ],
+    a: 2
+  },
+  {
+    q: 'กรณีอัตราส่วนขั้นต่ำแห่งการลงทุนของผู้กู้น้อยกว่าร้อยละ 20 ให้อยู่ในอำนาจของใคร?',
+    c: [
+      'ผู้จัดการสาขา',
+      'ผู้ช่วยผู้จัดการสายงานบริหารงานสินเชื่อ',
+      'หัวหน้าหน่วยอำเภอ',
+      'คณะกรรมการสินเชื่อประจำสาขา'
+    ],
+    a: 1
+  },
+  {
+    q: 'ข้อ 8 การผ่อนผันราคาประเมินและวงเงินจำนอง ให้ลูกค้ากู้เงินมากกว่าร้อยละ 50 แต่ไม่เกินร้อยละเท่าใด?',
+    c: [
+      'ร้อยละ 70',
+      'ร้อยละ 80',
+      'ร้อยละ 90',
+      'ร้อยละ 100'
+    ],
+    a: 1
+  },
+  {
+    q: 'การผ่อนผันราคาประเมินตามข้อ 8 อยู่ในอำนาจของใคร?',
+    c: [
+      'ผู้อำนวยการสำนักอนุมัติสินเชื่อ',
+      'ผู้ช่วยผู้จัดการสายงานบริหารสินเชื่อ',
+      'ผู้จัดการสาขา',
+      'หัวหน้าหน่วยอำเภอ'
+    ],
+    a: 2
+  },
+  {
+    q: 'ข้อ 15 แห่งข้อบังคับฉบับที่ 44 กำหนดวัตถุประสงค์การให้เกษตรกรกู้เงินกี่ประการ?',
+    c: [
+      '5 ประการ',
+      '6 ประการ',
+      '7 ประการ',
+      '8 ประการ'
+    ],
+    a: 2
+  },
+  {
+    q: 'ข้อใดไม่ใช่วัตถุประสงค์การกู้เงินตามข้อ 15 ฉ.44?',
+    c: [
+      'เพื่อเป็นค่าใช้จ่ายในการประกอบอาชีพ',
+      'เพื่อชำระหนี้สินภายนอก',
+      'เพื่อซื้อทองคำเพื่อการลงทุน',
+      'เพื่อรอการขายผลิตผล'
+    ],
+    a: 2
+  },
+  {
+    q: 'หลักการให้กู้เงินตามลักษณะของการใช้เงินกู้ ข้อใดเรียกว่า "ค่าใช้จ่าย"?',
+    c: [
+      'การให้กู้เพื่อลงทุนในสินทรัพย์ที่มีอายุ > 1 ปี',
+      'การให้กู้เพื่อเป็นเงินทุนหมุนเวียนในรอบปี',
+      'การให้กู้เพื่อเพิ่มรายได้ให้ลูกค้าที่ประสบปัญหา',
+      'การให้กู้เพื่อชะลอการขายผลิตผล'
+    ],
+    a: 1
+  },
+  {
+    q: 'ข้อใดคือความหมายของ "การฟื้นฟูการประกอบอาชีพ"?',
+    c: [
+      'การให้กู้เพื่อซื้อสินทรัพย์ถาวร',
+      'การให้กู้เพื่อเพิ่มรายได้ของลูกค้าที่ประสบปัญหาจนไม่สามารถชำระหนี้ได้',
+      'การให้กู้เพื่อการศึกษาอบรมของลูกค้า',
+      'การให้กู้เพื่อชำระหนี้สินภายนอก'
+    ],
+    a: 1
+  },
+  {
+    q: 'ข้อใดไม่ใช่หลักเกณฑ์ในการวิเคราะห์ตัวผู้กู้ (Credit Analysis)?',
+    c: [
+      'ฐานะทางการเงิน',
+      'ชื่อเสียงความซื่อสัตย์สุจริต',
+      'ประวัติการใช้เงินกู้/การชำระหนี้',
+      'ที่ตั้งของสาขาที่เปิดบัญชี'
+    ],
+    a: 3
+  },
+  {
+    q: 'ขั้นตอนแรกของกระบวนการให้กู้เงินคืออะไร?',
+    c: [
+      'วิเคราะห์เงินกู้',
+      'รับแจ้งความประสงค์/ชี้แจงหลักเกณฑ์',
+      'พิจารณาอนุมัติ',
+      'ตรวจสอบและประเมินผล'
+    ],
+    a: 1
+  },
+  {
+    q: 'วงเงินกู้ไม่เกิน 500,000 บาท ใช้สูตรวิเคราะห์ใดสำหรับลูกค้าเกษตรกร?',
+    c: [
+      'AGRI CAP Branch',
+      'SMAE CAP Branch',
+      'Mini CAP',
+      'Full CAP'
+    ],
+    a: 2
+  },
+  {
+    q: 'วงเงินกู้ > 500,000 บาท แต่ไม่เกิน 3,000,000 บาท สำหรับอาชีพอื่นใช้สูตรใด?',
+    c: [
+      'Mini CAP หรือ W/C',
+      'SMAE CAP Branch หรือ W/C',
+      'AGRI CAP Branch เท่านั้น',
+      'Full Analysis'
+    ],
+    a: 1
+  },
+  {
+    q: 'การตรวจทานวงเงินไม่เกิน 500,000 บาท อยู่ในอำนาจของใคร?',
+    c: [
+      'ผู้จัดการสาขา',
+      'ผู้ช่วยผู้จัดการสาขา',
+      'หัวหน้าหน่วยอำเภอ',
+      'พนักงานพัฒนาธุรกิจ'
+    ],
+    a: 2
+  },
+  {
+    q: 'หนังสือกู้เงินที่อนุมัติแล้ว ผู้กู้ต้องรับเงินกู้ภายในกี่เดือน?',
+    c: [
+      '1 เดือน',
+      '2 เดือน',
+      '3 เดือน',
+      '6 เดือน'
+    ],
+    a: 2
+  },
+  {
+    q: 'วงเงินกู้เครดิตเงินสดแบบ คสก. ต่อรายสูงสุดเท่าใด?',
+    c: [
+      '100,000 บาท',
+      '150,000 บาท',
+      '200,000 บาท',
+      '500,000 บาท'
+    ],
+    a: 2
+  },
+  {
+    q: 'เงินกู้เครดิตเงินสดแบบ คสก. ต้องมีผู้กู้ร่วมกันอย่างน้อยกี่คน?',
+    c: [
+      '3 คน',
+      '5 คน',
+      '7 คน',
+      '10 คน'
+    ],
+    a: 1
+  },
+  {
+    q: 'ระยะเวลาชำระคืนต้นเงินกู้ของ คสก./คสร. ไม่เกินกี่เดือน?',
+    c: [
+      '6 เดือน',
+      '9 เดือน',
+      '12 เดือน (มีเหตุพิเศษไม่เกิน 18 เดือน)',
+      '24 เดือน'
+    ],
+    a: 2
+  },
+  {
+    q: 'เงินกู้เพื่อเป็นค่าลงทุนในการประกอบอาชีพเกษตรกรรม กำหนดระยะเวลาชำระหนี้ไม่เกินกี่ปี?',
+    c: [
+      '10 ปี (พิเศษ 15 ปี)',
+      '15 ปี (พิเศษ 20 ปี)',
+      '20 ปี (พิเศษ 25 ปี)',
+      '5 ปี (พิเศษ 10 ปี)'
+    ],
+    a: 1
+  },
+  {
+    q: 'ลูกค้าขอกู้เงินพัฒนาความรู้ แต่มีรายได้สุทธิไม่เพียงพอชำระหนี้ภายในรอบปีการผลิต ควรกำหนดให้เป็น?',
+    c: [
+      'ค่าใช้จ่ายในการพัฒนาความรู้',
+      'ค่าลงทุนในการพัฒนาความรู้',
+      'เงินกู้เพื่อการกุศล',
+      'ไม่สามารถให้กู้ได้'
+    ],
+    a: 1
+  },
+  {
+    q: 'เงินกู้เพื่อพัฒนาคุณภาพชีวิตด้านที่อยู่อาศัย ผู้กู้ที่มีรายได้ประจำสม่ำเสมอ กู้ได้ไม่เกินกี่เท่าของรายได้?',
+    c: [
+      'ไม่เกิน 3 เท่า',
+      'ไม่เกิน 10 เท่า',
+      'ไม่เกิน 20 เท่า',
+      'ไม่เกิน 30 เท่า'
+    ],
+    a: 3
+  },
+  {
+    q: 'วงเงินกู้พัฒนาคุณภาพชีวิตด้านที่อยู่อาศัยสูงสุดไม่เกินเท่าใด (รวมทุกสัญญา)?',
+    c: [
+      '1 ล้านบาท',
+      '2 ล้านบาท',
+      '3 ล้านบาท',
+      '5 ล้านบาท'
+    ],
+    a: 2
+  },
+  {
+    q: 'การให้กู้เงินเพื่อพัฒนาคุณภาพชีวิตด้านที่อยู่อาศัย ต้องมีผู้ค้ำประกันอย่างน้อยกี่คน?',
+    c: [
+      '1 คน',
+      '2 คน',
+      '3 คน',
+      'ไม่มีข้อกำหนด'
+    ],
+    a: 1
+  },
+  {
+    q: 'ข้อใดต่อไปนี้ถูกต้องเกี่ยวกับสินเชื่อ A-Cash?',
+    c: [
+      'วงเงินกู้สูงสุด 30,000 บาท ต่อราย',
+      'วงเงินกู้สูงสุด 50,000 บาท ต่อราย',
+      'วงเงินกู้สูงสุด 100,000 บาท ต่อราย',
+      'วงเงินกู้สูงสุด 200,000 บาท ต่อราย'
+    ],
+    a: 1
+  },
+  {
+    q: 'ผู้กู้สินเชื่อ A-Cash ต้องมีประวัติการชำระหนี้ระดับใด?',
+    c: [
+      'A ขึ้นไป',
+      'AA ขึ้นไป',
+      'AAA ขึ้นไป',
+      'ไม่มีข้อกำหนด'
+    ],
+    a: 1
+  },
+  {
+    q: 'A-Cash Gold ต้องเป็นลูกค้าที่มีประวัติการชำระหนี้ระดับใด?',
+    c: [
+      'AA ขึ้นไป',
+      'AA+ ขึ้นไป',
+      'AAA หรือ AAA+',
+      'A ขึ้นไป'
+    ],
+    a: 2
+  },
+  {
+    q: 'สินเชื่อ A-Cash Gold วงเงินกู้สูงสุดเท่าใด ต่อราย?',
+    c: [
+      '50,000 บาท',
+      '75,000 บาท',
+      '100,000 บาท',
+      '150,000 บาท'
+    ],
+    a: 2
+  },
+  {
+    q: 'A-Cash Gold ใช้หลักประกันได้สูงสุดกี่เปอร์เซ็นต์ของวงเงินจำนอง?',
+    c: [
+      '80%',
+      '90%',
+      '95%',
+      '100%'
+    ],
+    a: 2
+  },
+  {
+    q: 'สินเชื่อ A-Cash ช่องทางการเบิกเงินมีกี่ช่องทาง?',
+    c: [
+      '1 ช่องทาง',
+      '2 ช่องทาง',
+      '3 ช่องทาง',
+      '4 ช่องทาง'
+    ],
+    a: 2
+  },
+  {
+    q: 'A-Cash ต้องชำระคืนภายในระยะเวลาเท่าใด?',
+    c: [
+      '6 เดือน',
+      '12 เดือน',
+      '18 เดือน',
+      '24 เดือน'
+    ],
+    a: 1
+  },
+  {
+    q: 'Market Code ของ A-Cash และ A-Cash Gold คือข้อใด?',
+    c: [
+      '1005 และ 2409',
+      '2409 และ 1005',
+      '1005 และ 1006',
+      '2409 และ 2410'
+    ],
+    a: 0
+  },
+  {
+    q: 'การตรวจสอบและประเมินผลกระทบสิ่งแวดล้อม ใช้กับสัตว์ประเภทใด?',
+    c: [
+      'กุ้ง สุกร ไก่ ปลา',
+      'กุ้ง สุกร โคเนื้อ โคนม',
+      'สุกร โคเนื้อ เป็ด ไก่',
+      'ปลา กุ้ง ปู หอย'
+    ],
+    a: 1
+  },
+  {
+    q: 'การตรวจสอบและประเมินผลกระทบสิ่งแวดล้อม ใช้วงเงินกู้ตั้งแต่เท่าใดขึ้นไป?',
+    c: [
+      '100,000 บาท',
+      '200,000 บาท',
+      '300,000 บาท',
+      '500,000 บาท'
+    ],
+    a: 2
+  }
+];
+
+const E = [
+  'เฉลยข้อ 1: ข้อ ค. — อัตราส่วนขั้นต่ำแห่งการลงทุนของผู้กู้ไม่น้อยกว่าร้อยละ 20 แห่งค่าลงทุนตามแผนงานหรือโครงการ (ข้อ 6)',
+  'เฉลยข้อ 2: ข้อ ข. — กรณีที่อัตราส่วนขั้นต่ำแห่งการลงทุนน้อยกว่าร้อยละ 20 ให้อยู่ในอำนาจผู้ช่วยผู้จัดการสายงานบริหารงานสินเชื่อ',
+  'เฉลยข้อ 3: ข้อ ข. — ผ่อนผันให้กู้มากกว่าร้อยละ 50 แต่ไม่เกินร้อยละ 80 (ข้อ 8)',
+  'เฉลยข้อ 4: ข้อ ค. — อยู่ในอำนาจผู้จัดการสาขา (ผู้ช่วยผู้จัดการสาขาทำการแทนได้โดยผู้จัดการสาขาต้องมอบหมายเป็นลายลักษณ์อักษร)',
+  'เฉลยข้อ 5: ข้อ ค. — วัตถุประสงค์ 7 ประการ คือ ค่าใช้จ่าย ค่าลงทุน ฟื้นฟูอาชีพ ชำระหนี้ภายนอก พัฒนาความรู้ พัฒนาคุณภาพชีวิต รอขายผลิตผล และตามโครงการ',
+  'เฉลยข้อ 6: ข้อ ค. — ซื้อทองคำเพื่อการลงทุนไม่แก่นวัตถุประสงค์ของฉ.44 (7 ข้อไม่มีข้อนี้)',
+  'เฉลยข้อ 7: ข้อ ข. — ค่าใช้จ่าย = เงินทุนหมุนเวียนในรอบปี (อาจผลิตรอบเดียวหรือหลายรอบ) ส่วนค่าลงทุน = สินทรัพย์ > 1 ปี',
+  'เฉลยข้อ 8: ข้อ ข. — การฟื้นฟูอาชีพ คือ การให้กู้เพื่อเพิ่มรายได้ลูกค้าที่ประสบปัญหาจนไม่สามารถชำระหนี้ได้',
+  'เฉลยข้อ 9: ข้อ ง. — หลักเกณฑ์วิเคราะห์มี 8 ข้อ: ฐานะ ชื่อเสียง ประวัติ ความรู้ ความต้องการ รายได้ ความสามารถ และหลักประกัน — ที่ตั้งสาขาไม่เกี่ยวข้อง',
+  'เฉลยข้อ 10: ข้อ ข. — ขั้นตอนที่ 1: รับแจ้งความประสงค์/ชี้แจงหลักเกณฑ์ → สอบสืบ → วิเคราะห์ → ตรวจทาน → อนุมัติ → แจ้งผล/จ่าย',
+  'เฉลยข้อ 11: ข้อ ค. — วงเงิน ≤ 500K เกษตรใช้ Mini CAP, อาชีพอื่นใช้ W/C',
+  'เฉลยข้อ 12: ข้อ ข. — วงเงิน 500K-3M อาชีพอื่นใช้ SMAE CAP Branch หรือ W/C ส่วนเกษตรใช้ AGRI CAP Branch',
+  'เฉลยข้อ 13: ข้อ ค. — ตรวจทาน ≤ 500K = หัวหน้าหน่วยอำเภอ, ≤ 1M = ผช.ผจก.สาขา, ≤ 3M = ผจก.สาขา',
+  'เฉลยข้อ 14: ข้อ ค. — หนังสือกู้เงินที่อนุมัติแล้ว รับเงินกู้ภายใน 3 เดือน ถ้าครบกำหนดประทับ "ยกเลิก"',
+  'เฉลยข้อ 15: ข้อ ค. — คสก. ต่อรายไม่เกิน 200,000 บาท',
+  'เฉลยข้อ 16: ข้อ ข. — คสก. ต้องมีผู้กู้ในกลุ่มเดียวกันอย่างน้อย 5 คนขึ้นไป',
+  'เฉลยข้อ 17: ข้อ ค. — ชำระคืนต้นเงินกู้ภายในไม่เกิน 12 เดือน (มีเหตุผลพิเศษไม่เกิน 18 เดือน)',
+  'เฉลยข้อ 18: ข้อ ข. — ระยะเวลาชำระหนี้ไม่เกิน 15 ปี (มีเหตุพิเศษไม่เกิน 20 ปี) ปลอดต้นไม่เกิน 5 ปีแรก',
+  'เฉลยข้อ 19: ข้อ ข. — กรณีมีรายได้สุทธิไม่เพียงพอชำระหนี้ภายในรอบปีการผลิต ให้กู้เป็นค่าลงทุนในการพัฒนาความรู้ (ใช้หลักประกันตามข้อบังคับ)',
+  'เฉลยข้อ 20: ข้อ ง. — รายได้ประจำ กู้ได้ไม่เกิน 30 เท่าของรายได้ประจำต่อเดือนหลังหักค่าใช้จ่าย (รายได้ไม่ประจำ กู้ไม่เกิน 3 เท่าของรายได้ต่อปี)',
+  'เฉลยข้อ 21: ข้อ ค. — รวมสัญญาเงินกู้พัฒนาคุณภาพชีวิตด้านที่อยู่อาศัย วงเงินสูงสุดต้องไม่เกิน 3 ล้านบาท',
+  'เฉลยข้อ 22: ข้อ ข. — ต้องมีลูกค้าประจำสาขาหรือบุคคลอื่นค้ำประกันอย่างน้อย 2 คน',
+  'เฉลยข้อ 23: ข้อ ข. — สินเชื่อ A-Cash วงเงินกู้สูงสุด 50,000 บาท ต่อราย ต่อครั้ง (Market Code 1005)',
+  'เฉลยข้อ 24: ข้อ ข. — ผู้กู้ A-Cash ต้องเป็นลูกค้าชั้นดี AA ขึ้นไป ชำระหนี้ต่อเนื่อง ≥ 1 ปี',
+  'เฉลยข้อ 25: ข้อ ค. — A-Cash Gold ต้องเป็นลูกค้า AAA หรือ AAA+ เท่านั้น (สูงกว่า A-Cash ที่ต้องการ AA ขึ้นไป)',
+  'เฉลยข้อ 26: ข้อ ค. — A-Cash Gold วงเงินสูงสุด 100,000 บาท ต่อราย (Market Code 2409)',
+  'เฉลยข้อ 27: ข้อ ค. — A-Cash Gold ใช้หลักประกันได้ถึง 95% ของวงเงินจำนอง (A-Cash ปกติ 80%)',
+  'เฉลยข้อ 28: ข้อ ค. — A-Cash เบิกเงินได้ 3 ช่องทาง: สาขา, ATM, BAAC Mobile',
+  'เฉลยข้อ 29: ข้อ ข. — A-Cash ชำระคืนภายใน 12 เดือน',
+  'เฉลยข้อ 30: ข้อ ก. — Market Code: A-Cash = 1005, A-Cash Gold = 2409',
+  'เฉลยข้อ 31: ข้อ ข. — การประเมินสิ่งแวดล้อมใช้กับ กุ้ง สุกร โคเนื้อ โคนม เท่านั้น ไม่รวมไก่',
+  'เฉลยข้อ 32: ข้อ ค. — การประเมินผลกระทบสิ่งแวดล้อมใช้วงเงินกู้ตั้งแต่ 300,000 บาทขึ้นไปต่อสัญญา'
+];
+
+function renderQuiz() {
+  const el = document.getElementById('qz-container');
+  let h = '';
+  for (let i = 0; i < Q.length; i++) {
+    const q = Q[i];
+    h += '<div class="q" id="q_'+i+'"><p><b>'+(i+1)+'. '+q.q+'</b></p>';
+    for (let j = 0; j < q.c.length; j++) {
+      const letter = String.fromCharCode(65+j);
+      h += '<label><input type="radio" name="q_'+i+'" value="'+j+'" id="r'+i+'_'+j+'"><span style="margin-left:6px">'+letter+'. '+q.c[j]+'</span></label>';
+    }
+    h += '<button class="btn" onclick="checkAnswer('+i+')">✅ ตรวจคำตอบ</button>';
+    h += '<div class="rb" id="rb_'+i+'"></div></div>';
+  }
+  el.innerHTML = h;
+}
+
+function checkAnswer(i) {
+  const selected = document.querySelector('input[name="q_'+i+'"]:checked');
+  if (!selected) return;
+  const ans = parseInt(selected.value);
+  const rb = document.getElementById('rb_'+i);
+  document.querySelectorAll('input[name="q_'+i+'"]').forEach(r => r.disabled = true);
+  const btn = rb.parentElement.querySelector('.btn');
+  if (btn) btn.disabled = true;
+  if (ans === Q[i].a) {
+    rb.className = 'rb ok';
+    rb.innerHTML = '✅ ถูกต้อง! ' + E[i];
+  } else {
+    const correctLetter = String.fromCharCode(65+Q[i].a);
+    rb.className = 'rb no';
+    rb.innerHTML = '❌ ผิด! เฉลย: ' + E[i];
+  }
+  updateScore();
+}
+
+function updateScore() {
+  let score = 0;
+  for (let i = 0; i < Q.length; i++) {
+    const rb = document.getElementById('rb_'+i);
+    if (rb && rb.classList.contains('ok')) score++;
+  }
+  document.getElementById('score-display').textContent = score;
+}
+
+function resetQuiz() {
+  if (!confirm('รีเซ็ตข้อสอบทั้งหมดและเริ่มใหม่?')) return;
+  for (let i = 0; i < Q.length; i++) {
+    document.querySelectorAll('input[name="q_'+i+'"]').forEach(r => { r.checked = false; r.disabled = false; });
+    const rb = document.getElementById('rb_'+i);
+    if (rb) { rb.className = 'rb'; rb.innerHTML = ''; }
+    const btn = document.querySelector('#q_'+i+' .btn');
+    if (btn) btn.disabled = false;
+  }
+  document.getElementById('score-display').textContent = '0';
+}
+
+renderQuiz();
+</script>
+
+</body>
+</html>
